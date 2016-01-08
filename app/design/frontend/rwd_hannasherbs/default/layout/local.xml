@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+    <checkout_cart_index>
+        <reference name="content">
+            <block name="checkout.cart">
+                <remove name="checkout.cart.shipping"/>
+            </block>
+        </reference>
+    </checkout_cart_index>
+</layout>

@@ -1,0 +1,24 @@
+<?php
+/**
+ * @category    design
+ * @package     rwd_hannasherbs default
+ * @author   	 Chris Rogers
+ * @since     	 2015-06-05
+ */
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+<?php $_menu = $this->getHtml('level-top'); ?>
+<?php if (isset($_menu)): ?>
+    <nav id="nav">
+        <ol class="nav-primary col-7-layout">
+            <?php echo $_menu ?>
+            <li id="salon-top-link" class="level0 last"><a class="hpadding-xs" href="http://faceandfiguresalon.co.uk" target="_blank" title="<?php echo $this->__('Visit the salon in Taunton, Somerset (redirects to Face and Figure Salon)') ?>"><?php echo $this->__('The Salon') ?></a></li>
+        </ol>
+    </nav>
+<?php endif ?>

@@ -1,0 +1,31 @@
+<?php
+/**
+ *
+ * @category    design
+ * @package     rwd_hannasherbs
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @author 		 Chris Rogers
+ * @since 		 2015-11-20
+ */
+
+/**
+ * Shoping cart sidebar
+ *
+ * @see Mage_Checkout_Block_Cart_Sidebar
+ */
+
+?>
+
+<?php
+    $_cartQty = $this->getSummaryCount();
+    if(empty($_cartQty)) {
+        $_cartQty = 0;
+    }
+?>
+
+<a href="#header-cart-mobile" class="skip-link skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
+    <span class="icon"></span>
+    <span class="label"><?php echo $this->__('Cart'); ?></span>
+    <span class="count"><?php echo $_cartQty; ?></span>
+</a>

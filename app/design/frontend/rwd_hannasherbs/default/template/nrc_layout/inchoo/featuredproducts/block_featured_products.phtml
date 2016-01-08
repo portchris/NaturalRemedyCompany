@@ -1,0 +1,42 @@
+<?php
+/**
+ * @category    Inchoo
+ * @package     Inchoo Featured Products
+ * @author      Chris Rogers & Domagoj Potkoc, Inchoo Team <web@inchoo.net>
+ * @since       2015-11-27
+ */
+?>
+<?php $image_size = (int) Mage::getStoreConfig("featuredproducts/cmspage/max_image_dimension") ?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+    <h2 class="subtitle"><?php echo $this->__($this->getBlockLabel()) ?></h2>
+    <?php $i = 0;
+    $row = 1;
+    $perRow = $this->getItemsPerRow(); ?>
+    <ul class="products-grid list-inline products-grid--max-<?php echo $perRow ?>-col">
+        <?php foreach ($_products->getItems() as $_product): ?>
+            <?php if ($i !== 0 && $i % $perRow == 0): $row++; ?>
+                </ul><ul class="list-inline products-grid--max-<?php echo $perRow ?>-col">
+            <?php endif; ?>
+            <li id="product-featured-<?php echo $i ?>" class="featured-item col-1 <?php echo ((($i * $row) % 2) > 0) ? 'even' : 'odd' ?>">
+                <a class="product-image" href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+                    <img class="product-img img-responsive" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($image_size, $image_size) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+                </a>
+                <div class="vspace">
+                    <h3 class="product-name">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>)">
+                            <?php echo $this->htmlEscape($_product->getName()) ?>
+                        </a>
+                    </h3>
+                    <?php //echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                    <?php if (Mage::getStoreConfig('featuredproducts/general/price_visible')): ?>
+                        <?php echo $this->getPriceHtml($_product, true, '-new') ?>
+                        <?php if (!$_product->isSaleable()): ?>
+                            <div class="out-of-stock"><?php echo $this->__('Out of stock') ?></div>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <?php $i++; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

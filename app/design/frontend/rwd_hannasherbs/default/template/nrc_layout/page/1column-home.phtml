@@ -1,0 +1,79 @@
+<?php
+/**
+ * Template for homepage defined by Natural_Remedy Module
+ * @author      Chris Rogers
+ * @package     rwd_hannasherbs_default
+ * @since       2015-06-12
+ */
+?>
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]> <html lang="en" id="top" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" id="top" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" id="top" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" id="top" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" id="top" class="no-js"> <!--<![endif]-->
+
+<head>
+<?php echo $this->getChildHtml('head') ?>
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<div class="wrapper">
+    <?php echo $this->getChildHtml('global_notices') ?>
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+        <div class="main-container col1-layout">
+            <div class="main">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+                <div class="col-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepage-slider')->toHtml(); ?>
+                    <div id="homepage-content" class="hpadding">
+                        <div class="col2-set">
+                            <div class="col-1"><?php echo $this->getChildHtml('content') ?></div>
+                            <div class="col-2"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('twitter_feed')->toHtml(); ?></div>
+                        </div>
+                    </div>
+                    <div id="service-breakdown" class="hpadding vspace-xl">
+                        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('service_breakdown')->toHtml(); ?>
+                    </div>
+                    <div id="testimonials" class="vspace vpadding">
+                        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('testimonials')->toHtml(); ?>
+                    </div>
+                    <div id="featured-products" class="hpadding vspace text-center">
+                        <?php echo Mage::getBlockSingleton('featuredproducts/listing')->toHtml(); ?>
+                    </div>
+                    <div id="latest-products" class="vspace-bottom hpadding">
+                        <?php echo $this->getLayout()->createBlock('catalog/product_new')->setTemplate('nrc_layout/catalog/product/new.phtml')->toHtml(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $j(document).ready(function () {
+                $j('.testimonials-container .slideshow').cycle({
+                    slides: '> li',
+                    pager: '.testimonials-pager',
+                    pagerTemplate: '<span class="pager-box"></span>',
+                    speed: 600,
+                    pauseOnHover: true,
+                    swipe: true,
+                    prev: '.testimonials-prev',
+                    next: '.testimonials-next',
+                    fx: 'scrollHorz',
+                    timeout: 0
+                });
+            });
+        </script>
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('global_cookie_notice') ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div>
+</div>
+<?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>
+

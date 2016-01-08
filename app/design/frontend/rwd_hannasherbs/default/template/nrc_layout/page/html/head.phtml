@@ -1,0 +1,81 @@
+<?php
+/**
+ * @category    design
+ * @package     rwd_hannasherbs default
+ * @author   	 Chris Rogers
+ * @since     	 2015-06-05
+ */
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<!-- Facebook product meta -->	
+<?php $storeName = Mage::getStoreConfig('general/store_information/name'); ?>
+<?php if (Mage::registry('current_product')) : ?>
+	<?php $product = Mage::registry('current_product'); ?>
+	<meta property="og:title" content="<?php echo $product->getName(); ?>" /> 
+	<meta property="og:description" content="<?php echo strip_tags($product->getShortDescription()); ?>" />  
+	<meta property="og:image" content="<?php echo Mage::helper('catalog/image')->init($product, 'image');?>" />
+	<meta property="og:site_name" content="<?php echo $storeName . ' - ' . $product->getName(); ?>"/> 
+	<meta property="og:url" content="<?php echo $product->getProductUrl(); ?>" />
+<?php else: ?>
+	<?php $page = $this->getRequest()->getModuleName(); ?>
+	<?php if (strpos($page, "cms") !== FALSE): ?>
+		<?php $cms = Mage::getSingleton('cms/page'); ?>
+		<meta property="og:title" content="<?php echo $cms->getTitle(); ?>" /> 
+		<meta property="og:description" content="<?php echo strip_tags($cms->getContent()); ?>" />  
+		<meta property="og:image" content="<?php echo $this->getSkinUrl('images/logo_facebook.jpg'); ?>" />
+		<meta property="og:site_name" content="<?php echo $storeName . ' - ' . $cms->getTitle(); ?>"/> 
+		<meta property="og:url" content="<?php echo Mage::getUrl() . $cms->getIdentifier(); ?>" />
+	<?php elseif (strpos($page, "catalog") !== FALSE): ?>
+		<?php $category = Mage::registry('current_category');
+		if (isset($category) && !empty($category)) : 
+			$img = $category->getImageUrl(); 
+			if (empty($img)) { 
+				$this->getSkinUrl('images/logo_facebook.jpg'); 
+			} ?>
+			<meta property="og:title" content="<?php echo $category->getName(); ?>" /> 
+			<meta property="og:description" content="<?php echo strip_tags($category->getDescription()); ?>" />  
+			<meta property="og:image" content="<?php echo $img; ?>" />
+			<meta property="og:site_name" content="<?php echo $storeName . ' - ' . $category->getName(); ?>"/> 
+			<meta property="og:url" content="<?php echo $category->getUrl(); ?>" />
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<!-- Favicons -->
+<?php $skin_url = $this->getSkinUrl(); ?>
+<link rel="apple-touch-icon" sizes="57x57" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $skin_url ?>images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="<?php echo $skin_url ?>images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="<?php echo $skin_url ?>images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="<?php echo $skin_url ?>images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="<?php echo $skin_url ?>images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="<?php echo $skin_url ?>images/favicons/manifest.json">
+<link rel="shortcut icon" href="<?php echo $skin_url ?>images/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#74704a">
+<meta name="msapplication-TileImage" content="<?php echo $skin_url ?>images/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="<?php echo $skin_url ?>images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#74704a">
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>

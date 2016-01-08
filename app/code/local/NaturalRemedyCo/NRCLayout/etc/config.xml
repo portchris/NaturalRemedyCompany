@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+	<modules>
+		<NaturalRemedyCo_NRCLayout>
+			<version>0.0.1</version>
+		</NaturalRemedyCo_NRCLayout>
+	</modules>
+	<global>
+		<blocks>
+			<nrc_layout>
+				<class>NaturalRemedyCo_NRCLayout_Block</class>
+			</nrc_layout>
+			<featuredproducts>
+				<rewrite>
+					<listing>NaturalRemedyCo_NRCLayout_Block_Listing</listing>
+				</rewrite>
+			</featuredproducts>
+		</blocks>
+		<page>
+			<layouts>
+				<homepage_layout translate="label">
+					<label>Homepage - 1 Column</label>
+					<template>nrc_layout/page/1column-home.phtml</template>
+					<layout_handle>homepage_layout</layout_handle>
+				</homepage_layout>
+			</layouts>
+		</page>
+	</global>
+	<frontend>
+		<routers>
+			<nrc_layout>
+				<use>standard</use>
+				<args>
+					<module>NaturalRemedyCo_NRCLayout</module>
+					<frontName>nrc_layout</frontName>
+				</args>
+			</nrc_layout>
+			<contacts>
+				<use>standard</use>
+				<args>
+					<module>Mage_Contacts</module>
+					<frontName>contact-us</frontName>
+				</args>
+			</contacts>
+		</routers>
+		<layout>
+			<updates>
+				<nrc_layout module="NaturalRemedyCo_NRCLayout">
+					<file>natural_remedy.xml</file>
+				</nrc_layout>
+			</updates>
+		</layout>
+	</frontend>
+</config>

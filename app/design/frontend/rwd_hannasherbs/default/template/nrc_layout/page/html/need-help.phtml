@@ -1,0 +1,17 @@
+<?php /**
+ * @author      Chris Rogers
+ * @package     rwd_hannasherbs_default
+ * @since       2015-06-12
+*/
+if (strpos(Mage::helper('core/url')->getCurrentUrl(),'contact-us') == false): ?>
+	<div id="need-help" class="full-width text-center vpadding vspace-top">
+		<div class="main-container">
+			<p>
+				<span class="hpadding"><?php echo $this->__("Not sure which product is right for you?"); ?></span>
+				<a href="<?php echo $this->getUrl('contacts');?>" type="button" role="button" class="button hspace">Contact Us</a>
+			</p>
+		</div>
+	</div>
+<?php else: ?>
+	<div class="full-width vspace">&nbsp;</div>
+<?php endif; ?>
