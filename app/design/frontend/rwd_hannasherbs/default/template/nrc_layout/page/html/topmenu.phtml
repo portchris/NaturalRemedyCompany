@@ -14,9 +14,15 @@
  */
 ?>
 <?php $_menu = $this->getHtml('level-top'); ?>
+<?php $categories = Mage::getModel('catalog/category')->getCollection()
+	->addAttributeToSelect('*')//or you can just add some attributes
+	->addAttributeToFilter('level', 2)//2 is actually the first level
+	->addAttributeToFilter('is_active', 1)//if you want only active categories
+; 
+$cat_c = (count($categories) + 1); // +1 for the salon link ?>
 <?php if (isset($_menu)): ?>
     <nav id="nav">
-        <ol class="nav-primary col-7-layout">
+        <ol class="nav-primary col-<?php echo $cat_c ?>-layout">
             <?php echo $_menu ?>
             <li id="salon-top-link" class="level0 last"><a class="hpadding-xs" href="http://faceandfiguresalon.co.uk" target="_blank" title="<?php echo $this->__('Visit the salon in Taunton, Somerset (redirects to Face and Figure Salon)') ?>"><?php echo $this->__('The Salon') ?></a></li>
         </ol>

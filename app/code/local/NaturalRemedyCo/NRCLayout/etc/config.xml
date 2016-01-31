@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<NaturalRemedyCo_NRCLayout>
-			<version>0.0.1</version>
+			<version>0.1.0</version>
 		</NaturalRemedyCo_NRCLayout>
 	</modules>
 	<global>
@@ -15,6 +15,11 @@
 					<listing>NaturalRemedyCo_NRCLayout_Block_Listing</listing>
 				</rewrite>
 			</featuredproducts>
+			<sales>
+				<rewrite>
+					<order_info_buttons>NaturalRemedyCo_NRCLayout_Block_Sales_Order_Info_Buttons</order_info_buttons>
+				</rewrite>
+			</sales>
 		</blocks>
 		<page>
 			<layouts>
@@ -25,6 +30,22 @@
 				</homepage_layout>
 			</layouts>
 		</page>
+		<models>
+			<nrc_layout>
+				<class>NaturalRemedyCo_NRCLayout_Model</class>
+			</nrc_layout>
+		</models>
+		<resources>
+			<cat_attr>
+				<setup>
+					<module>NaturalRemedyCo_NRCLayout</module>
+					<class>NaturalRemedyCo_NRCLayout_Model_Resource_Mysql4_CatalogSetup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</cat_attr>
+		</resources> 
 	</global>
 	<frontend>
 		<routers>

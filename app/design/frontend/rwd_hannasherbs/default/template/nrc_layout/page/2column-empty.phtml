@@ -1,0 +1,75 @@
+<?php
+/**
+ * @category    design
+ * @package     rwd_hannasherbs_default
+ * @author   	 Chris Rogers
+ * @since     	 2016-01-22 
+ */
+?>
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+<head>
+    <?php echo $this->getChildHtml('head') ?>
+</head>
+<body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
+	<?php echo $this->getChildHtml('after_body_start') ?>
+	<header id="header" class="page-header vpadding">
+		<div class="page-header-container">
+			<a class="logo" href="/">
+				<?php $store_id = Mage::app()->getStore()->getStoreId();
+				$logo = Mage::getStoreConfig('design/header/logo_src', $store_id);
+				$logo_src = Mage::getModel('core/design_package')->getSkinUrl() . $logo; 
+				$logo_alt = Mage::getStoreConfig('design/header/logo_alt', $store_id); ?>
+				<img src="<?php echo $logo_src ?>" alt="<?php echo $logo_alt ?>" class="large" />
+				<img src="<?php echo $logo_src ?>" alt="<?php echo $logo_alt ?>" class="small" />
+			</a>
+		</div>
+		<div class="skip-links"></div>
+	</header>
+	<div class="main-container">
+		<div class="main">
+			<div class="col2-left-layout vspace vpadding">
+				<div class="col-main">
+					<?php echo $this->getChildHtml('global_messages') ?>
+					<?php echo $this->getChildHtml('content') ?>
+					<?php echo $this->getAbsoluteFooter() ?>
+				</div>
+				<div class="col-left sidebar">
+					<?php $cms_pages = Mage::getModel('cms/page')->getCollection();
+					$empty_layout_pages = array();
+					foreach ($cms_pages as $cms) {
+						$template = strtolower($cms->_data["root_template"]);
+				 		if (strpos($template, "empty") !== FALSE) {
+				 			// This CMS page uses the Empty layout template
+				 			$empty_layout_pages[] = $cms;
+				 		}
+					}
+					if (!empty($empty_layout_pages)) : ?>
+						<div id="narrow-by-list-contact">
+							<div class="links">
+								<h2><?php echo $this->__('Other Resources') ?></h2>
+								<ul>
+									<?php $page_id = Mage::getBlockSingleton('cms/page')->getPage()->getId(); ?>
+									<?php foreach ($empty_layout_pages as $page) : ?>
+										<?php $id = $page->getId();
+										$name = $page->getTitle();
+										$url = Mage::helper('cms/page')->getPageUrl($id); 
+										$active = ($id == $page_id) ? "active" : ""; ?>
+										<li><a href="<?php echo $url ?>" class="<?php echo $active ?>" title="View <?php echo $name ?>"><?php echo $name ?></a></li>
+									<?php endforeach; ?>
+								</ul>
+							</div>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php echo $this->getChildHtml('before_body_end') ?>
+</body>
+</html>

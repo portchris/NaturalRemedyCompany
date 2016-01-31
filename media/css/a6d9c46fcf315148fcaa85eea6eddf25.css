@@ -1117,7 +1117,7 @@ a.button:hover {
  */
 .icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid,
 .sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .skip-cart .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
-  background-image: url(../images/icon_sprite.png);
+  background-image: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/icon_sprite.png);
   background-repeat: no-repeat;
   text-indent: -9999px;
 }
@@ -1125,7 +1125,7 @@ a.button:hover {
 @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 4 / 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .icon-sprite, .btn-remove2, .ratings .rating-box, .ratings .rating-box .rating, .sorter > .sort-by .sort-by-switcher, .sorter > .view-mode .grid,
   .sorter > .view-mode .list, .skip-nav .icon, .skip-search .icon, #search_mini_form .search-button:before, .skip-account .icon, .skip-cart .icon, .product-view .sharing-links a, .review-summary-table .rating-box .rating-number:after, .ratings-table .rating-box, .ratings-table .rating-box .rating {
-    background-image: url(../images/icon_sprite@2x.png);
+    background-image: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/icon_sprite@2x.png);
     background-size: 100px 1000px;
   }
 }
@@ -1518,7 +1518,7 @@ a.button:hover {
   min-height: 40px;
   padding-top: 14.5px;
   padding-bottom: 14.5px;
-  background-image: url("../images/demo-logo.png");
+  background-image: url("http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/demo-logo.png");
   background-position: left;
   background-repeat: no-repeat;
 }
@@ -3108,7 +3108,7 @@ body {
   min-width: 320px;
   min-height: 100%;
   margin: 0 auto;
-  background: url("../images/background.jpg");
+  background: url("http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/background.jpg");
 }
 
 .wrapper:after {
@@ -4015,7 +4015,7 @@ a.skip-link {
   display: none;
 }
 .footer .links.social-media em {
-  background-image: url(../images/social_icons.png);
+  background-image: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/social_icons.png);
   background-repeat: no-repeat;
   width: 13px;
   vertical-align: middle;
@@ -4024,7 +4024,7 @@ a.skip-link {
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 4 / 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .footer .links.social-media em {
-    background-image: url(../images/social_icons@2x.png);
+    background-image: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/social_icons@2x.png);
     background-size: 50px 125px;
   }
 }
@@ -4326,7 +4326,7 @@ p.product-name a:hover {
   z-index: 2;
 }
 .products-grid .product-image:after {
-  background-image: url("../images/opc-ajax-loader.gif");
+  background-image: url("http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/opc-ajax-loader.gif");
   background-repeat: no-repeat;
   background-position: center;
   z-index: 3;
@@ -5196,7 +5196,7 @@ p.product-name a:hover {
   z-index: 2;
 }
 .product-image-gallery:after {
-  background-image: url("../images/opc-ajax-loader.gif");
+  background-image: url("http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/opc-ajax-loader.gif");
   background-repeat: no-repeat;
   background-position: center;
   z-index: 3;
@@ -7506,7 +7506,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
   right: 0;
   top: 0;
   bottom: 0;
-  background: url(../images/bg_x.png) center no-repeat transparent;
+  background: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/bg_x.png) center no-repeat transparent;
   z-index: 10;
 }
 
@@ -9202,7 +9202,7 @@ div.paypal-logo span > img {
   z-index: 2;
 }
 .header-minicart .minicart-wrapper:after {
-  background-image: url("../images/opc-ajax-loader.gif");
+  background-image: url("http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/opc-ajax-loader.gif");
   background-repeat: no-repeat;
   background-position: center;
   z-index: 3;
@@ -10128,7 +10128,7 @@ body .promos > li {
 }
 
 .catalog-category-view div.categoryland-caption span.three-dots {
-  background: url(../images/bg_threeDots.png) no-repeat center center;
+  background: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/bg_threeDots.png) no-repeat center center;
   display: block;
   height: 20px;
 }
@@ -10158,7 +10158,7 @@ body .promos > li {
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.three-dots,
 .catalog-category-view div.categoryland-caption span.three-dots {
-  background: url(../images/bg_threeDots.png) no-repeat center center;
+  background: url(http://localhost:8888/NaturalRemedyCompany/skin/frontend/rwd_hannasherbs/default/images/bg_threeDots.png) no-repeat center center;
   display: block;
   height: 20px;
 }

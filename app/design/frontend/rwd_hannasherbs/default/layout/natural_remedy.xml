@@ -133,6 +133,11 @@
 				<template>nrc_layout/catalog/product/list.phtml</template>
 			</action>		
 		</reference>
+		<reference name="category.products">
+			<action method="setTemplate">
+				<template>nrc_layout/catalog/category/view.phtml</template>
+			</action>
+		</reference>
 	</catalog_category_default>
 	<catalog_category_layered>
 		<reference name="product_list">
@@ -140,7 +145,19 @@
 				<template>nrc_layout/catalog/product/list.phtml</template>
 			</action>
 		</reference>
+		<reference name="category.products">
+			<action method="setTemplate">
+				<template>nrc_layout/catalog/category/view.phtml</template>
+			</action>
+		</reference>
 	</catalog_category_layered>
+	<checkout_onepage_index>
+		<reference name="checkout.onepage">
+			<action method="setTemplate">
+				<template>nrc_layout/checkout/onepage.phtml</template>
+			</action>
+		</reference>
+	</checkout_onepage_index>
 	<customer_account>
 		<block type="customer/account_navigation" name="customer_account_navigation" before="-" template="customer/account/navigation.phtml">
 			<action method="addLink" translate="label" module="customer">
@@ -247,7 +264,6 @@
 			<block type="tag/customer_view" name="customer_view" template="tag/customer/view.phtml"/>
 		</reference>
 	</tag_customer_view>
-
 	<!-- Configurable Swatches -->
 	<PRODUCT_TYPE_configurable>
 		<reference name="product.info.options.configurable">
@@ -259,5 +275,9 @@
 			</block>
 		</reference>
 	</PRODUCT_TYPE_configurable>
-
+	<page_empty>
+        <reference name="root">
+            <action method="setTemplate"><template>nrc_layout/page/2column-empty.phtml</template></action>
+        </reference>
+    </page_empty>
 </layout>
