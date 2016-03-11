@@ -58,9 +58,42 @@
             this.reloadProgressBlock(this.currentStep);
         }
 
-        // Checkout abandonment rate - by Inchoo
+        // Checkout abandonment rate analytics - Credit to Inchoo
         try {
+            var step = 0;
+            var option = '';
+            switch (section) {
+                case 'onepage':
+                case 'login':
+                    step = 2;
+                    option = 'Checkout intro';
+                break;
+                case 'billing':
+                    step = 3;
+                    option = 'Checkout billing';
+                break;
+                case 'shipping':
+                    step = 4;
+                    option = 'Checkout shipping';
+                break;
+                case 'shipping_method':
+                    step = 5;
+                    option = 'Checkout shipping method';
+                break;
+                case 'payment':
+                    step = 6;
+                    option = 'Checkout payment method';
+                break;
+                case 'review':
+                    step = 7;
+                    option = 'Checkout review';
+                break;
+            }
             ga('send', 'pageview', '/checkout/onepage/' + section + '/');
+            ga('send', 'event', 'Checkout', option);
+            ga('require', 'ec');
+            ga('ec:setAction', 'checkout', {'step': step, 'option': option});
+
         } catch (err) {
             console.log(err);
         }
@@ -77,6 +110,21 @@
 
         if (!reloadProgressBlock) {
             this.resetPreviousSteps();
+        }
+
+        try {
+            ga('require', 'ec');
+            <?php if ($currentStep == "login"): ?>
+                ga('send', 'pageview', '/checkout/onepage/login/');
+                ga('send', 'event', 'Checkout', 'Intro');
+                ga('ec:setAction', 'checkout', {'step': 2, 'option': 'Checkout intro'});
+            <?php elseif ($currentStep == "billing"): ?>
+                ga('send', 'pageview', '/checkout/onepage/billing/');
+                ga('send', 'event', 'Checkout', 'Billing');
+                ga('ec:setAction', 'checkout', {'step': 3, 'option': 'Billing address'});
+            <?php endif; ?>
+        } catch (err) {
+            console.log(err);
         }
     };
 //]]>

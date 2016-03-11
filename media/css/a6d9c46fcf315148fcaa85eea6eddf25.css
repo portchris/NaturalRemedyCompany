@@ -914,7 +914,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button,
 #co-shipping-method-form .buttons-set .button,
 .footer .button {
-  background: #8c8759;
+  background: #AA1F62;
   display: inline-block;
   padding: 7px 15px;
   border: 0;
@@ -932,7 +932,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .cart-table .product-cart-actions .button:hover,
 #co-shipping-method-form .buttons-set .button:hover,
 .footer .button:hover {
-  background: #5D5A3B;
+  background: #81184b;
   cursor: pointer;
 }
 .button:active,
@@ -9726,7 +9726,14 @@ div.paypal-logo span > img {
 #contactForm .fieldset .legend + .required {
   margin: 0;
 }
-
+#contactForm input, #contactForm select, #contactForm textarea, 
+#contactForm .input-box, #contactForm .wide, #contactForm .buttons-set {
+  width: 100%;
+  max-width: none;
+}
+#contactForm .button {
+  float: right;
+}
 @media only screen and (max-width: 770px) {
   #contactForm {
     padding-left: 0;
@@ -10561,8 +10568,12 @@ body.customer-account .my-account .order-action-buttons a.button:hover,
   margin: 0 auto;
 }
 #need-help .button {
+  background-color: #8c8759;
   padding: 20px;
   font-size: 24px;
+}
+#need-help .button:hover {
+  background-color: #5D5A3B;
 }
 #need-help .main-container {
   border: none;
@@ -10803,6 +10814,10 @@ body.customer-account .my-account .order-action-buttons a.button:hover,
     float: none;
     margin-top: 10px;
     text-align: center;
+  }
+  .contacts-index-index .col2-set .col-1,
+  .contacts-index-index .col2-set .col-2 {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 600px) {
