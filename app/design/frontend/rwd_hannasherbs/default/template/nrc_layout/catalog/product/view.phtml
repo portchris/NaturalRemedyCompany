@@ -147,22 +147,20 @@
         </script>
     </div>
 
-    <div class="product-collateral toggle-content tabs">
-        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-            <dl id="collateral-tabs" class="collateral-tabs">
-                <?php foreach ($detailedInfoGroup as $alias => $html):?>
-                    <dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-                    <dd class="tab-container">
-                        <div class="tab-content"><?php echo $html ?></div>
-                    </dd>
-                <?php endforeach;?>
-                <dt class="tab"><span><?php echo $this->__("Product Tags") ?></span></dt>
-                <dd class="tab-container product-tags">
-                    <div class="tab-content"><?php echo $this->getChildHtml('product_additional_data') ?></div>
-                </dd>
-            </dl>
-        <?php endif; ?>
-    </div>
+    <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')): 
+        $our_promise = $this->__('%sOur Promise To You%s', '<h2>', '</h2>') . $this->getLayout()->createBlock('cms/block')->setBlockId('service_breakdown')->toHtml(); 
+        $detailedInfoGroup["product-tags"] = $this->getChildHtml('product_additional_data'); 
+        $detailedInfoGroup = array_slice($detailedInfoGroup, 0, 1, true) + array("our-promise" => $our_promise) + array_slice($detailedInfoGroup, 1, count($detailedInfoGroup) - 1, true); ?>
+        <div id="collateral-tabs" class="collateral-tabs">
+            <?php foreach ($detailedInfoGroup as $alias => $html): 
+                $t = $this->escapeHtml($this->getChildData($alias, 'title'));
+                $t = (is_null($t)) ? strtolower(str_replace(" ", "-", $alias)) : strtolower(str_replace(" ", "-", $t)); ?>
+                <div class="product-options vpadding vspace <?php echo $t; ?>">
+                    <?php echo $html ?> 
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
     <?php echo $this->getChildHtml('upsell_products') ?>
 
