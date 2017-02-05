@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+<channel>
+<title>Inventory data feed</title>
+<link>https://www.naturalremedy.company</link>
+<description>Submit this feed throughout the day to update your price, availability and/or sale price information for specific items already submitted in your full product feed.</description>
+<item>
+<g:id><![CDATA[black-cohosh-root-tincture-500mg]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[black-cohosh-root-tincture-400mg]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-001-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-001-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-002-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-002-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-003-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-003-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-001-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-001-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-002-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-002-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-003-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-003-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-004-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-004-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-004-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-004-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-005-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-005-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-006-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-006-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-007-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-007-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-008-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-008-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-009-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-009-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-005-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-005-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tea-rem-001-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tea-rem-001-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tea-rem-002-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tea-rem-002-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-010-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-010-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-011-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-011-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-012-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-012-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-013-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-013-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-014-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-014-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-015-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-015-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-016-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-016-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-006-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-006-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-007-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[tinc-rem-007-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-001-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[85.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-001-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[85.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-002-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-002-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-003-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-003-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-004-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-004-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-005-001]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[30.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-005-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[30.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-006-001]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[31.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-006-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[31.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-007-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-007-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-008-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[28.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-008-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[28.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-009-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[70.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-009-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[70.50 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-010-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-010-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-006]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-007]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-008]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-011-009]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[40.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-012-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-012-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-012-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-012-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-012-005]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-013-001]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[31.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-013-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[31.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-005]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-006]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-014-007]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-015-001]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-015-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-015-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-015-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-016-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-016-001-120g-Cream]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[25.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-017-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-017-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-017-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-017-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[26.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-018-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[16.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-018-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[16.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-018-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[16.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-018-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[16.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-019-001]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[14.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-019-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[14.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-019-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[14.00 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-006]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-007]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-008]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-009]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-010]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-011]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-012]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-013]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-014]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-015]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-016]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-017]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-018]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-020-019]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[19.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-006]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-007]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-008]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-009]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-021-010]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-022-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-022-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-006]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-007]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-008]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-009]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-010]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-023-011]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-024-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-024-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[19.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-025-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-025-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-025-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-025-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[23.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-027-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[15.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-006]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-007]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-008]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-009]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-010]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-011]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-012]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-013]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-014]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-015]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-016]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-017]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-018]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-019]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-020]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-021]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-022]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-023]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-024]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-028-025]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-005]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-006]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-007]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-008]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-009]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-010]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-011]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-012]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-013]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-014]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-015]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-016]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-029-017]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[39.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-004]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-005]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-026-006]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[24.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-022-003]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[natural-make-up-022-004]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[21.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-018-002]]></g:id>
+<g:availability><![CDATA[out of stock]]></g:availability>
+<g:price><![CDATA[29.95 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-017-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-017-002]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[17.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-018-003]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[32.99 USD]]></g:price>
+
+</item>
+<item>
+<g:id><![CDATA[cap-rem-018-001]]></g:id>
+<g:availability><![CDATA[in stock]]></g:availability>
+<g:price><![CDATA[32.99 USD]]></g:price>
+
+</item>
+</channel>
+</rss>
