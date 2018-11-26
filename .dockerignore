@@ -1,0 +1,7 @@
+.git
+.gitignore
+docs/*
+env/local/*
+src/app/etc/local.xml
+src/var
+src/media
