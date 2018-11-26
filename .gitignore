@@ -1,20 +1,20 @@
 # Magento 1.x
 
-/src/app/etc/local.xml
-/src/var
-/src/includes/src/
-/src/downloader/.cache/
-/src/downloader/cache.cfg
-/src/downloader/connect.cfg
-/src/dev/tests/functional/composer.lock
-/src/dev/tests/functional/vendor/
-/src/dev/tests/functional/generated/
-/src/dev/tests/functional/var/
-/src/media/
+src/app/etc/local.xml
+src/var
+src/includes/src/
+src/downloader/.cache/
+src/downloader/cache.cfg
+src/downloader/connect.cfg
+src/dev/tests/functional/composer.lock
+src/dev/tests/functional/vendor/
+src/dev/tests/functional/generated/
+src/dev/tests/functional/var/
+src/media/
 sitemap.xml
-/src/.*
-/src/phpcs.xml
-/src/vendor/
+src/.*
+src/phpcs.xml
+src/vendor/
 
 # Unwanted Files
 
@@ -62,6 +62,6 @@ ehthumbs.db
 
 # Keep files
 
-!/src/lib/Zend/Queue/Adapter/Db/*.sql
-!/src/.htaccess
-!/src/.modman
+!src/lib/Zend/Queue/Adapter/Db/*.sql
+!src/.htaccess
+!src/.modman
