@@ -1,0 +1,109 @@
+version: '3.1'
+
+networks:
+  naturalremedy:
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./env/nginx
+    networks:
+      - naturalremedy
+    ports:
+      - 80:80
+    env_file:
+      - ./env/nginx/.env
+    command: /bin/bash -c "envsubst < /etc/nginx/conf.d/naturalremedy.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'" 
+    depends_on:
+      - php72
+    volumes:
+      - ./src:/home/www/
+      - ./storage:/home/www/storage
+      - ./data/nginx/logs:/var/log/nginx
+      - ./env/nginx/sites-available:/etc/nginx/sites-available
+      - ./env/nginx/sites-enabled:/etc/nginx/sites-enabled
+
+  mysql:
+    container_name: mysql
+    build: ./env/mysql
+    networks:
+      - naturalremedy
+    ports:
+      - 3306:3306
+    env_file:
+      - ./env/mysql/.env
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./env/mysql/conf.d:/etc/mysql/conf.d
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    networks:
+      - naturalremedy
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+      ADMINER_DESIGN: pepa-linha
+
+  elasticsearch:
+    build: ../images/elasticsearch
+    container_name: elasticsearch
+    networks:
+      - naturalremedy
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ../data/elasticsearch:/usr/share/elasticsearch/data
+
+  rabbitmq:
+    image: rabbitmq:3.7-management-alpine
+    container_name: rabbitmq
+    networks:
+      - naturalremedy
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog
+    networks:
+      - naturalremedy
+    ports:
+      - 8025:8025
+    depends_on:
+      - nginx
+
+  redis:
+    image: redis:4-alpine
+    container_name: redis
+    command: /usr/local/etc/redis/redis.conf
+    networks:
+      - naturalremedy
+    ports:
+      - 6379:6379
+    volumes:
+      - ../config/redis:/usr/local/etc/redis
+
+  php72:
+    container_name: php72
+    build: ./env/php72
+    hostname: php72
+    networks:
+      - naturalremedy
+    depends_on:
+      - mysql
+    volumes:
+      - ./env/composer:/home/www/.composer
+      - ./env/global/bashrc:/home/www/.bashrc
+      - ./data/bash/.bash_history:/home/www/.bash_history
+      - ~/.ssh:/home/www/.ssh:ro
+      - ~/.gitconfig:/home/www/.gitconfig:ro
+      - ./storage:/home/www/storage
+      - ./src:/home/www/

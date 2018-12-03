@@ -1,0 +1,17 @@
+server {
+	listen ${NGINX_PORT};
+
+	server_name ${NGINX_HOST};
+
+	set $MAGE_ROOT /home/www/naturalremedy/src;
+
+	root $MAGE_ROOT;
+	index index.php;
+	set $code default;
+
+	location / {
+	    try_files $uri $uri/ /index.php$is_args$args;
+	}
+
+	include /etc/nginx/defaults/magento1.conf;
+}
