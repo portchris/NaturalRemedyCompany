@@ -36,19 +36,6 @@ services:
       - ./data/mysql:/var/lib/mysql
       - ./env/mysql/conf.d:/etc/mysql/conf.d
 
-  adminer:
-    image: adminer
-    container_name: adminer
-    networks:
-      - naturalremedy
-    ports:
-      - 8080:8080
-    depends_on:
-      - mysql
-    environment:
-      ADMINER_DEFAULT_SERVER: mysql
-      ADMINER_DESIGN: pepa-linha
-
   elasticsearch:
     build: ../images/elasticsearch
     container_name: elasticsearch
