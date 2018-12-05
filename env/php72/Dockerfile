@@ -7,7 +7,7 @@ ARG GID=1000
 # Configure build
 ENV DEBIAN_FRONTEND noninteractive
 RUN rm /etc/localtime && \
-    ln -s /usr/share/zoneinfo/Australia/Melbourne /etc/localtime && \
+    ln -s /usr/share/zoneinfo/Europe/London /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
 # Add the www user

@@ -37,7 +37,7 @@ services:
       - ./env/mysql/conf.d:/etc/mysql/conf.d
 
   elasticsearch:
-    build: ../images/elasticsearch
+    build: ./env/elasticsearch
     container_name: elasticsearch
     networks:
       - naturalremedy
