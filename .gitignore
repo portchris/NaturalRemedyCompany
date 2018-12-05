@@ -41,6 +41,8 @@ adminer.php
 *.sublime-workspace
 *.iws
 nbproject/
+data/
+env/nginx/sites-available/default.conf
 
 # OSX
 
