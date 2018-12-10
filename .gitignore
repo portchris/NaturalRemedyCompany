@@ -42,7 +42,7 @@ adminer.php
 *.iws
 nbproject/
 data/
-env/nginx/sites-available/default.conf
+env/nginx/webserver/conf.d/default.conf
 
 # OSX
 

@@ -15,9 +15,10 @@ services:
       - ./env/nginx/.env
     depends_on:
       - php72
+    tty: true
     volumes:
-      - ./src:/home/www/
-      - ./storage:/home/www/storage
+      - ./src:/home/www/naturalremedy/src
+      - ./storage:/home/www/storage/naturalremedy
       - ./data/nginx/logs:/var/log/nginx
       - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
       - ./env/nginx/webserver/defaults:/etc/nginx/defaults
@@ -86,5 +87,5 @@ services:
       - ./data/bash/.bash_history:/home/www/.bash_history
       - ~/.ssh:/home/www/.ssh:ro
       - ~/.gitconfig:/home/www/.gitconfig:ro
-      - ./storage:/home/www/storage
-      - ./src:/home/www/
+      - ./storage:/home/www/storage/naturalremedy
+      - ./src:/home/www/naturalremedy/src

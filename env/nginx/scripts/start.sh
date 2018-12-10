@@ -25,8 +25,7 @@ if [ -f $ENV ]; then
 	echo # \n
 	cat $CONF_DEFAULT
 	echo # \n
-	nginx -t
-	service nginx restart
+	nginx -g "daemon off;"
 else
 	echo "Error: no /etc/nginx/.env environment variables file found!"
 	exit 1
