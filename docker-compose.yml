@@ -49,8 +49,9 @@ services:
       memlock:
         soft: -1
         hard: -1
+    tty: true
     volumes:
-      - ../data/elasticsearch:/usr/share/elasticsearch/data
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
 
   mailhog:
     image: mailhog/mailhog:latest
@@ -71,7 +72,7 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - ../config/redis:/usr/local/etc/redis
+      - ./env/redis:/usr/local/etc/redis
 
   php72:
     container_name: php72
