@@ -1,6 +1,6 @@
 server {
 	listen {NGINX_PORT};
-	# listen [::]:80 {NGINX_PORT};
+	listen [::]:{NGINX_PORT};
 	# listen 443 ssl http2 {NGINX_PORT};
 	# listen [::]:443 ssl http2 {NGINX_PORT};
 

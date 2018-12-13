@@ -22,7 +22,8 @@ RUN apt-get update && \
         ca-certificates \
         gnupg2 \
         curl \
-        inotify-tools
+        inotify-tools \
+		software-properties-common
 
 # Install nginx
 RUN curl -LsS http://nginx.org/keys/nginx_signing.key | apt-key add - && \
@@ -43,6 +44,11 @@ ADD ./scripts /scripts
 
 # Add environment variables
 ADD ./.env /etc/nginx
+
+# Install Certbot (LetsEncrypt)
+RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/stretch-backports.list && \
+	apt-get update && \
+	apt-get install -y python-certbot-nginx -t stretch-backports
 
 EXPOSE 80 443
 

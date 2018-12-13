@@ -34,7 +34,9 @@ RUN apt-get update && \
         ssh-client \
         ssmtp \
         unzip \
-        wget
+        wget \
+		cron \
+		vim
 
 # Install PHP
 RUN curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add - && \
@@ -83,6 +85,10 @@ RUN bash /scripts/install-composer.sh
 # Config
 ADD ./config/php /etc/php/7.2/fpm
 ADD ./config/ssmtp /etc/ssmtp
+
+# Setup and add default CRON tasks
+ADD ./config/cron /etc/cron.d
+RUN chmod 0644 -R /etc/cron.d/
 
 EXPOSE 9000
 

@@ -1,6 +1,0 @@
-MAILTO=""
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-SHELL=/bin/bash
-
-* * * * * www-data /usr/bin/php /var/www/src/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/src/var/log/magento.cron.log
-* * * * * www-data /usr/bin/php /var/www/src/bin/magento setup:cron:run >> /var/www/src/var/log/setup.cron.log

@@ -1,0 +1,7 @@
+MAILTO=""
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash
+
+* * * * * www /bin/bash /home/www/naturalremedy/src/scheduler_cron.sh --mode always | grep -v "Ran jobs by schedule" >> /home/www/naturalremedy/src/var/log/magento.cron.log
+* * * * * www /bin/bash /home/www/naturalremedy/src/scheduler_cron.sh --mode default
+*/10 * * * * www cd /home/www/naturalremedy/src/shell && /usr/local/bin/php scheduler.php --action watchdog
