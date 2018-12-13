@@ -37,6 +37,7 @@ services:
     volumes:
       - ./data/mysql:/var/lib/mysql
       - ./env/mysql/conf.d:/etc/mysql/conf.d
+      - ./data/dbimport/:/docker-entrypoint-initdb.d
 
   elasticsearch:
     build: ./env/elasticsearch
