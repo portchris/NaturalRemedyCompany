@@ -43,7 +43,7 @@ ADD ./webserver/ /etc/nginx
 ADD ./scripts /scripts
 
 # Add environment variables
-ADD ./.env /etc/nginx
+COPY ./.env /etc/nginx
 
 # Install Certbot (LetsEncrypt)
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/stretch-backports.list && \
@@ -53,5 +53,4 @@ RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/s
 EXPOSE 80 443
 
 # Execute Nginx config using environment variables to start all services
-CMD ["nginx", "-g", "daemon off;"]
 CMD ["bash", "/scripts/start.sh"]
