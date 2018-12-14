@@ -92,5 +92,8 @@ RUN chmod 0644 -R /etc/cron.d/
 
 EXPOSE 9000
 
+# Install Magerun
+CMD ["bash","/scripts/install-magerun.sh"]
+
 # Run supervisor to start all services
 CMD ["bash","/scripts/start.sh"]
