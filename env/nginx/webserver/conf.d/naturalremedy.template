@@ -12,6 +12,7 @@ server {
 	listen [::]:443 ssl http2 default_server;
 	ssl_certificate /etc/ssl/certs/{NGINX_HOST}.crt;
 	ssl_certificate_key /etc/ssl/private/{NGINX_HOST}.key;
+	ssl_trusted_certificate /etc/ssl/certs/{NGINX_HOST}.crt;
 	include /etc/nginx/global/ssl-params.conf;
 
 	server_name {NGINX_HOST};
