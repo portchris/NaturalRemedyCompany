@@ -25,6 +25,8 @@ services:
       - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
       - ./env/nginx/webserver/defaults:/etc/nginx/defaults
       - ./env/nginx/webserver/global:/etc/nginx/global
+      - ./env/ssl/certs/private:/etc/ssl/certs/private
+      - ./env/ssl/keys/private:/etc/ssl/keys/private
 
   mysql:
     container_name: mysql

@@ -39,15 +39,15 @@ if [ -f $ENV ]; then
 	# Certbot LetsEncrypt certificate
 	if [[ $NGINX_HOST == *"portchris.co.uk"* ]]; then
 		echo "Generating self-signed localhost dev certificate"
-		if [ -f /etc/ssl/private/$NGINX_HOST.key ]; then
-			rm /etc/ssl/private/$NGINX_HOST.key
-		fi
-		if [ -f /etc/ssl/certs/$NGINX_HOST.crt ]; then
-			rm /etc/ssl/certs/$NGINX_HOST.crt
-		fi
-		openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/$NGINX_HOST.key -out /etc/ssl/certs/$NGINX_HOST.crt \
-			-subj "/C=UK/ST=Somerset/L=Taunton/O=Portchris/OU=IT Department/CN=$NGINX_HOST"
-		openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+		# if [ -f /etc/ssl/private/$NGINX_HOST.key ]; then
+		# 	rm /etc/ssl/private/$NGINX_HOST.key
+		# fi
+		# if [ -f /etc/ssl/certs/$NGINX_HOST.crt ]; then
+		# 	rm /etc/ssl/certs/$NGINX_HOST.crt
+		# fi
+		# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/$NGINX_HOST.key -out /etc/ssl/certs/$NGINX_HOST.crt \
+		# 	-subj "/C=UK/ST=Somerset/L=Taunton/O=Portchris/OU=IT Department/CN=172.17.0.1"
+		# openssl dhparam -out /etc/ssl/certs/private/dhparam.pem 2048
 	else
 		echo "Generating LetsEncrypt certificate for production domain $NGINX_HOST"
 		certbot --nginx -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
