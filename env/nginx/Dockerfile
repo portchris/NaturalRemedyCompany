@@ -43,7 +43,10 @@ ADD ./webserver/ /etc/nginx
 ADD ./scripts /scripts
 
 # Add environment variables
-COPY ./.env /etc/nginx
+ADD ./.env /etc/nginx
+
+# Copy localhost self-signed certificates
+ADD ./ssl/certs /etc/nginx/ssl/certs
 
 # Install Certbot (LetsEncrypt)
 RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/stretch-backports.list && \

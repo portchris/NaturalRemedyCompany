@@ -11,7 +11,7 @@ services:
       - naturalremedy
     ports:
       - 80:80
-      - 443:433
+      - 443:443
     env_file:
       - ./env/nginx/.env
     depends_on:
@@ -25,8 +25,7 @@ services:
       - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
       - ./env/nginx/webserver/defaults:/etc/nginx/defaults
       - ./env/nginx/webserver/global:/etc/nginx/global
-      - ./env/ssl/certs/private:/etc/ssl/certs/private
-      - ./env/ssl/keys/private:/etc/ssl/keys/private
+      - ./env/nginx/ssl:/etc/nginx/ssl
 
   mysql:
     container_name: mysql

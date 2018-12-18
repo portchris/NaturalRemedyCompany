@@ -32,6 +32,17 @@ if [ -f $ENV ]; then
 	sed -i -e "s/{NGINX_HOST}/${NGINX_HOST}/g" $CONF_DEFAULT
 	sed -i -e "s/{NGINX_PORT}/${NGINX_PORT}/g" $CONF_DEFAULT
 	sed -i -e "s/{NGINX_WEBROOT}/${NGINX_WEBROOT}/g" $CONF_DEFAULT
+	if [ -z ${SSL_CERTIFICATE_PATH+x} ]; then
+		sed -i -e "s/{SSL_CERTIFICATE_PATH}/${SSL_CERTIFICATE_PATH}/g" $CONF_DEFAULT
+	fi
+
+	if [ -z ${SSL_KEY_PATH+x} ]; then
+		sed -i -e "s/{SSL_KEY_PATH}/${SSL_KEY_PATH}/g" $CONF_DEFAULT
+	fi
+
+	if [ -z ${SSL_DHPARAM_PATH+x} ]; then
+		sed -i -e "s/{SSL_DHPARAM_PATH}/${SSL_DHPARAM_PATH}/g" $CONF_DEFAULT
+	fi
 	echo # \n
 	cat $CONF_DEFAULT
 	echo # \n
@@ -39,15 +50,13 @@ if [ -f $ENV ]; then
 	# Certbot LetsEncrypt certificate
 	if [[ $NGINX_HOST == *"portchris.co.uk"* ]]; then
 		echo "Generating self-signed localhost dev certificate"
-		# if [ -f /etc/ssl/private/$NGINX_HOST.key ]; then
-		# 	rm /etc/ssl/private/$NGINX_HOST.key
-		# fi
-		# if [ -f /etc/ssl/certs/$NGINX_HOST.crt ]; then
-		# 	rm /etc/ssl/certs/$NGINX_HOST.crt
-		# fi
-		# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/$NGINX_HOST.key -out /etc/ssl/certs/$NGINX_HOST.crt \
-		# 	-subj "/C=UK/ST=Somerset/L=Taunton/O=Portchris/OU=IT Department/CN=172.17.0.1"
-		# openssl dhparam -out /etc/ssl/certs/private/dhparam.pem 2048
+		chown root:root -R /etc/nginx/ssl
+		chmod -R 600 /etc/nginx/ssl
+		if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
+			mkdir /usr/local/share/ca-certificates/localhost
+		fi
+		cp /etc/nginx/ssl/certs/private/$NGINX_HOST.cert /usr/local/share/ca-certificates/localhost/
+		update-ca-certificates
 	else
 		echo "Generating LetsEncrypt certificate for production domain $NGINX_HOST"
 		certbot --nginx -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
