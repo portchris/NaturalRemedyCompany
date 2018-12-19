@@ -50,12 +50,13 @@ if [ -f $ENV ]; then
 	# Certbot LetsEncrypt certificate
 	if [[ $NGINX_HOST == *"portchris.co.uk"* ]]; then
 		echo "Generating self-signed localhost dev certificate"
-		chown root:root -R /etc/nginx/ssl
-		chmod -R 600 /etc/nginx/ssl
+		# chown root:root -R /etc/nginx/ssl
+		# chmod -R 600 /etc/nginx/ssl
 		if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
 			mkdir /usr/local/share/ca-certificates/localhost
 		fi
 		cp /etc/nginx/ssl/certs/private/$NGINX_HOST.cert /usr/local/share/ca-certificates/localhost/
+		# certbot certonly --standalone -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
 		update-ca-certificates
 	else
 		echo "Generating LetsEncrypt certificate for production domain $NGINX_HOST"

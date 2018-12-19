@@ -23,7 +23,8 @@ RUN apt-get update && \
         gnupg2 \
         curl \
         inotify-tools \
-		software-properties-common
+		software-properties-common \
+		vim
 
 # Install nginx
 RUN curl -LsS http://nginx.org/keys/nginx_signing.key | apt-key add - && \
