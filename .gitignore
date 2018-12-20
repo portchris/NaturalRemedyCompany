@@ -43,6 +43,7 @@ adminer.php
 nbproject/
 data/
 env/nginx/webserver/conf.d/default.conf
+env/nginx/ssl/certs
 
 # OSX
 
