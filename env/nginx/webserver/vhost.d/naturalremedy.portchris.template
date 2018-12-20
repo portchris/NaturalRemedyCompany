@@ -1,0 +1,49 @@
+server {
+    listen {NGINX_PORT} default_server;
+    listen [::]:{NGINX_PORT} default_server;
+    
+	server_name {NGINX_HOST};
+
+	set $MAGE_ROOT /home/www/naturalremedy/src;
+	set $code default;
+	
+	root $MAGE_ROOT;
+	index index.php;
+
+	location / {
+	    try_files $uri $uri/ /index.php$is_args$args;
+	}
+
+	include /etc/nginx/defaults/magento1.conf;
+}
+
+server {
+	
+	# SSL configuration
+	listen 443 ssl http2 default_server;
+	listen [::]:443 ssl http2 default_server;
+	ssl_certificate certs/default.crt;
+	ssl_certificate_key certs/default.key;
+	
+	# ssl_trusted_certificate ssl/certs/private/{NGINX_HOST}.cert;
+	# proxy_ssl_trusted_certificate ssl/certs/private/{NGINX_HOST}.cert;
+	# proxy_ssl_verify on;
+	# proxy_ssl_session_reuse on;
+	# proxy_ssl_name localhost;
+	
+	include /etc/nginx/global/ssl-params.conf;
+
+	server_name {NGINX_HOST};
+
+	set $MAGE_ROOT /home/www/naturalremedy/src;
+	set $code default;
+
+	root $MAGE_ROOT;
+	index index.php;
+
+	location / {
+		proxy_pass https://localhost:80;
+	}
+
+	include /etc/nginx/defaults/magento1.conf;
+}

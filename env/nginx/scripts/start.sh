@@ -1,8 +1,8 @@
 # Any extra start up scripts here to run on container instantiation
 #!/bin/bash
 
-CONF="/etc/nginx/conf.d/naturalremedy.template"
-CONF_DEFAULT="/etc/nginx/conf.d/default.conf"
+CONF="/etc/nginx/vhost.d/naturalremedy.template"
+CONF_DEFAULT="/etc/nginx/vhost.d/naturalremedy.conf"
 ENV="/etc/nginx/.env"
 
 # Update Nginx config depending on environment files
@@ -28,6 +28,10 @@ if [ -f $ENV ]; then
 		rm $CONF_DEFAULT
 	fi
 
+	# Update CONF to match current domain env
+	CONF="/etc/nginx/vhost.d/$NGINX_HOST.template"
+	CONF_DEFAULT="/etc/nginx/vhost.d/$NGINX_HOST.conf"
+
 	cp $CONF $CONF_DEFAULT
 	sed -i -e "s/{NGINX_HOST}/${NGINX_HOST}/g" $CONF_DEFAULT
 	sed -i -e "s/{NGINX_PORT}/${NGINX_PORT}/g" $CONF_DEFAULT
@@ -48,19 +52,19 @@ if [ -f $ENV ]; then
 	echo # \n
 
 	# Certbot LetsEncrypt certificate
-	if [[ $NGINX_HOST == *"portchris.co.uk"* ]]; then
+	if [[ $NGINX_HOST == *"portchris"* ]]; then
 		echo "Generating self-signed localhost dev certificate"
 		# chown root:root -R /etc/nginx/ssl
 		# chmod -R 600 /etc/nginx/ssl
-		if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
-			mkdir /usr/local/share/ca-certificates/localhost
-		fi
-		cp /etc/nginx/ssl/certs/private/$NGINX_HOST.cert /usr/local/share/ca-certificates/localhost/
+		# if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
+		# 	mkdir /usr/local/share/ca-certificates/localhost
+		# fi
+		# cp /etc/nginx/ssl/certs/private/$NGINX_HOST.cert /usr/local/share/ca-certificates/localhost/
 		# certbot certonly --standalone -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
-		update-ca-certificates
+		# update-ca-certificates
 	else
 		echo "Generating LetsEncrypt certificate for production domain $NGINX_HOST"
-		certbot --nginx -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
+		# certbot --nginx -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
 	fi
 
 	# Restart web server in Docker mode
