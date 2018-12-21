@@ -10,8 +10,8 @@ services:
     networks:
       - naturalremedy
     ports:
-      - 80:80
-      - 443:443
+      - 80:3000
+      - 443:3000
     env_file:
       - ./env/nginx/.env
     depends_on:
