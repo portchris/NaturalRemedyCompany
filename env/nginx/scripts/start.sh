@@ -9,18 +9,13 @@ ENV="/etc/nginx/.env"
 if [ -f $ENV ]; then
 	export $(grep -v '^#' $ENV | xargs)
 	
-	if [ -z ${NGINX_HOST+x} ]; then
-		echo "NGINX_HOST not set!"
+	if [ -z ${VIRTUAL_HOST+x} ]; then
+		echo "VIRTUAL_HOST not set!"
 		exit 1
 	fi
 
-	if [ -z ${NGINX_PORT+x} ]; then
-		echo "NGINX_PORT not set!"
-		exit 1
-	fi
-
-	if [ -z ${NGINX_WEBROOT+x} ]; then
-		echo "NGINX_WEBROOT not set!"
+	if [ -z ${WEBROOT+x} ]; then
+		echo "WEBROOT not set!"
 		exit 1
 	fi
 
@@ -29,42 +24,31 @@ if [ -f $ENV ]; then
 	fi
 
 	# Update CONF to match current domain env
-	CONF="/etc/nginx/vhost.d/$NGINX_HOST.template"
-	CONF_DEFAULT="/etc/nginx/vhost.d/$NGINX_HOST.conf"
+	CONF="/etc/nginx/vhost.d/$VIRTUAL_HOST.template"
+	CONF_DEFAULT="/etc/nginx/vhost.d/$VIRTUAL_HOST.conf"
 
 	cp $CONF $CONF_DEFAULT
-	sed -i -e "s/{NGINX_HOST}/${NGINX_HOST}/g" $CONF_DEFAULT
-	sed -i -e "s/{NGINX_PORT}/${NGINX_PORT}/g" $CONF_DEFAULT
-	sed -i -e "s/{NGINX_WEBROOT}/${NGINX_WEBROOT}/g" $CONF_DEFAULT
-	if [ -z ${SSL_CERTIFICATE_PATH+x} ]; then
-		sed -i -e "s/{SSL_CERTIFICATE_PATH}/${SSL_CERTIFICATE_PATH}/g" $CONF_DEFAULT
-	fi
-
-	if [ -z ${SSL_KEY_PATH+x} ]; then
-		sed -i -e "s/{SSL_KEY_PATH}/${SSL_KEY_PATH}/g" $CONF_DEFAULT
-	fi
-
-	if [ -z ${SSL_DHPARAM_PATH+x} ]; then
-		sed -i -e "s/{SSL_DHPARAM_PATH}/${SSL_DHPARAM_PATH}/g" $CONF_DEFAULT
-	fi
+	sed -i -e "s/{VIRTUAL_HOST}/${VIRTUAL_HOST}/g" $CONF_DEFAULT
+	sed -i -e "s/{WEBROOT}/${WEBROOT}/g" $CONF_DEFAULT
 	echo # \n
 	cat $CONF_DEFAULT
 	echo # \n
 
+
 	# Certbot LetsEncrypt certificate
-	if [[ $NGINX_HOST == *"portchris"* ]]; then
+	if [[ $VIRTUAL_HOST == *"portchris"* ]]; then
 		echo "Generating self-signed localhost dev certificate"
 		# chown root:root -R /etc/nginx/ssl
 		# chmod -R 600 /etc/nginx/ssl
 		# if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
 		# 	mkdir /usr/local/share/ca-certificates/localhost
 		# fi
-		# cp /etc/nginx/ssl/certs/private/$NGINX_HOST.cert /usr/local/share/ca-certificates/localhost/
-		# certbot certonly --standalone -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
+		# cp /etc/nginx/ssl/certs/private/$VIRTUAL_HOST.cert /usr/local/share/ca-certificates/localhost/
+		# certbot certonly --standalone -d $VIRTUAL_HOST --agree-tos -n -m chris@portchris.co.uk
 		# update-ca-certificates
 	else
-		echo "Generating LetsEncrypt certificate for production domain $NGINX_HOST"
-		# certbot --nginx -d $NGINX_HOST --agree-tos -n -m chris@portchris.co.uk
+		echo "Generating LetsEncrypt certificate for production domain $VIRTUAL_HOST"
+		# certbot --nginx -d $VIRTUAL_HOST --agree-tos -n -m chris@portchris.co.uk
 	fi
 
 	# Restart web server in Docker mode
