@@ -43,6 +43,25 @@ RUN curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add - && \
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/php.list && \
     apt-get update -o Dir::Etc::sourcelist="sources.list.d/php.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
+# Nginx
+RUN curl -LsS http://nginx.org/keys/nginx_signing.key | apt-key add - && \
+    echo "deb http://nginx.org/packages/mainline/debian stretch nginx" | tee -a /etc/apt/sources.list.d/nginx.list && \
+    echo "deb-src http://nginx.org/packages/mainline/debian stretch nginx" | tee -a /etc/apt/sources.list.d/nginx.list && \
+    apt-get update -o Dir::Etc::sourcelist="sources.list.d/nginx.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+
+# Install main software
+RUN apt-get install -y --no-install-recommends \
+    nginx
+
+# Default nginx homepage
+ADD ./config/nginx/default /usr/share/nginx/html
+
+# Add config and scripts
+ADD ./config/nginx/webserver /etc/nginx
+
+# Add environment variables for Nginx
+ADD ./.env /etc/nginx
+
 # yarn
 #RUN curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 #    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee -a /etc/apt/sources.list.d/yarn.list && \
@@ -80,7 +99,7 @@ RUN mkdir -p /var/lib/php/sessions && \
 # RUN bash /scripts/install-ioncube.sh
 
 # Composer
-RUN bash /scripts/install-composer.sh
+# RUN bash /scripts/install-composer.sh
 
 # Config
 ADD ./config/php /etc/php/7.2/fpm
@@ -90,7 +109,7 @@ ADD ./config/ssmtp /etc/ssmtp
 ADD ./config/cron /etc/cron.d
 RUN chmod 0644 -R /etc/cron.d/
 
-EXPOSE 9000
+EXPOSE 9000 8080
 
 # Install Magerun
 CMD ["bash","/scripts/install-magerun.sh"]

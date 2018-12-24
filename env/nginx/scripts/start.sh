@@ -1,8 +1,8 @@
 # Any extra start up scripts here to run on container instantiation
 #!/bin/bash
 
-CONF="/etc/nginx/vhost.d/naturalremedy.co.uk.template"
-CONF_DEFAULT="/etc/nginx/vhost.d/naturalremedy.co.uk.conf"
+CONF="/etc/nginx/conf.d/naturalremedy.co.uk.template"
+CONF_DEFAULT="/etc/nginx/conf.d/default.conf"
 ENV="/etc/nginx/.env"
 
 # Update Nginx config depending on environment files
@@ -24,8 +24,10 @@ if [ -f $ENV ]; then
 	fi
 
 	# Update CONF to match current domain env
-	CONF="/etc/nginx/vhost.d/$VIRTUAL_HOST.template"
-	CONF_DEFAULT="/etc/nginx/vhost.d/$VIRTUAL_HOST.conf"
+	if [ ! -f $CONF ]; then
+		CONF="/etc/nginx/conf.d/$VIRTUAL_HOST.template"
+		# CONF_DEFAULT="/etc/nginx/vhost.d/$VIRTUAL_HOST.conf"
+	fi
 
 	cp $CONF $CONF_DEFAULT
 	sed -i -e "s/{VIRTUAL_HOST}/${VIRTUAL_HOST}/g" $CONF_DEFAULT

@@ -1,6 +1,6 @@
-# upstream naturalremedy {
-# 	server http://php72:9000;
-# }
+upstream naturalremedy {
+	server localhost:8080;
+}
 
 server {
 
@@ -15,10 +15,8 @@ server {
 	root $MAGE_ROOT;
 	index index.php;
 
-	include /etc/nginx/defaults/magento1.conf;
-
 	location / {
-	    proxy_pass http://localhost:9000;
+	    proxy_pass http://naturalremedy;
 	}
 }
 
@@ -45,29 +43,27 @@ server {
 	root $MAGE_ROOT;
 	index index.php;
 
-	include /etc/nginx/defaults/magento1.conf;
-
 	location / {
-		proxy_pass http://localhost:9000;
+		proxy_pass http://naturalremedy;
 	}
 }
 
-server {
-    listen 3000;
-    listen [::]:3000;
+# server {
+#     listen 3000;
+#     listen [::]:3000;
     
-	server_name {VIRTUAL_HOST};
+# 	server_name {VIRTUAL_HOST};
 
-	set $MAGE_ROOT /home/www/naturalremedy/src;
-	set $code default;
+# 	set $MAGE_ROOT /home/www/naturalremedy/src;
+# 	set $code default;
 	
-	root $MAGE_ROOT;
-	index index.php;
+# 	root $MAGE_ROOT;
+# 	index index.php;
 
-	include /etc/nginx/defaults/magento1.conf;
+# 	include /etc/nginx/defaults/magento1.conf;
 
-	location / {
-	    try_files $uri $uri/ /index.php$is_args$args;
-	}
+# 	location / {
+# 	    try_files $uri $uri/ /index.php$is_args$args;
+# 	}
 
-}
+# }

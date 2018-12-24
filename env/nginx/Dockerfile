@@ -38,7 +38,7 @@ RUN rm /etc/localtime && \
 #   nginx
 
 # Default nginx homepage
-ADD ./default /usr/share/nginx/html
+# ADD ./default /usr/share/nginx/html
 
 # Add config and scripts
 ADD ./webserver/ /etc/nginx
