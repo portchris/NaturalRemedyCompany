@@ -1,8 +1,8 @@
 # Any extra start up scripts here to run on container instantiation
 #!/bin/bash
 
-CONF="/etc/nginx/vhost.d/naturalremedy.template"
-CONF_DEFAULT="/etc/nginx/vhost.d/naturalremedy.conf"
+CONF="/etc/nginx/vhost.d/naturalremedy.co.uk.template"
+CONF_DEFAULT="/etc/nginx/vhost.d/naturalremedy.co.uk.conf"
 ENV="/etc/nginx/.env"
 
 # Update Nginx config depending on environment files
