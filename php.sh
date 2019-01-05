@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker-compose exec -u www php72 bash -c 'cd /home/www/naturalremedy/; exec "${SHELL:-sh}"'
+docker-compose exec -u root webapp bash -c 'cd /home/www/naturalremedy/; exec "${SHELL:-sh}"'

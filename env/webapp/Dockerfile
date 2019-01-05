@@ -14,9 +14,6 @@ RUN rm /etc/localtime && \
 RUN groupadd -g $GID www && \
     useradd -u $UID -g $GID -s /bin/bash www
 
-# Add scripts
-ADD ./scripts /scripts
-
 # Add required packages
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -62,7 +59,11 @@ ADD ./config/nginx/webserver /etc/nginx
 # Add environment variables for Nginx
 ADD ./.env /etc/nginx
 
-# yarn
+# Add scripts
+ADD ./scripts /scripts
+RUN chmod +x -R /scripts
+
+# Yarn
 #RUN curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 #    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee -a /etc/apt/sources.list.d/yarn.list && \
 #    apt-get update -o Dir::Etc::sourcelist="sources.list.d/yarn.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
@@ -112,7 +113,7 @@ RUN chmod 0644 -R /etc/cron.d/
 EXPOSE 9000 8080
 
 # Install Magerun
-CMD ["bash","/scripts/install-magerun.sh"]
+# CMD ["/bin/bash", "/scripts/install-magerun.sh"]
 
 # Run supervisor to start all services
-CMD ["bash","/scripts/start.sh"]
+CMD ["/bin/bash", "/scripts/start.sh"]

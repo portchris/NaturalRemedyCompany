@@ -4,7 +4,7 @@
 # Environment Set Up
 
 *Nginx*
-Create Nginx environment file: _./env/nginx/.env_ - here is an example of available variables:
+Create Nginx environment file: _./env/nginx-proxy/.env_ - here is an example of available variables:
 ```
 NGINX_HOST=naturalremedy.portchris
 NGINX_WEBROOT=/home/www/naturalremedy
@@ -20,15 +20,15 @@ SSL_DHPARAM_PATH=/etc/nginx/certs/dhparam.pem
 ```
 
 # Virtual Hosts
-It is important to set up an Nginx template configuration file in ./env/nginx/webserver/vhost.d in order to create your virtual host and thus bring the site up.
-There is an example of one available within ./env/nginx/webserver/vhost.d/naturalremedy.portchris.template - the name of the .template file takes that from the NINX_HOST environment variable from above.
+It is important to set up an Nginx template configuration file in ./env/nginx-proxy/webserver/vhost.d in order to create your virtual host and thus bring the site up.
+There is an example of one available within ./env/nginx-proxy/webserver/vhost.d/naturalremedy.portchris.template - the name of the .template file takes that from the NINX_HOST environment variable from above.
 
 # Image
 This docker image is taken from https://github.com/jwilder/nginx-proxy - see here for more information.
 
 ## PHP
 # Environment Set Up
-Create PHP environment file: _./env/php72/.env_ - here is an example of available variables:
+Create PHP environment file: _./env/webapp/.env_ - here is an example of available variables:
 ```
 # None as of yet
 ```

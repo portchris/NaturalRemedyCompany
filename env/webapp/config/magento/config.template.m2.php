@@ -109,7 +109,7 @@ return array (
   array (
     0 =>
     array (
-      'host' => 'nginx',
+      'host' => 'nginx-proxy',
     ),
   ),
 );
