@@ -1,27 +1,8 @@
 server {
     listen 8080;
-    # listen [::]:8080;
+    listen [::]:8080;
     
 	server_name {VIRTUAL_HOST};
-
-	set $MAGE_ROOT /home/www/naturalremedy/src;
-	set $code default;
-	
-	root $MAGE_ROOT;
-	index index.php;
-
-	include /etc/nginx/defaults/magento1.conf;
-
-	location / {
-	    try_files $uri $uri/ /index.php$is_args$args;
-	}
-}
-
-server {
-    listen 8080;
-    # listen [::]:8080;
-    
-	server_name localhost;
 
 	set $MAGE_ROOT /home/www/naturalremedy/src;
 	set $code default;

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-php-fpm7.2
-
 CONF="/etc/nginx/conf.d/naturalremedy.co.uk.template"
 CONF_DEFAULT="/etc/nginx/conf.d/default.conf"
 ENV="/etc/nginx/.env"
@@ -43,3 +41,5 @@ else
 	echo "Error: no /etc/nginx/.env environment variables file found!"
 	exit 1
 fi
+
+php-fpm7.2
