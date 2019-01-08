@@ -96,12 +96,6 @@ RUN mkdir -p /var/lib/php/sessions && \
 #RUN apt-get install -y \
 #    yarn
 
-# Ioncube
-# RUN bash /scripts/install-ioncube.sh
-
-# Composer
-# RUN bash /scripts/install-composer.sh
-
 # Config
 ADD ./config/php /etc/php/7.2/fpm
 ADD ./config/ssmtp /etc/ssmtp
@@ -112,8 +106,15 @@ RUN chmod 0644 -R /etc/cron.d/
 
 EXPOSE 9000 8080
 
+# Install Ioncube
+# RUN bash /scripts/install-ioncube.sh
+
+# Install Composer
+CMD ["/bin/bash", "/scripts/install-composer.sh"]
+
 # Install Magerun
-# CMD ["/bin/bash", "/scripts/install-magerun.sh"]
+CMD ["/bin/bash", "/scripts/install-magerun.sh"]
 
 # Run supervisor to start all services
-CMD ["/bin/bash", "/scripts/start.sh"]
+CMD ["/bin/bash", "/scripts/start-nginx.sh"]
+# CMD ["/bin/bash", "/scripts/start-php-fpm.sh"]

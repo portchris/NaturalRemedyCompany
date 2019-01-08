@@ -41,5 +41,3 @@ else
 	echo "Error: no /etc/nginx/.env environment variables file found!"
 	exit 1
 fi
-
-php-fpm7.2
