@@ -1,61 +1,9 @@
 version: '3.1'
 
-networks:
-  naturalremedy:
-
 services:
-  nginx-proxy:
-    container_name: nginx-proxy
-    build: ./env/nginx-proxy
-    networks:
-      - naturalremedy
-    ports:
-      - 80:80
-      - 443:443
-    env_file:
-      - ./env/nginx-proxy/.env
-    depends_on:
-      - webapp
-    tty: true
-    volumes:
-      - ./src:/home/www/naturalremedy/src
-      - ./storage:/home/www/storage/naturalremedy
-      - ./data/nginx-proxy/logs:/var/log/nginx
-      - ./env/nginx-proxy/webserver/nginx.conf:/etc/nginx/nginx.conf
-      - ./env/nginx-proxy/webserver/conf.d:/etc/nginx/conf.d
-      - ./env/nginx-proxy/webserver/vhost.d:/etc/nginx/vhost.d
-      - ./env/nginx-proxy/webserver/defaults:/etc/nginx/defaults
-      - ./env/nginx-proxy/webserver/global:/etc/nginx/global
-      - ./env/nginx-proxy/ssl/certs:/etc/nginx/certs
-      - ./env/nginx-proxy/share:/usr/share/nginx/html
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-    labels:
-      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
-
-  letsencrypt:
-    restart: always
-    container_name: letsencrypt
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    env_file:
-      - ./env/letsencrypt/.env
-    volumes:
-      - ./data/letsencrypt/logs:/var/log
-      - ./env/nginx-proxy/webserver/nginx.conf:/etc/nginx/nginx.conf
-      - ./env/nginx-proxy/webserver/conf.d:/etc/nginx/conf.d
-      - ./env/nginx-proxy/webserver/vhost.d:/etc/nginx/vhost.d
-      - ./env/nginx-proxy/webserver/defaults:/etc/nginx/defaults
-      - ./env/nginx-proxy/webserver/global:/etc/nginx/global
-      - ./env/nginx-proxy/ssl/certs:/etc/nginx/certs
-      - ./env/nginx-proxy/share:/usr/share/nginx/html
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    depends_on:
-      - nginx-proxy
-
   mysql:
     container_name: mysql
     build: ./env/mysql
-    networks:
-      - naturalremedy
     ports:
       - 3306:3306
     env_file:
@@ -68,8 +16,6 @@ services:
   elasticsearch:
     build: ./env/elasticsearch
     container_name: elasticsearch
-    networks:
-      - naturalremedy
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -84,19 +30,15 @@ services:
   mailhog:
     image: mailhog/mailhog:latest
     container_name: mailhog
-    networks:
-      - naturalremedy
     ports:
       - 8025:8025
     depends_on:
-      - nginx-proxy
+      - webapp
 
   redis:
     image: redis:4-alpine
     container_name: redis
     command: /usr/local/etc/redis/redis.conf
-    networks:
-      - naturalremedy
     ports:
       - 6379:6379
     volumes:
@@ -106,13 +48,17 @@ services:
     container_name: webapp
     build: ./env/webapp
     hostname: webapp
-    networks:
-      - naturalremedy
     depends_on:
       - mysql
     ports:
       - 9000:9000
-      - 8080:8080
+      - 80
+      - 443
+    env_file: ./env/webapp/.env
+    environment:
+      - VIRTUAL_HOST=naturalremedy.portchris.co.uk
+      - VIRTUAL_PORT=80
+      - VIRTUAL_NETWORK=proxy-network
     volumes:
       - ./env/composer:/home/www/.composer
       - ./env/global/bashrc:/home/www/.bashrc
@@ -121,3 +67,8 @@ services:
       - ~/.gitconfig:/home/www/.gitconfig:ro
       - ./storage:/home/www/storage/naturalremedy
       - ./src:/home/www/naturalremedy/src
+      - ./env/webapp/config/nginx/webserver/conf.d:/etc/nginx/conf.d
+networks:
+  default:
+    external:
+      name: proxy-network
