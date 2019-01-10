@@ -1,44 +1,48 @@
-### Natural Remedy Company
+# Natural Remedy Company
 
 ## Nginx
-# Environment Set Up
+### Environment Set Up
 
 *Nginx*
 Create Nginx environment file: _./env/nginx-proxy/.env_ - here is an example of available variables:
 ```
-NGINX_HOST=naturalremedy.portchris
-NGINX_WEBROOT=/home/www/naturalremedy
-NGINX_PORT=80
-VIRTUAL_HOST=naturalremedy.portchris
+WEBROOT=/home/www/naturalremedy
+VIRTUAL_ROOT=/home/www/naturalremedy
+VIRTUAL_HOST=naturalremedy.portchris.co.uk
+VIRTUAL_PROTO=fastcgi
+VIRTUAL_PORT=443
+VIRTUAL_PROTO=https
 LETSENCRYPT_EMAIL=chris@portchris.co.uk
 LETSENCRYPT_HOST=naturalremedy.portchris
 LETSENCRYPT_TEST=true
 ENABLE_IPV6=true
-SSL_CERTIFICATE_PATH=/etc/nginx/certs/default.crt
-SSL_KEY_PATH=/etc/nginx/certs/default.key
-SSL_DHPARAM_PATH=/etc/nginx/certs/dhparam.pem
 ```
 
-# Virtual Hosts
+### Virtual Hosts
 It is important to set up an Nginx template configuration file in ./env/nginx-proxy/webserver/vhost.d in order to create your virtual host and thus bring the site up.
 There is an example of one available within ./env/nginx-proxy/webserver/vhost.d/naturalremedy.portchris.template - the name of the .template file takes that from the NINX_HOST environment variable from above.
 
-# Image
+### Image
 This docker image is taken from https://github.com/jwilder/nginx-proxy - see here for more information.
 
-## PHP
-# Environment Set Up
-Create PHP environment file: _./env/webapp/.env_ - here is an example of available variables:
+## Webapp
+This container is responsible for the application and will run PHP 7.2 and Nginx
+### Environment Set Up
+Create the environment file: _./env/webapp/.env_ - here is an example of available variables:
 ```
-# None as of yet
+VIRTUAL_HOST=naturalremedy.portchris.co.uk
+WEBROOT=/home/www/naturalremedy
+VIRTUAL_PROTO=https
+VIRTUAL_PORT=443
+VIRTUAL_NETWORK=naturalremedy
 ```
 
-# Magento CLI
+### Magento CLI
 n98-magerun.phar is available within this container also.
 
 
 ## MySQL
-# Environment Set Up
+### Environment Set Up
 *MySQL*
 Create MySQL environment file: _./env/mysql/.env_ - here is an example of available variables:
 ```
@@ -46,7 +50,7 @@ MYSQL_ROOT_PASSWORD=password
 ```
 
 ## LetsEncrypt
-# Environment Set Up
+### Environment Set Up
 This is the SSL Certification Companion container that will generate the certs.
 To use it with original nginx-proxy container you must declare 3 writable volumes from the nginx-proxy container:
 ```
@@ -55,7 +59,7 @@ To use it with original nginx-proxy container you must declare 3 writable volume
     /usr/share/nginx/html to write challenge files.
 ```
 
-# Image
+### Image
 This docker image is taken from https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion - See here for more information,
 
 ## Docker

@@ -104,7 +104,7 @@ ADD ./config/ssmtp /etc/ssmtp
 ADD ./config/cron /etc/cron.d
 RUN chmod 0644 -R /etc/cron.d/
 
-EXPOSE 9000 8080
+EXPOSE 9000 8080 443 80
 
 # Install Ioncube
 # RUN bash /scripts/install-ioncube.sh
