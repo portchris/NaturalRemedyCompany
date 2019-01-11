@@ -4,55 +4,34 @@ networks:
   naturalremedy:
 
 services:
-  nginx-proxy:
-    container_name: nginx-proxy
-    build: ./env/nginx-proxy
+  nr_nginx:
+    container_name: nr_nginx
+    build: ./env/nginx
     networks:
       - naturalremedy
     ports:
       - 80:80
       - 443:443
     env_file:
-      - ./env/nginx-proxy/.env
+      - ./env/nginx/.env
     depends_on:
-      - webapp
+      - nr_php72
     tty: true
     volumes:
       - ./src:/home/www/naturalremedy/src
       - ./storage:/home/www/storage/naturalremedy
-      - ./data/nginx-proxy/logs:/var/log/nginx
-      - ./env/nginx-proxy/webserver/nginx.conf:/etc/nginx/nginx.conf
-      - ./env/nginx-proxy/webserver/conf.d:/etc/nginx/conf.d
-      - ./env/nginx-proxy/webserver/vhost.d:/etc/nginx/vhost.d
-      - ./env/nginx-proxy/webserver/defaults:/etc/nginx/defaults
-      - ./env/nginx-proxy/webserver/global:/etc/nginx/global
-      - ./env/nginx-proxy/ssl/certs:/etc/nginx/certs
-      - ./env/nginx-proxy/share:/usr/share/nginx/html
+      - ./data/nginx/logs:/var/log/nginx
+      - ./env/nginx/webserver/nginx.conf:/etc/nginx/nginx.conf
+      - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
+      - ./env/nginx/webserver/vhost.d:/etc/nginx/vhost.d
+      - ./env/nginx/webserver/defaults:/etc/nginx/defaults
+      - ./env/nginx/webserver/global:/etc/nginx/global
+      - ./env/nginx/ssl/certs:/etc/nginx/certs
+      - ./env/nginx/share:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    labels:
-      com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
 
-  letsencrypt:
-    restart: always
-    container_name: letsencrypt
-    image: jrcs/letsencrypt-nginx-proxy-companion
-    env_file:
-      - ./env/letsencrypt/.env
-    volumes:
-      - ./data/letsencrypt/logs:/var/log
-      - ./env/nginx-proxy/webserver/nginx.conf:/etc/nginx/nginx.conf
-      - ./env/nginx-proxy/webserver/conf.d:/etc/nginx/conf.d
-      - ./env/nginx-proxy/webserver/vhost.d:/etc/nginx/vhost.d
-      - ./env/nginx-proxy/webserver/defaults:/etc/nginx/defaults
-      - ./env/nginx-proxy/webserver/global:/etc/nginx/global
-      - ./env/nginx-proxy/ssl/certs:/etc/nginx/certs
-      - ./env/nginx-proxy/share:/usr/share/nginx/html
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    depends_on:
-      - nginx-proxy
-
-  mysql:
-    container_name: mysql
+  nr_mysql:
+    container_name: nr_mysql
     build: ./env/mysql
     networks:
       - naturalremedy
@@ -65,9 +44,9 @@ services:
       - ./env/mysql/conf.d:/etc/mysql/conf.d
       - ./data/dbimport/:/docker-entrypoint-initdb.d
 
-  elasticsearch:
+  nr_elasticsearch:
     build: ./env/elasticsearch
-    container_name: elasticsearch
+    container_name: nr_elasticsearch
     networks:
       - naturalremedy
     environment:
@@ -81,19 +60,19 @@ services:
     volumes:
       - ./data/elasticsearch:/usr/share/elasticsearch/data
 
-  mailhog:
+  nr_mailhog:
     image: mailhog/mailhog:latest
-    container_name: mailhog
+    container_name: nr_mailhog
     networks:
       - naturalremedy
     ports:
       - 8025:8025
     depends_on:
-      - nginx-proxy
+      - nr_php72
 
-  redis:
+  nr_redis:
     image: redis:4-alpine
-    container_name: redis
+    container_name: nr_redis
     command: /usr/local/etc/redis/redis.conf
     networks:
       - naturalremedy
@@ -102,14 +81,14 @@ services:
     volumes:
       - ./env/redis:/usr/local/etc/redis
 
-  webapp:
-    container_name: webapp
-    build: ./env/webapp
-    hostname: webapp
+  nr_php72:
+    container_name: nr_php72
+    build: ./env/php72
+    hostname: php72
     networks:
       - naturalremedy
     depends_on:
-      - mysql
+      - nr_mysql
     ports:
       - 9000:9000
       - 8080:8080

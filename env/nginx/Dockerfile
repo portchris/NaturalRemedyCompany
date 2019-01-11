@@ -38,7 +38,7 @@ RUN rm /etc/localtime && \
 #   nginx
 
 # Default nginx homepage
-# ADD ./default /usr/share/nginx/html
+ADD ./default /usr/share/nginx/html
 
 # Add config and scripts
 ADD ./webserver/ /etc/nginx
@@ -49,14 +49,14 @@ RUN chmod +x -R /scripts
 ADD ./.env /etc/nginx
 
 # Copy localhost self-signed certificates
-# ADD ./ssl/certs /etc/nginx/ssl/certs
+ADD ./ssl/certs /etc/nginx/ssl/certs
 
 # Install Certbot (LetsEncrypt)
 # RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/stretch-backports.list && \
 #	apt-get update && \
 #	apt-get install -y python-certbot-nginx -t stretch-backports
 
-EXPOSE 80 443 8080
+EXPOSE 80 443
 
 # Execute Nginx config using environment variables to start all services
 CMD ["bash", "/scripts/start.sh"]

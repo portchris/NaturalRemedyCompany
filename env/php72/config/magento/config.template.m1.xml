@@ -30,7 +30,7 @@
         <cache>
             <backend><![CDATA[Cm_Cache_Backend_Redis]]></backend>
             <backend_options>
-                    <server><![CDATA[redis]]></server>
+                    <server><![CDATA[nr_redis]]></server>
                     <port><![CDATA[6379]]></port>
                     <persistent><![CDATA[backend]]></persistent>
                     <database><![CDATA[0]]></database>
@@ -47,7 +47,7 @@
             </backend_options>
         </cache>
         <redis_session>
-                <host><![CDATA[redis]]></host>
+                <host><![CDATA[nr_redis]]></host>
                 <port><![CDATA[6379]]></port>
                 <password></password>
                 <timeout><![CDATA[2.5]]></timeout>

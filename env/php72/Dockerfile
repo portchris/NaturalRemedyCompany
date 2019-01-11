@@ -40,24 +40,6 @@ RUN curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add - && \
     echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee -a /etc/apt/sources.list.d/php.list && \
     apt-get update -o Dir::Etc::sourcelist="sources.list.d/php.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
-# Nginx
-RUN curl -LsS http://nginx.org/keys/nginx_signing.key | apt-key add - && \
-    echo "deb http://nginx.org/packages/mainline/debian stretch nginx" | tee -a /etc/apt/sources.list.d/nginx.list && \
-    echo "deb-src http://nginx.org/packages/mainline/debian stretch nginx" | tee -a /etc/apt/sources.list.d/nginx.list && \
-    apt-get update -o Dir::Etc::sourcelist="sources.list.d/nginx.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
-
-# Install main software
-RUN apt-get install -y --no-install-recommends \
-    nginx
-
-# Default nginx homepage
-ADD ./config/nginx/default /usr/share/nginx/html
-
-# Add config and scripts
-ADD ./config/nginx/webserver /etc/nginx
-
-# Add environment variables for Nginx
-ADD ./.env /etc/nginx
 
 # Add scripts
 ADD ./scripts /scripts
@@ -104,7 +86,7 @@ ADD ./config/ssmtp /etc/ssmtp
 ADD ./config/cron /etc/cron.d
 RUN chmod 0644 -R /etc/cron.d/
 
-EXPOSE 9000 8080 443 80
+EXPOSE 9000
 
 # Install Ioncube
 # RUN bash /scripts/install-ioncube.sh
@@ -116,5 +98,4 @@ CMD ["/bin/bash", "/scripts/install-composer.sh"]
 CMD ["/bin/bash", "/scripts/install-magerun.sh"]
 
 # Run supervisor to start all services
-CMD ["/bin/bash", "/scripts/start-nginx.sh"]
 # CMD ["/bin/bash", "/scripts/start-php-fpm.sh"]

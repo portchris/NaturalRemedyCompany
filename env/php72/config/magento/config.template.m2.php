@@ -13,7 +13,7 @@ return array (
     'save' => 'redis',
     'redis' =>
     array (
-      'host' => 'redis',
+      'host' => 'nr_redis',
       'port' => '6379',
       'password' => '',
       'timeout' => '2.5',
@@ -95,7 +95,7 @@ return array (
         'backend' => 'Cm_Cache_Backend_Redis',
         'backend_options' =>
         array (
-          'server' => 'redis',
+          'server' => 'nr_redis',
           'port' => '6379',
           'database' => '3',
           'compress_data' => '1',

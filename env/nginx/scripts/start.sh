@@ -36,23 +36,6 @@ if [ -f $ENV ]; then
 	cat $CONF_DEFAULT
 	echo # \n
 
-
-	# Certbot LetsEncrypt certificate
-	if [[ $VIRTUAL_HOST == *"portchris"* ]]; then
-		echo "Generating self-signed localhost dev certificate"
-		# chown root:root -R /etc/nginx/ssl
-		# chmod -R 600 /etc/nginx/ssl
-		# if [ ! -d "/usr/local/share/ca-certificates/localhost" ]; then
-		# 	mkdir /usr/local/share/ca-certificates/localhost
-		# fi
-		# cp /etc/nginx/ssl/certs/private/$VIRTUAL_HOST.cert /usr/local/share/ca-certificates/localhost/
-		# certbot certonly --standalone -d $VIRTUAL_HOST --agree-tos -n -m chris@portchris.co.uk
-		# update-ca-certificates
-	else
-		echo "Generating LetsEncrypt certificate for production domain $VIRTUAL_HOST"
-		# certbot --nginx -d $VIRTUAL_HOST --agree-tos -n -m chris@portchris.co.uk
-	fi
-
 	# Restart web server in Docker mode
 	nginx -g "daemon off;"
 else
