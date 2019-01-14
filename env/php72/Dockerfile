@@ -68,6 +68,7 @@ RUN apt-get install -y --no-install-recommends \
     php7.2-intl \
     php7.2-soap \
     php7.2-sqlite3 \
+	php7.2-mcrypt \
     php-redis
 
 # Fix issue with php sessions
@@ -86,6 +87,13 @@ ADD ./config/ssmtp /etc/ssmtp
 ADD ./config/cron /etc/cron.d
 RUN chmod 0644 -R /etc/cron.d/
 
+# Install n98-magerun
+RUN curl -sS -o n98-magerun.phar https://files.magerun.net/n98-magerun.phar &&  \
+	curl -sS -o n98-magerun.phar.sha256 https://files.magerun.net/sha256.php?file=n98-magerun.phar && \
+	shasum -a 256 -c n98-magerun.phar.sha256 && \
+	chmod +x n98-magerun.phar && \
+	mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
+
 EXPOSE 9000
 
 # Install Ioncube
@@ -94,8 +102,5 @@ EXPOSE 9000
 # Install Composer
 CMD ["/bin/bash", "/scripts/install-composer.sh"]
 
-# Install Magerun
-CMD ["/bin/bash", "/scripts/install-magerun.sh"]
-
 # Run supervisor to start all services
-# CMD ["/bin/bash", "/scripts/start-php-fpm.sh"]
+CMD ["/bin/bash", "/scripts/start.sh"]
