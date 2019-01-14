@@ -68,7 +68,6 @@ RUN apt-get install -y --no-install-recommends \
     php7.2-intl \
     php7.2-soap \
     php7.2-sqlite3 \
-	php7.2-mcrypt \
     php-redis
 
 # Fix issue with php sessions
