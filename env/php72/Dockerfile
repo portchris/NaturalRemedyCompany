@@ -51,7 +51,8 @@ RUN chmod +x -R /scripts
 #    apt-get update -o Dir::Etc::sourcelist="sources.list.d/yarn.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
 # Install php with extensions
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
     php7.2 \
     php7.2-fpm \
     php7.2-curl \
@@ -68,7 +69,18 @@ RUN apt-get install -y --no-install-recommends \
     php7.2-intl \
     php7.2-soap \
     php7.2-sqlite3 \
-    php-redis
+    php-redis \
+	php7.2-dev \
+	php-pear \
+	gcc \ 
+	make \
+	autoconf \
+	libc-dev \
+	pkg-config \
+	libmcrypt-dev
+
+# Install mcrypt (legacy for M1)
+RUN pecl install mcrypt-1.0.1
 
 # Fix issue with php sessions
 RUN mkdir -p /var/lib/php/sessions && \
