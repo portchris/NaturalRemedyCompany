@@ -79,7 +79,7 @@
                     <span><span><?php echo $this->__('Estimate') ?></span></span>
                 </button>
             </div>
-        </form>
+        <?php echo $this->getBlockHtml("formkey") ?></form>
         <script type="text/javascript">
         //<![CDATA[
             new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);
@@ -120,7 +120,7 @@
                     <span><span><?php echo $this->__('Update Total') ?></span></span>
                 </button>
             </div>
-        </form>
+        <?php echo $this->getBlockHtml("formkey") ?></form>
         <?php endif; ?>
         <script type="text/javascript">
         //<![CDATA[

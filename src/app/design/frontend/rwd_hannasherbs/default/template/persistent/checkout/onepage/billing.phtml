@@ -202,7 +202,7 @@
         </span>
     </div>
 </div>
-</form>
+<?php echo $this->getBlockHtml("formkey") ?></form>
 <script type="text/javascript">
 //<![CDATA[
     var billing = new Billing('co-billing-form', '<?php echo $this->getUrl('checkout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('checkout/onepage/saveBilling') ?>');
