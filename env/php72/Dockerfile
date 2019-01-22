@@ -33,7 +33,8 @@ RUN apt-get update && \
         unzip \
         wget \
 		cron \
-		vim
+		vim \
+		procps
 
 # Install PHP
 RUN curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add - && \
