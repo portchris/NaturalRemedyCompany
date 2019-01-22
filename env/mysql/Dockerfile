@@ -8,4 +8,5 @@ ARG GID=1000
 RUN userdel mysql && \
 	groupadd -g $GID mysql && \
     useradd -u $UID -g $GID -s /bin/bash mysql && \
-	chown -R mysql:mysql /var/lib/mysql
+	chown -R mysql:mysql /var/lib/mysql && \
+	chmod -R 755 /var/lib/mysql/
