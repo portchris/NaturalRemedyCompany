@@ -1,9 +1,17 @@
 server {
+	listen 80;
+    listen [::]:80;
+	
+	server_name {VIRTUAL_HOST};
+	return 301 $scheme://www.{VIRTUAL_HOST}$request_uri;
+}
+
+server {
 
     listen 80;
     listen [::]:80;
     
-	server_name {VIRTUAL_HOST};
+	server_name www.{VIRTUAL_HOST};
 
 	# Redirect to HTTPS
 	# location / {
