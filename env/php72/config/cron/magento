@@ -2,4 +2,4 @@ MAILTO=""
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 SHELL=/bin/bash
 
-* * * * * www php -f /home/www/naturalremedy/src/cron.sh | grep -v "Ran jobs by schedule" >> /home/www/naturalremedy/src/var/log/magento.cron.log
+* * * * * www /bin/bash /home/www/naturalremedy/src/cron.sh | grep -v "Ran jobs by schedule" >> /home/www/naturalremedy/src/var/log/magento.cron.log
