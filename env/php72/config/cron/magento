@@ -3,4 +3,4 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 SHELL=/bin/bash
 
 * * * * * www php -f /home/www/naturalremedy/src/cron.sh | grep -v "Ran jobs by schedule" >> /home/www/naturalremedy/src/var/log/magento.cron.log
-* * * * * www cd /home/www/naturalremedy && ./magento.sh cron:run >> /home/www/naturalremedy/src/var/log/magento.cron.log
+* * * * * www n98-magerun.phar --root-dir=/home/www/naturalremedy/src cron:run >> /home/www/naturalremedy/src/var/log/magento.cron.log
