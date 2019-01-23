@@ -10,7 +10,8 @@ services:
     networks:
       - naturalremedy
     ports:
-      - 8080:8080
+      - 80:80
+      - 443:443
     env_file:
       - ./env/nginx/.env
     depends_on:
@@ -90,6 +91,7 @@ services:
       - nr_mysql
     ports:
       - 9000:9000
+      - 8080:8080
     volumes:
       - ./env/composer:/home/www/.composer
       - ./env/global/bashrc:/home/www/.bashrc
