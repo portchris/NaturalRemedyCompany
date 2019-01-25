@@ -50,13 +50,30 @@ MYSQL_ROOT_PASSWORD=password
 ```
 
 ## LetsEncrypt
+Let's Encrypt is handled by the certbot package installed in the nginx container
+
 ### Environment Set Up
-This is the SSL Certification Companion container that will generate the certs.
-To use it with original nginx-proxy container you must declare 3 writable volumes from the nginx-proxy container:
+To create a certificate, shell into the nginx container and run the following command:
 ```
-    /etc/nginx/certs to create/renew Let's Encrypt certificates
-    /etc/nginx/vhost.d to change the configuration of vhosts (needed by Let's Encrypt)
-    /usr/share/nginx/html to write challenge files.
+certbot certonly -a manual --rsa-key-size 4096 --email example@email.com -d yourdomain.com -d www.yourdomain.com
+```
+Follow the on-screen prompts to create the acme challenge, ensure these files are available outside the container (docker cp).
+
+Then edit the nginx file listening on port 443 linking to your new SSL certificate:
+```
+server {
+
+	...
+	
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+	ssl_certificate /etc/letsencrypt/live/yourdomain.com/cert.pem;
+	ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+	
+	include /etc/nginx/global/ssl-params.conf;
+
+	...
+}
 ```
 
 ### Image

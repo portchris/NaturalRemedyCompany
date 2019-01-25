@@ -13,7 +13,8 @@ RUN apk update && \
         curl \
         inotify-tools \
 		vim \
-		tzdata
+		tzdata \
+		certbot
 
 
 # Add the www user
