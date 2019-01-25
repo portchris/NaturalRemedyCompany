@@ -25,7 +25,7 @@ services:
       - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
       - ./env/nginx/webserver/defaults:/etc/nginx/defaults
       - ./env/nginx/webserver/global:/etc/nginx/global
-      - ./env/nginx/ssl/certs:/etc/letsencrypt/live/
+      - ./env/nginx/ssl/:/etc/letsencrypt/
       - ./env/nginx/share:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
