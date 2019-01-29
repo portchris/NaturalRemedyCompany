@@ -1,6 +1,6 @@
 server {
-	listen 80;
-    listen [::]:80;
+	listen 8080;
+	listen [::]:8080;
 	
 	server_name {VIRTUAL_HOST};
 	return 301 $scheme://www.{VIRTUAL_HOST}$request_uri;
@@ -8,8 +8,8 @@ server {
 
 server {
 
-    listen 80;
-    listen [::]:80;
+	listen 8080;
+	listen [::]:8080;
     
 	server_name www.{VIRTUAL_HOST};
 
@@ -35,8 +35,8 @@ server {
 	# SSL configuration
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
-	ssl_certificate /etc/letsencrypt/live/{VIRTUAL_HOST}/cert.pem;
-	ssl_certificate_key /etc/letsencrypt/live/{VIRTUAL_HOST}/privkey.pem;
+	ssl_certificate certs/default.crt;
+	ssl_certificate_key certs/default.key;
 	
 	# ssl_trusted_certificate ssl/certs/private/{VIRTUAL_HOST}.cert;
 	# proxy_ssl_trusted_certificate ssl/certs/private/{VIRTUAL_HOST}.cert;

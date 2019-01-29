@@ -1,17 +1,39 @@
 version: '3.1'
 
-networks:
-  naturalremedy:
-
 services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - ./env/letsencrypt/.env
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./env/nginx/certs:/etc/nginx/certs
+      - ./env/nginx/webserver/vhost.d:/etc/nginx/vhost.d
+      - ./env/nginx/share:/usr/share/nginx/html
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    volumes:
+      - ./env/nginx/certs:/etc/nginx/certs
+      - ./env/nginx/webserver/vhost.d:/etc/nginx/vhost.d
+      - ./env/nginx/share:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+
   nr_nginx:
     container_name: nr_nginx
     build: ./env/nginx
-    networks:
-      - naturalremedy
     ports:
-      - 80:80
-      - 443:443
+      - 8080:8080
+    expose:
+      - 80
+      - 443
     env_file:
       - ./env/nginx/.env
     depends_on:
@@ -25,15 +47,13 @@ services:
       - ./env/nginx/webserver/conf.d:/etc/nginx/conf.d
       - ./env/nginx/webserver/defaults:/etc/nginx/defaults
       - ./env/nginx/webserver/global:/etc/nginx/global
-      - ./env/nginx/ssl/:/etc/letsencrypt/
+      - ./env/nginx/certs/:/etc/nginx/certs
       - ./env/nginx/share:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   nr_mysql:
     container_name: nr_mysql
     build: ./env/mysql
-    networks:
-      - naturalremedy
     ports:
       - 3306:3306
     env_file:
@@ -46,8 +66,6 @@ services:
   nr_elasticsearch:
     build: ./env/elasticsearch
     container_name: nr_elasticsearch
-    networks:
-      - naturalremedy
     environment:
       - discovery.type=single-node
       - xpack.security.enabled=false
@@ -62,8 +80,6 @@ services:
   nr_mailhog:
     image: mailhog/mailhog:latest
     container_name: nr_mailhog
-    networks:
-      - naturalremedy
     ports:
       - 8025:8025
     depends_on:
@@ -73,8 +89,6 @@ services:
     image: redis:4-alpine
     container_name: nr_redis
     command: /usr/local/etc/redis/redis.conf
-    networks:
-      - naturalremedy
     ports:
       - 6379:6379
     volumes:
@@ -84,13 +98,10 @@ services:
     container_name: nr_php72
     build: ./env/php72
     hostname: php72
-    networks:
-      - naturalremedy
     depends_on:
       - nr_mysql
     ports:
       - 9000:9000
-      - 8080:8080
     volumes:
       - ./env/composer:/home/www/.composer
       - ./env/global/bashrc:/home/www/.bashrc
@@ -99,3 +110,8 @@ services:
       - ~/.gitconfig:/home/www/.gitconfig:ro
       - ./storage:/home/www/storage/naturalremedy
       - ./src:/home/www/naturalremedy/src
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
