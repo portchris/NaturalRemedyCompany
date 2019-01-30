@@ -9,8 +9,8 @@ ENV="/etc/nginx/.env"
 if [ -f $ENV ]; then
 	export $(grep -v '^#' $ENV | xargs)
 	
-	if [ -z ${VIRTUAL_HOST+x} ]; then
-		echo "VIRTUAL_HOST not set!"
+	if [ -z ${TEMPLATE+x} ]; then
+		echo "TEMPLATE not set!"
 		exit 1
 	fi
 
@@ -20,11 +20,11 @@ if [ -f $ENV ]; then
 
 	# Update CONF to match current domain env
 	if [ ! -f $CONF ]; then
-		CONF="/etc/nginx/conf.d/$VIRTUAL_HOST.template"
+		CONF="/etc/nginx/conf.d/$TEMPLATE.template"
 	fi
 
 	cp $CONF $CONF_DEFAULT
-	sed -i -e "s/{VIRTUAL_HOST}/${VIRTUAL_HOST}/g" $CONF_DEFAULT
+	sed -i -e "s/{TEMPLATE}/${TEMPLATE}/g" $CONF_DEFAULT
 	echo # \n
 	cat $CONF_DEFAULT
 	echo # \n
