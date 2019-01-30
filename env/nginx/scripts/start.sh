@@ -14,11 +14,6 @@ if [ -f $ENV ]; then
 		exit 1
 	fi
 
-	if [ -z ${WEBROOT+x} ]; then
-		echo "WEBROOT not set!"
-		exit 1
-	fi
-
 	if [ -f $CONF_DEFAULT ]; then
 		rm $CONF_DEFAULT
 	fi
@@ -26,12 +21,10 @@ if [ -f $ENV ]; then
 	# Update CONF to match current domain env
 	if [ ! -f $CONF ]; then
 		CONF="/etc/nginx/conf.d/$VIRTUAL_HOST.template"
-		# CONF_DEFAULT="/etc/nginx/vhost.d/$VIRTUAL_HOST.conf"
 	fi
 
 	cp $CONF $CONF_DEFAULT
 	sed -i -e "s/{VIRTUAL_HOST}/${VIRTUAL_HOST}/g" $CONF_DEFAULT
-	sed -i -e "s/{WEBROOT}/${WEBROOT}/g" $CONF_DEFAULT
 	echo # \n
 	cat $CONF_DEFAULT
 	echo # \n

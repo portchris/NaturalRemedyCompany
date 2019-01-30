@@ -1,0 +1,27 @@
+server {
+	listen 8080;
+	listen [::]:8080;
+	
+	server_name naturalremedy.company;
+	return 301 $scheme://www.naturalremedy.company$request_uri;
+}
+
+server {
+
+	listen 8080;
+	listen [::]:8080;
+    
+	server_name www.naturalremedy.company;
+
+	set $MAGE_ROOT /home/www/naturalremedy/src;
+	set $code default;
+	
+	root $MAGE_ROOT;
+	index index.php;
+
+	include /etc/nginx/defaults/magento1.conf;
+
+	location / {
+	    try_files $uri $uri/ /index.php$is_args$args;
+	}
+}
