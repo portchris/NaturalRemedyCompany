@@ -25,33 +25,3 @@ server {
 	    try_files $uri $uri/ /index.php$is_args$args;
 	}
 }
-
-server {
-	
-	# SSL configuration
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
-	ssl_certificate certs/www.naturalremedy.company.cert;
-	ssl_certificate_key certs/www.naturalremedy.company.key;
-	
-	# ssl_trusted_certificate certs/www.naturalremedy.company.cert;
-	# proxy_ssl_trusted_certificate certs/www.naturalremedy.company.cert;
-	# proxy_ssl_verify on;
-	# proxy_ssl_session_reuse on;
-	# proxy_ssl_name localhost;
-	include /etc/nginx/global/ssl-params.conf;
-
-	server_name www.naturalremedy.company;
-
-	set $MAGE_ROOT /home/www/naturalremedy/src;
-	set $code default;
-	
-	root $MAGE_ROOT;
-	index index.php;
-
-	include /etc/nginx/defaults/magento1.conf;
-
-	location / {
-	    try_files $uri $uri/ /index.php$is_args$args;
-	}
-}
