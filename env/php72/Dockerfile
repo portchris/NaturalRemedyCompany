@@ -94,7 +94,6 @@ RUN mkdir -p /var/lib/php/sessions && \
 # Config
 ADD ./config/php /etc/php/7.2/fpm
 ADD ./config/ssmtp /etc/ssmtp
-ADD ./config/index-before.php /home/www/config
 
 # Setup and add default CRON tasks
 ADD ./config/cron /etc/cron.d
