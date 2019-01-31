@@ -53,7 +53,7 @@ ADD ./.env /etc/nginx
 ADD ./certs /etc/nginx/certs
 
 # Add before PHP scripts
-ADD ./config/index-before.php /home/www/config
+ADD ./config/index-before.php /home/www/index-before.php
 
 # Install Certbot (LetsEncrypt)
 # RUN echo "deb http://ftp.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/stretch-backports.list && \

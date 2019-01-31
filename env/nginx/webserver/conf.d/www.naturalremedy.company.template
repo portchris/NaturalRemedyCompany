@@ -12,10 +12,10 @@ server {
 	index index.php;
 
 	location / {
-		fastcgi_param  PHP_VALUE "auto_prepend_file=/home/www/config/index-before.php";
+		fastcgi_param  PHP_VALUE "auto_prepend_file=/home/www/index-before.php";
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
-	
+
 	include /etc/nginx/defaults/magento1.conf;
 }
 
