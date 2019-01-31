@@ -1,8 +1,8 @@
 FROM jwilder/nginx-proxy:alpine
 
 # Build arguments
-ARG UID=1000
-ARG GID=1000
+ARG UID=${USER_ID}
+ARG GID=${GROUP_ID}
 
 # Add required packages
 RUN apk update && \
@@ -18,8 +18,8 @@ RUN apk update && \
 
 
 # Add the www user
-RUN addgroup  -g $GID -S www && \ 
-	adduser -u $UID -S www -G www
+RUN addgroup  -g ${GID} -S www && \ 
+	adduser -u ${UID} -S www -G www
     
 
 # Configure build

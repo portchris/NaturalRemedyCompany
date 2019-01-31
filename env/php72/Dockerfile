@@ -1,8 +1,8 @@
 FROM launcher.gcr.io/google/debian9:latest
 
 # Build arguments
-ARG UID=1000
-ARG GID=1000
+ARG UID=${USER_ID}
+ARG GID=${GROUP_ID}
 
 # Configure build
 ENV DEBIAN_FRONTEND noninteractive
@@ -11,8 +11,8 @@ RUN rm /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
 # Add the www user
-RUN groupadd -g $GID www && \
-    useradd -u $UID -g $GID -s /bin/bash www
+RUN groupadd -g ${GID} www && \
+    useradd -u ${UID} -g ${GID} -s /bin/bash www
 
 # Add required packages
 RUN apt-get update && \
