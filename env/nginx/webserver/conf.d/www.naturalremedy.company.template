@@ -11,11 +11,11 @@ server {
 	root $MAGE_ROOT;
 	index index.php;
 
+	include /etc/nginx/defaults/magento1.conf;
+	include /etc/nginx/global/php72.live.conf;
+
 	location / {
-		fastcgi_param  PHP_VALUE "auto_prepend_file=/home/www/index-before.php";
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
-
-	include /etc/nginx/defaults/magento1.conf;
 }
 

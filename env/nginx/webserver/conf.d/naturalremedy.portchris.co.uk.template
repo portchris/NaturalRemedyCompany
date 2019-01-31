@@ -3,7 +3,7 @@ server {
     listen 8080;
     listen [::]:8080;
     
-	server_name {VIRTUAL_HOST};
+	server_name naturalremedy.portchris.co.uk;
 
 	# Redirect to HTTPS
 	# location / {
@@ -16,38 +16,34 @@ server {
 	index index.php;
 
 	include /etc/nginx/defaults/magento1.conf;
+	include /etc/nginx/global/php72.conf;
 
 	location / {
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
 }
 
-server {
+# server {
 	
-	# SSL configuration
-	listen 443 ssl http2;
-	listen [::]:443 ssl http2;
-	ssl_certificate certs/default.crt;
-	ssl_certificate_key certs/default.key;
+# 	# SSL configuration
+# 	listen 443 ssl http2;
+# 	listen [::]:443 ssl http2;
+# 	ssl_certificate certs/default.crt;
+# 	ssl_certificate_key certs/default.key;
 	
-	# ssl_trusted_certificate ssl/certs/private/{VIRTUAL_HOST}.cert;
-	# proxy_ssl_trusted_certificate ssl/certs/private/{VIRTUAL_HOST}.cert;
-	# proxy_ssl_verify on;
-	# proxy_ssl_session_reuse on;
-	# proxy_ssl_name localhost;
-	include /etc/nginx/global/ssl-params.conf;
+# 	# include /etc/nginx/global/ssl-params.conf;
 
-	server_name {VIRTUAL_HOST};
+# 	server_name naturalremedy.portchris.co.uk;
 
-	set $MAGE_ROOT /home/www/naturalremedy/src;
-	set $code default;
+# 	set $MAGE_ROOT /home/www/naturalremedy/src;
+# 	set $code default;
 	
-	root $MAGE_ROOT;
-	index index.php;
+# 	root $MAGE_ROOT;
+# 	index index.php;
 
-	include /etc/nginx/defaults/magento1.conf;
+# 	include /etc/nginx/defaults/magento1.conf;
 
-	location / {
-	    try_files $uri $uri/ /index.php$is_args$args;
-	}
-}
+# 	location / {
+# 	    try_files $uri $uri/ /index.php$is_args$args;
+# 	}
+# }
