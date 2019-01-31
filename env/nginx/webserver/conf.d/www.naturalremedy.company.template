@@ -14,7 +14,7 @@ server {
 	include /etc/nginx/defaults/magento1.conf;
 
 	location / {
-		fastcgi_param HTTPS 'on';
+		fastcgi_param  PHP_VALUE "auto_prepend_file=/home/www/config/index-before.php";
 	    try_files $uri $uri/ /index.php$is_args$args;
 	}
 }
