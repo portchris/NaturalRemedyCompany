@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    //<![CDATA[
+    function submitWebhooks() {
+        new Ajax.Request('<?php echo $this->getWebhooksUrl() ?>', {
+            method:     'get',
+            onSuccess: function(transport) {
+                alert('Webhooks subscribed.');
+            },
+            onFailure: function(transport) {
+                alert('Couldn\'t subscribe.');
+            }
+        });
+    }
+    //]]>
+</script>
+<?php echo $this->getButtonHtml(); ?>&nbsp;

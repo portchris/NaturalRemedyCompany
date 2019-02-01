@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Squareup_Omni extension
+ */
+/**
+ * @category    Squareup
+ * @package     Squareup_Omni
+ * @copyright   2018
+ * @author      SquareUp
+ */
+-->
+<layout>
+    <default>
+        <reference name="head">
+            <block type="core/template" name="squareup.sqpaymentform" template="squareup/payment/head.phtml" />
+            <action method="addCss">
+                <stylesheet>css/squareup/sqpaymentform.css</stylesheet>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/squareup/squareup.js</name>
+                <params><![CDATA[data-group="js001"]]></params>
+                <if/>
+            </action>
+        </reference>
+    </default>
+    <squareup_omni_index_callback>
+        <block type="squareup_omni/callback" name="root" output="toHtml" template="squareup/callback.phtml"/>
+    </squareup_omni_index_callback>
+</layout>

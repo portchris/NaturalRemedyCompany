@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Squareup_Omni extension
+ */
+/**
+ * @category    Squareup
+ * @package     Squareup_Omni
+ * @copyright   2018
+ * @author      SquareUp
+ */
+-->
+<config>
+    <modules>
+        <Squareup_Omni>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Squareup_Omni>
+    </modules>
+</config>

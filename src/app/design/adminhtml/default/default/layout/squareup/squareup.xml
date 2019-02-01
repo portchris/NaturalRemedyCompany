@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<layout>
+
+    <adminhtml_catalog_product_simple>
+        <reference name="product_tabs">
+            <block type="squareup_omni/adminhtml_product_inventory" name="squareup_product" />
+        </reference>
+
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/squareup/product.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <script>css/squareup/locations.css</script>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_simple>
+    <adminhtml_sales_order_create_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/squareup/sqpaymentform.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="admin_squareup_sqpaymentform" as="admin_squareup_sqpaymentform" template="squareup/payment/head.phtml" />
+        </reference>
+    </adminhtml_sales_order_create_index>
+    
+    <adminhtml_customer_edit>
+        <reference name="customer_edit_tabs">
+            <action method="addTab"><name>customer_edit_tab_square_transactions</name>
+                <block>squareup_omni/adminhtml_customer_edit_tab_transactions</block>
+            </action>
+            <action method="addTab"><name>customer_edit_tab_square_refunds</name>
+                <block>squareup_omni/adminhtml_customer_edit_tab_refunds</block>
+            </action>
+        </reference>
+    </adminhtml_customer_edit>
+
+    <adminhtml_transaction_customergrid>
+        <block type="squareup_omni/adminhtml_customer_edit_tab_transactions" name="customer.square.transactions.grid"
+               output="toHtml"></block>
+    </adminhtml_transaction_customergrid>
+
+    <adminhtml_refunds_customergrid>
+        <block type="squareup_omni/adminhtml_customer_edit_tab_refunds" name="customer.square.refunds.grid"
+               output="toHtml"></block>
+    </adminhtml_refunds_customergrid>
+    <adminhtml_sales_order_view>
+        <reference name="order_tab_info">
+            <action method="setTemplate"><template>squareup/order/view/tab/info.phtml</template></action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>

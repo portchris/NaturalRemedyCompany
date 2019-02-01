@@ -1,0 +1,13 @@
+<?php
+$installer = $this;
+$installer->startSetup();
+
+$installer->run(
+    "ALTER TABLE {$installer->getTable('sales/quote_payment')}
+    ADD squareup_transaction VARCHAR( 255 ) NULL;
+  
+    ALTER TABLE {$installer->getTable('sales/order_payment')}
+    ADD squareup_transaction VARCHAR( 255 ) NULL;"
+);
+
+$installer->endSetup();

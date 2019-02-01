@@ -1,0 +1,155 @@
+<?php
+$configHelper = Mage::helper('squareup_omni/config');
+$inventories = $this->getInventory();
+$locationArr = $this->getLocations();
+
+$productId = Mage::app()->getRequest()->getParam('id');
+
+if (!$productId) {
+    $parentIds = Mage::getModel('catalog/product_type_configurable')->getParentIdsByChild($productId);
+    if (!empty($parentIds)) {
+        $childProductId = $productId;
+        $productId = $parentIds[0];
+    }
+}
+
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">
+            <?php echo $this->htmlEscape(Mage::helper('squareup_omni')->__('Square Location Inventory')); ?>
+        </h4>
+        <div class="right"></div>
+    </div>
+    <fieldset>
+        <legend><?php echo $this->htmlEscape($this->__('Square Inventory Location Associations')); ?></legend>
+        <div class="grid">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="data">
+                    <thead>
+                    <tr class="headings">
+                        <th><?php echo $this->htmlEscape($this->__('Location Name')); ?></th>
+                        <th><?php echo $this->htmlEscape($this->__('Status')); ?></th>
+                        <th><?php echo $this->htmlEscape($this->__('Quantity')); ?></th>
+                        <th><?php echo $this->htmlEscape($this->__('Calculated At')); ?></th>
+                        <th><?php echo $this->htmlEscape($this->__('Received At')); ?></th>
+                        <?php if ($configHelper->getSor() && $configHelper->isCatalogEnabled()): ?>
+                            <th><?php echo $this->htmlEscape($this->__('Actions')); ?></th>
+                        <?php endif; ?>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($inventories as $inventory): ?>
+                        <tr>
+                            <td class="location-name"
+                                data-location="<?php echo $this->htmlEscape($inventory->getLocationId()); ?>">
+                                <?php echo $this->htmlEscape($locationArr[$inventory->getLocationId()]); ?>
+                            </td>
+                            <td>
+                                <?php echo $this->htmlEscape($inventory->getStatus()); ?>
+                            </td>
+                            <?php if ($configHelper->getSor()): ?>
+                                <td>
+                                    <input type="text"
+                                           class="squareup-quantity"
+                                           name="quantity"
+                                           value="<?php echo $this->htmlEscape($inventory->getQuantity()); ?>" />
+                                </td>
+                            <?php else: ?>
+                                <td>
+                                    <?php echo $this->htmlEscape($inventory->getQuantity()); ?>
+                                </td>
+                            <?php endif; ?>
+                            <td>
+                                <?php echo $this->htmlEscape($inventory->getCalculatedAt()); ?>
+                            </td>
+                            <td>
+                                <?php echo $this->htmlEscape($inventory->getReceivedAt()); ?>
+                            </td>
+                            <?php if ($configHelper->getSor() && $configHelper->isCatalogEnabled()): ?>
+                                <td>
+                                    <button type="button" class="update-quantity">
+                                        <?php echo $this->htmlEscape('Update qty'); ?>
+                                    </button>
+                                    <button type="button" class="remove">
+                                        <?php echo $this->htmlEscape('Remove'); ?>
+                                    </button>
+                                </td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <?php if ($configHelper->getSor() && $configHelper->isCatalogEnabled()): ?>
+            <div class="add-location">
+                <button type="button" class="add-location">Add location</button>
+            </div>
+        <?php endif; ?>
+    </fieldset>
+</div>
+
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <?php
+        $newLocations = $this->getNewLocations();
+        if(!empty($newLocations)): ?>
+            <form id="my-custom-form" action="<?php echo $this->getUrl('adminhtml/square/location'); ?>" method="post">
+                <div>
+                    <input name="form_key"
+                           type="hidden"
+                           value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+                </div>
+                <div>
+                    <input name="product_id"
+                           type="hidden"
+                           value="<?php echo Mage::app()->getRequest()->getParam('id'); ?>" />
+                </div>
+                <table class="modal-inputs">
+                    <tr>
+                        <td>Location name</td>
+                        <td>
+                            <select name="location">
+                                <?php foreach ($this->getNewLocations() as $location): ?>
+                                    <option value="<?php echo $this->htmlEscape($location->getSquareId());?>">
+                                        <?php echo $this->htmlEscape($location->getName()) ;?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td>
+                            <input type="text" class="new-location-qty" name="qty" />
+                            <span class="qty-alert-message"></span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="save-location">
+                    <button type="button" class="save-location-button">Save</button>
+                </div>
+            </form>
+        <?php else: ?>
+            <div class="no-locations">
+                <span><?php echo $this->htmlEscape('No new locations available');?></span>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+<script>
+    var productId = <?php echo $productId; ?>;
+    <?php
+        if (isset($childProductId)) {
+            echo 'var childProductId = ' . $childProductId . ';';
+        }
+    ?>
+    var baseUrl = "<?php echo Mage::getBaseUrl('web'); ?>";
+    var removeSquareLocationUrl = "<?php echo Mage::helper('adminhtml')->getUrl(
+            'adminhtml/square/removeSquareInventory', array('_secure' => true)
+    ); ?>";
+    var locationId = "<?php echo Mage::helper('squareup_omni/config')->getLocationId(); ?>";
+</script>

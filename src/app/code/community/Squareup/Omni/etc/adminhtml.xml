@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Squareup_Omni extension
+ */
+/**
+ * @category    Squareup
+ * @package     Squareup_Omni
+ * @copyright   2018
+ * @author      SquareUp
+ */
+-->
+<config>
+    <menu>
+        <sales>
+            <children>
+                <squareup_omni translate="title" module="squareup_omni">
+                    <title>Square</title>
+                    <sort_order>35</sort_order>
+                    <children>
+                        <transaction translate="title" module="squareup_omni">
+                            <title>Transactions</title>
+                            <action>adminhtml/transaction/index</action>
+                            <sort_order>10</sort_order>
+                        </transaction>
+                        <refunds translate="title" module="squareup_omni">
+                            <title>Refunds</title>
+                            <action>adminhtml/refunds/index</action>
+                            <sort_order>20</sort_order>
+                        </refunds>
+                    </children>
+                </squareup_omni>
+            </children>
+        </sales>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <squareup_omni translate="title">
+                                        <title>Square Omni</title>
+                                        <sort_order>200</sort_order>
+                                    </squareup_omni>
+                                    <payment>
+                                        <children>
+                                            <squareup_payment translate="title">
+                                                <title>Square Payment</title>
+                                                <sort_order>200</sort_order>
+                                            </squareup_payment>
+                                        </children>
+                                    </payment>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <sales>
+                        <children>
+                            <squareup_omni translate="title">
+                                <title>Square</title>
+                                <children>
+                                    <transaction translate="title">
+                                        <title>Transaction</title>
+                                        <sort_order>200</sort_order>
+                                    </transaction>
+                                    <refunds translate="title">
+                                        <title>Refunds</title>
+                                        <sort_order>300</sort_order>
+                                    </refunds>
+                                </children>
+                            </squareup_omni>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

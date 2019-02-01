@@ -1,0 +1,6 @@
+<h4 id="squareup_omni_catalog_images_size">
+    <?php
+    $string = $this->__('There are ') . Mage::getModel('squareup_omni/catalog_images')->getCollectionSize() .
+        $this->__(' products that were updated and they don\'t have their image synchronized');
+    echo $this->urlEscape($string); ?>
+</h4>

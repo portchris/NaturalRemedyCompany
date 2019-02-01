@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    //<![CDATA[
+    function openConnection() {
+        var squareAppKey = $('squareup_omni_general_application_id');
+        var squareAppSecret = $('squareup_omni_general_application_secret');
+        if (squareAppKey.value.length === 0 || squareAppSecret.value.length === 0){
+            alert('Please fill in the Square Application Id and Square Application Secret');
+            return false;
+        }
+
+        var squareUrl = '<?php echo $this->htmlEscape($this->buildOauthUrl()); ?>' + squareAppKey.value;
+        window.open(squareUrl, '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+    }
+
+    function openRevoke() {
+        new Ajax.Request('<?php echo $this->getRevokeUrl() ?>', {
+            method:     'get',
+            onSuccess: function(transport) {
+                alert('Oauth token revoked.');
+                location.reload();
+            },
+            onFailure: function(transport) {
+                alert("Couldn't revoke oauth token.");
+            }
+        });
+    }
+    //]]>
+</script>
+<?php echo $this->getButtonHtml(); ?>&nbsp;
+<?php echo $this->getRevokeButtonHtml(); ?>

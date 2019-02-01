@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Squareup_Omni extension
+ */
+/**
+ * @category    Squareup
+ * @package     Squareup_Omni
+ * @copyright   2018
+ * @author      SquareUp
+ */
+-->
+<config>
+    <tabs>
+        <square_up translate="label" module="squareup_omni">
+            <label>Square</label>
+            <sort_order>200</sort_order>
+        </square_up>
+    </tabs>
+    <sections>
+        <squareup_omni translate="label" module="squareup_omni">
+            <label>Square Configuration</label>
+            <tab>square_up</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="squareup_omni">
+                    <label>General Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <application_mode translate="label">
+                            <label>Application Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>squareup_omni/system_config_source_options_mode</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </application_mode>
+                        <application_id translate="label comment" module="squareup_omni">
+                            <label>Square Application Id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                                1. Get Started: <a href="https://docs.connect.squareup.com/get-started">https://docs.connect.squareup.com/get-started</a>
+                                <br />
+                                2. Create App: <a href="https://connect.squareup.com/apps">https://connect.squareup.com/apps</a>
+                            ]]></comment>
+                            <depends>
+                                <application_mode>prod</application_mode>
+                            </depends>
+                        </application_id>
+                        <application_secret translate="label comment" module="squareup_omni">
+                            <label>Square Application Secret</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                            The square application secret found in your Square account.
+                            <br /><span style="color: red; font-weight:bold;">
+                            Important: Do not share your Application Secret with anyone. Do not store this value
+                            anywhere - you will not need to re-enter it again.</span>
+                            ]]></comment>
+                            <depends>
+                                <application_mode>prod</application_mode>
+                            </depends>
+                        </application_secret>
+                        <sandbox_application_id translate="label comment" module="squareup_omni">
+                            <label>Sandbox Application Id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The Sandbox Application Id found in your Square account ]]></comment>
+                            <depends>
+                                <application_mode>sandbox</application_mode>
+                            </depends>
+                        </sandbox_application_id>
+                        <sandbox_application_secret translate="label comment" module="squareup_omni">
+                            <label>Sandbox Access Token</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The Sandbox Access Token found in your Square account ]]></comment>
+                            <depends>
+                                <application_mode>sandbox</application_mode>
+                            </depends>
+                        </sandbox_application_secret>
+                        <sandbox_application_location translate="label comment" module="squareup_omni">
+                            <label>Sandbox Square Location for Online Payments</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>squareup_omni/system_config_source_options_location</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The square location found in your Square account ]]></comment>
+                            <depends>
+                                <application_mode>sandbox</application_mode>
+                            </depends>
+                        </sandbox_application_location>
+                        <location_id translate="label comment" module="squareup_omni">
+                            <label>Square Location for Online Payments</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>squareup_omni/system_config_source_options_location</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The square location found in your Square account ]]></comment>
+                            <depends>
+                                <application_mode>prod</application_mode>
+                            </depends>
+                        </location_id>
+                        <sandbox_documentation translate="label comment" module="squareup_omni">
+                            <label>Sandbox Documentation</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <application_mode>sandbox</application_mode>
+                            </depends>
+                        </sandbox_documentation>
+                    </fields>
+                </general>
+                <oauth_settings>
+                    <label>Oauth Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <oauth_message translate="label comment" module="squareup_omni">
+                            <label>Important Message!</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </oauth_message>
+                        <redirect_url translate="label comment">
+                            <label>Redirect Url</label>
+                            <comment>Retrieve OAuth Token</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Redirect Url for oauth configuration in square ]]></comment>
+                        </redirect_url>
+                        <application_oauth translate="label comment">
+                            <label>Get OAuth Token</label>
+                            <comment>Retrieve OAuth Token</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_oauth</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </application_oauth>
+                        <oauth_token translate="label comment" module="squareup_omni">
+                            <label>OAuth Access Token</label>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The OAuth Access Token is retrieved from Square after authorization ]]></comment>
+                        </oauth_token>
+                    </fields>
+                </oauth_settings>
+                <webhooks_settings>
+                    <label>Webhooks Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <webhook_url translate="label comment">
+                            <label>Webhook Url</label>
+                            <comment>Webhook Url</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Webhook Url in order to use the square webhooks ]]></comment>
+                        </webhook_url>
+                        <webhook_signature translate="label comment" module="squareup_omni">
+                            <label>Square Signature</label>
+                            <frontend_type>password</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ The square signiture ]]></comment>
+                        </webhook_signature>
+                        <webhook_button translate="label comment">
+                            <label>Register Webhooks</label>
+                            <comment>Register the inventory and payment webhooks</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_webhooks</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </webhook_button>
+                    </fields>
+                </webhooks_settings>
+                <customer translate="label" module="squareup_omni">
+                    <label>Customer Synchronization</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <customer_sync translate="label comment" module="squareup_omni">
+                            <label>Enable Customer Synchronization</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Enable the customer synchronization between Magento and Square ]]></comment>
+                        </customer_sync>
+                        <run_customer_sync translate="label comment">
+                            <label>Manual Customer Sync</label>
+                            <comment>Manually trigger customer sync</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_customer</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <customer_sync>1</customer_sync>
+                            </depends>
+                        </run_customer_sync>
+                    </fields>
+                </customer>
+                <catalog translate="label" module="squareup_omni">
+                    <label>Catalog and Inventory Synchronization</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <sor translate="label comment" module="squareup_omni">
+                            <label>System of records</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>squareup_omni/system_config_source_options_records</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                            Select the source of records in order to know the way the records are synchronized
+                            ]]></comment>
+                        </sor>
+                        <enable_catalog translate="label comment" module="squareup_omni">
+                            <label>Enable Catalog Synchronization</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Enable the synchronization of products between source of records and
+                            the client <br /><span style="font-weight: bold;">Please enable Catalog Sync in order to enable Inventory Sync.</span>
+                            ]]></comment>
+                        </enable_catalog>
+                        <run_catalog_sync translate="label comment">
+                            <label>Manual Catalog Sync</label>
+                            <comment>Manually trigger catalog sync</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_catalog</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_catalog>1</enable_catalog>
+                            </depends>
+                        </run_catalog_sync>
+                        <enable_inventory translate="label comment" module="squareup_omni">
+                            <label>Enable Inventory Synchronization</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Enable the synchronization of inventory between source of records and the client ]]></comment>
+                            <depends>
+                                <enable_catalog>1</enable_catalog>
+                            </depends>
+                        </enable_inventory>
+                        <run_inventory_sync translate="label comment">
+                            <label>Manual Inventory Sync</label>
+                            <comment>Manually trigger inventory sync</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_inventory</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable_catalog>1</enable_catalog>
+                                <enable_inventory>1</enable_inventory>
+                            </depends>
+                        </run_inventory_sync>
+                        <enable_images translate="label comment" module="squareup_omni">
+                            <label>Enable Catalog Images Synchronization</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ ]]></comment>
+                            <!--<depends>-->
+                                <!--<sor>1</sor>-->
+                                <!--<enable_catalog>1</enable_catalog>-->
+                            <!--</depends>-->
+                        </enable_images>
+                        <images_size translate="label comment" module="squareup_omni">
+                            <label>Images to upload</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<depends>-->
+                                <!--<sor>1</sor>-->
+                                <!--<enable_catalog>1</enable_catalog>-->
+                            <!--</depends>-->
+                        </images_size>
+                        <run_images_sync translate="label comment">
+                            <label>Manual Catalog Image Sync</label>
+                            <comment>Manually trigger catalog image sync</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_images</frontend_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<depends>-->
+                                <!--<sor>1</sor>-->
+                                <!--<enable_catalog>1</enable_catalog>-->
+                            <!--</depends>-->
+                        </run_images_sync>
+                    </fields>
+                </catalog>
+                <orders translate="label" module="squareup_omni">
+                    <label>Order and Transactions Synchronization</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <create_order translate="label comment" module="squareup_omni">
+                            <label>Create Square order</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Create Square Order when transaction is completed through Magento E-Commerce store ]]></comment>
+                        </create_order>
+                        <import_trans translate="label comment" module="squareup_omni">
+                            <label>Import transaction and refunds</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[ Import transaction and refunds from physical location  ]]></comment>
+                        </import_trans>
+                        <convert_transactions translate="label comment">
+                            <label>Convert transactions into orders</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <import_trans>1</import_trans>
+                            </depends>
+                        </convert_transactions>
+                        <run_import_trans translate="label comment">
+                            <label>Manual Transactions and Refunds Sync</label>
+                            <comment>Run the Transactions and Refunds sync before the cron job does it</comment>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_transactions</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <import_trans>1</import_trans>
+                            </depends>
+                        </run_import_trans>
+                    </fields>
+                </orders>
+            </groups>
+        </squareup_omni>
+        <payment>
+            <groups>
+                <squareup_payment translate="label" module="squareup_omni">
+                    <label>Square Payment Solution</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <payment_action translate="label comment">
+                            <label>Payment Action</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>40</sort_order>
+                            <source_model>squareup_omni/system_config_source_options_action</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>If you select Authorize Only please make sure you are creating the invoice not
+                                longer than 6 days, otherwise you will not be able to capture the amount.</comment>
+                        </payment_action>
+                        <enable_save_card_on_file translate="label comment">
+                            <label>Card on File</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>squareup_omni/system_config_source_options_cardonfile</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>When using "Only card on file" if you want no autorization or capture to be done
+                                for the customer, please select as payment action the value "Autorize only".</comment>
+                        </enable_save_card_on_file>
+                        <payment_message translate="label comment" module="squareup_omni">
+                            <label>Important Message!</label>
+                            <frontend_type>label</frontend_type>
+                            <frontend_model>squareup_omni/adminhtml_system_config_button_message</frontend_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <application_mode>prod</application_mode>
+                            </depends>
+                        </payment_message>
+                    </fields>
+                </squareup_payment>
+            </groups>
+        </payment>
+    </sections>
+</config>

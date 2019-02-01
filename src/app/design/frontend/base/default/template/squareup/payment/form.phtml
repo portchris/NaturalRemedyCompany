@@ -1,0 +1,170 @@
+<?php $helper = Mage::helper('squareup_omni'); ?>
+<?php $customerCards = null; ?>
+<?php if ($helper->haveSavedCards() && $helper->isSaveOnFileEnabled()) {
+    Mage::getModel('squareup_omni/card')->checkCcUpdates();
+} ?>
+<div id="payment_form_squareup_payment" style="display: none;">
+    <div class="message-wrapper"></div>
+    <div id="sq-ccbox">
+        <form id="nonce-form" novalidate
+              action="<?php echo $this->urlEscape($this->getUrl('square_magento/index/saveNonce')); ?>"
+              method="post">
+            <?php
+                if ($helper->haveSavedCards() && $helper->isSaveOnFileEnabled()) {
+                    echo $this->escapeHtml($helper->__('Pay with a saved Credit Card or use another Credit Card'));
+                } else {
+                    echo $this->escapeHtml($helper->__('Pay with a Credit Card'));
+                }
+            ?>
+            <?php if ($helper->haveSavedCards() && $helper->isSaveOnFileEnabled()) :?>
+                <?php $customerCards = $helper->getCustomerCards(); ?>
+                <?php if (!empty($customerCards)) : ?>
+                    <?php foreach ($customerCards as $cardId => $customerCard) : ?>
+                        <div id="square-customer-cards">
+                            <div id="squareup_payment_cards">
+                                <input id="squareup_payment_card_<?php echo $this->escapeHtml($cardId); ?>"
+                                       value="<?php echo $this->escapeHtml($cardId); ?>"
+                                       type="radio"
+                                       name="squareup_cards"
+                                       title="<?php  echo $this->escapeHtml(
+                                           $helper->getCardInputTitle($customerCard)
+                                       ); ?>"
+                                       class="radio"
+                                       autocomplete="off" />
+                                <label class="square-saved-card-label"
+                                       for="squareup_payment_card_<?php echo $this->escapeHtml($cardId); ?>">
+                                    <?php echo $helper->getCardInputTitle($customerCard); ?>
+                                </label>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <div id="square-customer-cards">
+                    <div id="squareup_pay_other_card">
+                        <input id="squareup_payment_other_card" value="other_card" type="radio" name="squareup_cards"
+                            title="<?php echo $this->escapeHtml($helper->__('Use other card')); ?>"
+                            class="radio"
+                            autocomplete="off">
+                        <label for="squareup_payment_other_card">
+                            <?php echo $this->escapeHtml($helper->__('Use other card')); ?>
+                        </label>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div id="square_form_fields" class="form-fields"
+                 style="<?php  echo ($helper->haveSavedCards() && $helper->isSaveOnFileEnabled()) ?  'display:none' :
+                     'display:block'; ?>">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="label-name"><?php echo $this->escapeHtml($helper->__('Card Number:')); ?></td>
+                        <td class="input-wrap"><div id="sq-card-number"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-name"><?php echo $this->escapeHtml($helper->__('CVV:')); ?></td>
+                        <td class="input-wrap"><div id="sq-cvv"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-name"><?php echo $this->escapeHtml($helper->__('Expiration Date:')); ?> </td>
+                        <td class="input-wrap"><div id="sq-expiration-date"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="label-name"><?php echo $this->escapeHtml($helper->__('Postal Code:')); ?></td>
+                        <td class="input-wrap"><div id="sq-postal-code"></div></td>
+                    </tr>
+                    <?php if($helper->canSaveCards()): ?>
+                        <tr style=" <?php echo ($helper->displaySaveCcCheckbox())? '': 'display:none;'; ?>">
+                            <td class="label-name">
+                                <?php echo $this->escapeHtml(
+                                    $helper->__(
+                                        'Save this credit card for future payments'
+                                    )
+                                ); ?>
+                            </td>
+                            <td class="input-wrap">
+                                <input id="save-square-card" type="checkbox" name="payment[save_square_card]"/>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    <?php if(false === $this->isOnePageCheckout()) :?>
+                        <tr>
+                            <td colspan="2">
+                                <button id="sq-creditcard"
+                                        class="button-credit-card"
+                                        onclick="Squareup.requestCardNonce(event)">
+                                    <?php echo $this->escapeHtml($helper->__('Pay with card')); ?>
+                                </button>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                    </tbody>
+                </table>
+                <input type="hidden" id="card-nonce" name="payment[nonce]">
+                <?php if($helper->canSaveCards() && empty($customerCards) && $helper->isSaveOnFileEnabled()) : ?>
+                    <input type="hidden" id="save_square_cards_empty" name="payment[save_square_card]"/>
+                <?php endif; ?>
+                <?php if($helper->onlyCardOnFileEnabled()) : ?>
+                    <p><?php echo $this->__('Your card will be automatically saved securely on Square.') ?></p>
+                <?php endif; ?>
+            </div>
+        </form>
+    </div>
+<!--    <div id="sq-walletbox">-->
+<!--    --><?php //echo $this->escapeHtml($helper->__('Pay with a Digital Wallet')); ?>
+<!--        <div id="sq-apple-pay-label" class="wallet-not-enabled">-->
+<!--            --><?php //echo $this->escapeHtml($helper->__('Apple Pay for Web not enabled')); ?>
+<!--        </div>-->
+<!--        <button id="sq-apple-pay" class="button-apple-pay"></button>-->
+<!---->
+<!--        <div id="sq-masterpass-label" class="wallet-not-enabled">-->
+<!--            --><?php //echo $this->escapeHtml($helper->__('Masterpass not enabled')); ?>
+<!--        </div>-->
+<!--        <button id="sq-masterpass" class="button-masterpass"></button>-->
+<!--    </div>-->
+    <script type="text/javascript">
+        Squareup.initPayment();
+        var onlyCardOnFileEnabled = <?php echo ($helper->canSaveCards() && $helper->onlyCardOnFileEnabled()) ? true :
+            'false'; ?>;
+        jQuery(document).ready(function() {
+            if(onlyCardOnFileEnabled == true) {
+                jQuery('#save_square_cards_empty').val('1');
+            }
+
+            jQuery('input[type=radio][name=squareup_cards]').change(function() {
+                if (this.value == 'other_card') {
+                    if (onlyCardOnFileEnabled == true) {
+                        var input = document.createElement("input");
+                        input.type = 'hidden';
+                        input.name = 'payment[save_square_card]';
+                        input.id = 'save_card_on_file_input';
+                        input.value = 1;
+                        document.getElementById("square_form_fields").appendChild(input);
+                    }
+                    document.getElementById("square_form_fields").style.display = "block";
+                    jQuery('input[name="payment[nonce]"]').val('');
+                }
+                else {
+                    var element =  document.getElementById('save_card_on_file_input');
+                    if (typeof(element) != 'undefined' && element != null)
+                    {
+                        // jQuery('input[name="payment[save_square_card]"]').remove();
+                        jQuery('input[name="payment[save_square_card]"]').val('');
+                    }
+
+                    document.getElementById("square_form_fields").style.display = "none";
+                    jQuery('input[name="payment[nonce]"]').val(this.value);
+                }
+            });
+
+            jQuery('#save-square-card').on('change', function(){
+                if(jQuery(this).is(':checked')){
+                    jQuery(this).val('1');
+                    jQuery('#save_square_cards_empty').val('1');
+                }else{
+                    jQuery(this).val('');
+                    jQuery('#save_square_cards_empty').val('');
+                }
+            });
+        });
+    </script>
+</div>

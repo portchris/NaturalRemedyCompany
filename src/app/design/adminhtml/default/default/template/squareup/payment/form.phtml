@@ -1,0 +1,104 @@
+<?php $code = $this->getMethodCode() ?>
+<?php $helper = Mage::helper('squareup_omni'); ?>
+<?php $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote() ?>
+<?php $shippingMethod = $quote->getShippingAddress()->getShippingMethod(); ?>
+<ul id="payment_form_<?php echo $this->escapeHtml($code); ?>" style="display:none">
+    <input type="hidden" id="card-nonce" name="payment[nonce]">
+    <?php if(empty($shippingMethod)): ?>
+        <li style="overflow: hidden;">
+            <p><?php echo $this->escapeHtml(
+                $this->__(
+                    'Please select the shipping method first. The payment can be proceeded only after the order has the 
+                    final grand total'
+                )
+            ); ?></p>
+        </li>
+    <?php else: ?>
+        <li style="overflow: hidden;">
+            <div id="sq-ccbox">
+                <form id="nonce-form" novalidate
+                      action="<?php echo $this->urlEscape($this->getUrl('square_magento/index/saveNonce')); ?>"
+                      method="post">
+                    <?php echo $this->escapeHtml($helper->__('Pay with a Credit Card')); ?>
+                    <div id="square_form_fields" class="form-fields"
+                         style="<?php  echo $helper->haveSavedCards() ?  'display:none' : 'display:block'; ?>">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="label-name">
+                                    <?php echo $this->escapeHtml($helper->__('Card Number:')); ?>
+                                </td>
+                                <td class="input-wrap"><div id="sq-card-number"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-name">
+                                    <?php echo $this->escapeHtml($helper->__('CVV:')); ?>
+                                </td>
+                                <td class="input-wrap"><div id="sq-cvv"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-name">
+                                    <?php echo $this->escapeHtml($helper->__('Expiration Date:')); ?>
+                                </td>
+                                <td class="input-wrap"><div id="sq-expiration-date"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="label-name">
+                                    <?php echo $this->escapeHtml($helper->__('Postal Code:')); ?>
+                                </td>
+                                <td class="input-wrap"><div id="sq-postal-code"></div></td>
+                            </tr>
+                            <?php if($helper->canSaveCards()): ?>
+                                <tr>
+                                    <td class="label-name">
+                                        <?php echo $this->escapeHtml(
+                                            $helper->__('Save this credit card for future payments')
+                                        ); ?>
+                                    </td>
+                                    <td class="input-wrap">
+                                        <input id="save-square-card" type="checkbox"
+                                               value="1" name="payment[save_square_card]"/>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                            <tr>
+                                <td colspan="2">
+                                    <button id="sq-creditcard"
+                                            class="button-credit-card"
+                                            onclick="Squareup.requestCardNonce(event)">
+                                        <?php echo $this->escapeHtml($helper->__('Pay with card')); ?>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div id="sq-walletbox">
+                <?php echo $this->escapeHtml($helper->__('Pay with a Digital Wallet')); ?>
+                <div id="sq-apple-pay-label" class="wallet-not-enabled">
+                    <?php echo $this->escapeHtml($helper->__('Apple Pay for Web not enabled')); ?>
+                </div>
+                <button id="sq-apple-pay" class="button-apple-pay"></button>
+
+                <div id="sq-masterpass-label" class="wallet-not-enabled">
+                    <?php echo $this->escapeHtml($helper->__('Masterpass not enabled')); ?>
+                </div>
+                <button id="sq-masterpass" class="button-masterpass"></button>
+            </div>
+            <script type="text/javascript">
+                document.observe(
+                    "dom:loaded", function () {
+                        Squareup.init();
+                        Squareup.initPayment();
+                    }
+                );
+                if (typeof (Squareup) !== 'undefined') {
+                    Squareup.init();
+                    Squareup.initPayment();
+                }
+            </script>
+        </li>
+    <?php endif; ?>
+</ul>

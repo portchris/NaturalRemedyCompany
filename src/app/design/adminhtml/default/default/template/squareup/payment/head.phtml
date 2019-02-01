@@ -1,0 +1,14 @@
+<script type="text/javascript" src="https://js.squareup.com/v2/paymentform"></script>
+<script>
+    var SquareupApplicationId = '<?php
+            $configHelper = Mage::helper('squareup_omni/config');
+            if ($configHelper->isSandbox()) {
+                echo $this->htmlEscape($configHelper->getApplicationId(true));
+            } else {
+                echo $this->htmlEscape($configHelper->getApplicationId());
+            }
+        ?>';
+    var SquareupLocationId = "<?php echo $this->htmlEscape(Mage::helper('squareup_omni/config')->getLocationId()); ?>";
+</script>
+<script type="text/javascript"
+        src="<?php echo Mage::getBaseUrl('skin') ?>adminhtml/default/default/js/squareup/squareup.js"></script>
