@@ -4,6 +4,9 @@
 		<NaturalRemedyCo_Squareup>
 			<active>true</active>
 			<codePool>local</codePool>
+			<depends>
+				<Squareup_Omni />
+			</depends>
 		</NaturalRemedyCo_Squareup>
 	</modules>
 </config>

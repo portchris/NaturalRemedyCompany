@@ -7,11 +7,11 @@
 	</modules>
 	<global>
 		<helpers>
-			<nrcsquare>
+			<squareup_omni>
 				<rewrite>
-					<data>Squareup_Omni_Helper_Data</data>
+					<data>NaturalRemedyCo_Squareup_Helper_Data</data>
 				</rewrite>
-			</nrcsquare>
+			</squareup_omni>
 		</helpers>
 	</global>
 </config>
