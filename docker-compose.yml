@@ -76,6 +76,7 @@ services:
       - nr_mysql
     ports:
       - 9000:9000
+      - 3000:3000
     volumes:
       - ./env/composer:/home/www/.composer
       - ./env/global/bashrc:/home/www/.bashrc

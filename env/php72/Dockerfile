@@ -78,7 +78,14 @@ RUN apt-get update && \
 	autoconf \
 	libc-dev \
 	pkg-config \
-	libmcrypt-dev
+	libmcrypt-dev \
+	software-properties-common
+
+# Install NPM & Node.Js
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
+	nodejs
 
 # Install mcrypt (legacy for M1)
 RUN pecl install mcrypt-1.0.1
@@ -107,7 +114,7 @@ RUN curl -sS -o n98-magerun.phar https://files.magerun.net/n98-magerun.phar &&  
 	chmod +x n98-magerun.phar && \
 	mv n98-magerun.phar /usr/local/bin/n98-magerun.phar
 
-EXPOSE 9000
+EXPOSE 9000 3000
 
 # Install Ioncube
 # RUN bash /scripts/install-ioncube.sh

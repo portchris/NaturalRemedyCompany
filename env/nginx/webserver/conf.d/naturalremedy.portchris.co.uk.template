@@ -23,6 +23,27 @@ server {
 	}
 }
 
+server {
+
+    listen 8080;
+    listen [::]:8080;
+    
+	server_name faceandfigure.portchris.co.uk;
+
+	set $MAGE_ROOT /home/www/naturalremedy/src;
+	set $code faceandfigure;
+	
+	root $MAGE_ROOT;
+	index index.php;
+
+	include /etc/nginx/defaults/magento1.conf;
+	include /etc/nginx/global/php72.conf;
+
+	location / {
+		try_files $uri $uri/ /index.php$is_args$args;
+	}
+}
+
 # server {
 	
 # 	# SSL configuration
