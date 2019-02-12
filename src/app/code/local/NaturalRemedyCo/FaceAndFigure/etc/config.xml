@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+	<modules>
+		<NaturalRemedyCo_FaceAndFigure>
+			<version>1.0.0</version>
+		</NaturalRemedyCo_FaceAndFigure>
+	</modules>
+	<global>
+		<blocks>
+			<faceandfigure>
+				<class>NaturalRemedyCo_FaceAndFigure_Block</class>
+			</faceandfigure>
+		</helpers>
+	</global>
+	<frontend>
+		<layout>
+			<updates>
+				<ff_layout module="NaturalRemedyCo_FaceAndFigure">
+					<file>faceandfigure.xml</file>
+				</ff_layout>
+			</updates>
+		</layout>
+	</frontend>
+</config>
