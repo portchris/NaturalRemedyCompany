@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <layout>
-	<reference name="content">
-		<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" />
-	</reference>
+	<page_empty>
+		<reference name="content">
+			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" />
+			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" />
+			<block type="faceandfigure/main" name="main" as="main" template="faceandfigure/main.phtml" />
+			<block type="faceandfigure/treatments" name="treatments" as="treatments" template="faceandfigure/treatments.phtml" />
+			<block type="faceandfigure/contact" name="contact" as="contact" template="faceandfigure/contact.phtml" />
+			<block type="faceandfigure/footer" name="footer" as="footer" template="faceandfigure/footer.phtml" />
+		</reference>
+	</page_empty>
 </layout>
