@@ -1,0 +1,40 @@
+<?php
+    /** @var Ess_M2eProUpdater_Block_Adminhtml_Configuration_Changelog $this */
+?>
+
+<div id="changelog_popup">
+
+    <div style="padding-top: 10px;">
+
+        <?php foreach ($this->getAffectedReleases() as $version => $release) : ?>
+            <div style="margin-bottom: 13px;">
+                <span>
+
+                    <?php if (!$this->hasChangeLogsRecords($release)) { continue; } ?>
+
+                    <strong><?php echo $version; ?></strong>
+                    <?php if (!empty($release['release_notes'])) : ?>
+                        &nbsp;
+                        <a href="<?php echo $release['release_notes']; ?>" target="_blank"><?php echo Mage::helper('M2eProUpdater')->__('[release notes]'); ?></a>
+                    <?php endif; ?>
+                </span>
+                <div style="margin-top: 3px;">
+                    <?php foreach ($release['changelog'] as $type => $changelogRecords) : ?>
+                        <div style="margin-top: 3px;">
+                            <?php foreach ($changelogRecords as $changelogRecord) : ?>
+                                <span><?php printf('*  %s: %s', ucfirst($type), $changelogRecord); ?></span><br/>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+        <div class="clear"></div>
+    </div>
+
+    <div style="text-align: right; margin-bottom: 20px;">
+        <?php echo $this->getChildHtml('close_button'); ?>
+    </div>
+
+</div>

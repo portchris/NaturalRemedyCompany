@@ -1,0 +1,22 @@
+#row_installation_upgrade_information_current_version .value strong {
+    font-weight: bold;
+    color: red;
+}
+#row_installation_upgrade_information_latest_version .value strong,
+#row_installation_upgrade_system_information_latest_version .value strong {
+    font-weight: bold;
+    color: green;
+}
+#row_installation_upgrade_information_latest_version .value a,
+#row_installation_upgrade_system_information_latest_version .value a {
+    padding-left: 15px;
+}
+
+.configuration-fieldset-after-container {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+}
+.configuration-fieldset-after-container ~ fieldset {
+    border-top: none !important;
+}

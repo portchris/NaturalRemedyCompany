@@ -1,0 +1,5 @@
+MAILTO=""
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+SHELL=/bin/bash
+
+* * * * * www php /home/www/naturalremedy/src/app/code/community/Ess/M2eProUpdater/m2epro_updater_cron.php

@@ -1,0 +1,18 @@
+<?php
+    /** @var Ess_M2eProUpdater_Block_Adminhtml_Messages $this */
+    /** @var Mage_Core_Model_Message_Abstract $message */
+?>
+
+<ul style="margin-top: 5px;" class="messages">
+    <?php foreach ($this->getMessages() as $message): ?>
+    <li class="<?php echo $this->getCssClass($message); ?>">
+        <ul>
+            <li>
+                <div style="display: inline-block; width: 92%;">
+                    <?php echo $message->getText(); ?>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <?php endforeach; ?>
+</ul>

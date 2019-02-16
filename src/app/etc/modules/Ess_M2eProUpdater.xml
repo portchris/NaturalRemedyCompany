@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ess_M2eProUpdater>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Ess_M2eProUpdater>
+    </modules>
+</config>

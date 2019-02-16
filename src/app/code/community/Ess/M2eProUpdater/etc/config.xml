@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ess_M2eProUpdater>
+            <version>1.3.1</version>
+        </Ess_M2eProUpdater>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Ess_M2eProUpdater after="Mage_Adminhtml">Ess_M2eProUpdater_Adminhtml</Ess_M2eProUpdater>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Ess_M2eProUpdater>
+                    <files>
+                        <default>Ess_M2eProUpdater.csv</default>
+                    </files>
+                </Ess_M2eProUpdater>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <installation_upgrade>
+                                            <title>Installation \ Upgrade</title>
+                                            <sort_order>1</sort_order>
+                                        </installation_upgrade>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <M2eProUpdater module="M2eProUpdater">
+                    <file>M2eProUpdater.xml</file>
+                </M2eProUpdater>
+            </updates>
+        </layout>
+        <events>
+
+            <!-- system configuration edit -->
+            <controller_action_predispatch_adminhtml_system_config_edit>
+                <observers>
+                    <M2eProUpdater_observer>
+                        <type>singleton</type>
+                        <class>Ess_M2eProUpdater_Observer_Configuration</class>
+                        <method>editAction</method>
+                    </M2eProUpdater_observer>
+                </observers>
+            </controller_action_predispatch_adminhtml_system_config_edit>
+
+            <!-- system configuration save -->
+            <controller_action_predispatch_adminhtml_system_config_save>
+                <observers>
+                    <M2eProUpdater_observer>
+                        <type>singleton</type>
+                        <class>Ess_M2eProUpdater_Observer_Configuration</class>
+                        <method>saveAction</method>
+                    </M2eProUpdater_observer>
+                </observers>
+            </controller_action_predispatch_adminhtml_system_config_save>
+
+            <!-- system configuration init config -->
+            <adminhtml_init_system_config>
+                <observers>
+                    <M2eProUpdater_observer>
+                        <type>singleton</type>
+                        <class>Ess_M2eProUpdater_Observer_Configuration</class>
+                        <method>initSystemConfig</method>
+                    </M2eProUpdater_observer>
+                </observers>
+            </adminhtml_init_system_config>
+
+            <!-- notifications -->
+            <controller_action_postdispatch>
+                <observers>
+                    <M2eProUpdater_observer>
+                        <type>singleton</type>
+                        <class>Ess_M2eProUpdater_Observer_Notification</class>
+                        <method>add</method>
+                    </M2eProUpdater_observer>
+                </observers>
+            </controller_action_postdispatch>
+
+        </events>
+    </adminhtml>
+    <global>
+        <models>
+            <M2eProUpdater>
+                <class>Ess_M2eProUpdater_Model</class>
+                <resourceModel>M2eProUpdater_mysql4</resourceModel>
+            </M2eProUpdater>
+        </models>
+        <resources>
+            <M2eProUpdater_setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </M2eProUpdater_setup>
+            <M2eProUpdater_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </M2eProUpdater_write>
+            <M2eProUpdater_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </M2eProUpdater_read>
+        </resources>
+        <blocks>
+            <M2eProUpdater>
+                <class>Ess_M2eProUpdater_Block</class>
+            </M2eProUpdater>
+        </blocks>
+        <helpers>
+            <M2eProUpdater>
+                <class>Ess_M2eProUpdater_Helper</class>
+            </M2eProUpdater>
+        </helpers>
+    </global>
+</config>

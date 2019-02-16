@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <m2epro_updater translate="label">
+            <label>M2E Pro Updater</label>
+            <sort_order>101</sort_order>
+        </m2epro_updater>
+    </tabs>
+    <sections>
+        <installation_upgrade translate="label" module="M2eProUpdater">
+            <label>%action%</label>
+            <tab>m2epro_updater</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+
+                <messages translate="label" module="M2eProUpdater">
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <frontend_model>M2eProUpdater/adminhtml_configuration_messages</frontend_model>
+                </messages>
+
+                <help translate="label text" module="M2eProUpdater">
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <frontend_model>M2eProUpdater/adminhtml_configuration_help</frontend_model>
+                </help>
+
+                <information translate="label" module="M2eProUpdater">
+                    <label>M2E Pro Extension</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>100</sort_order>
+                    <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Fieldset</frontend_model>
+                    <fields>
+                        <current_version translate="label">
+                            <label>Current Version</label>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_Information_CurrentVersion</frontend_model>
+                        </current_version>
+                        <latest_version translate="label">
+                            <label>Latest Version</label>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_Information_LatestVersion</frontend_model>
+                        </latest_version>
+                    </fields>
+                </information>
+
+                <automatic_upgrade translate="label" module="M2eProUpdater">
+                    <label>Automatic %action%</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>200</sort_order>
+                    <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Fieldset_AutomaticUpgrade</frontend_model>
+                    <fields>
+                        <schedule_upgrade translate="label">
+                            <frontend_type>button</frontend_type>
+                            <label>Schedule %action%</label>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_AutomaticUpgrade_ScheduleUpgrade</frontend_model>
+                        </schedule_upgrade>
+                        <decline_upgrade translate="label">
+                            <frontend_type>button</frontend_type>
+                            <label>Decline %action%</label>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_AutomaticUpgrade_DeclineUpgrade</frontend_model>
+                        </decline_upgrade>
+                    </fields>
+                </automatic_upgrade>
+
+                <manual_upgrade translate="label" module="M2eProUpdater">
+                    <label>Alternative %action%</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>300</sort_order>
+                    <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Fieldset_ManualUpgrade</frontend_model>
+                </manual_upgrade>
+
+                <settings translate="label" module="M2eProUpdater">
+                    <label>New Version Notification Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>400</sort_order>
+                    <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Fieldset</frontend_model>
+                    <fields>
+                        <notifications translate="label">
+                            <label>Notify me</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_Settings_Notification</frontend_model>
+                        </notifications>
+                        <m2ePro_minimum_stability translate="label">
+                            <label>Minimum Stability [M2ePro]</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_Settings_M2eProMinimumStability</frontend_model>
+                        </m2ePro_minimum_stability>
+                        <updater_minimum_stability translate="label">
+                            <label>Minimum Stability [Updater]</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_Settings_UpdaterMinimumStability</frontend_model>
+                        </updater_minimum_stability>
+                    </fields>
+                </settings>
+
+                <system_information translate="label" module="M2eProUpdater">
+                    <label>%action% Module</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>500</sort_order>
+                    <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Fieldset_SystemInformation</frontend_model>
+                    <fields>
+                        <current_version translate="label">
+                            <label>Current Version</label>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_SystemInformation_CurrentVersion</frontend_model>
+                        </current_version>
+                        <latest_version translate="label">
+                            <label>Latest Version</label>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>Ess_M2eProUpdater_Block_Adminhtml_Configuration_Field_SystemInformation_LatestVersion</frontend_model>
+                        </latest_version>
+                    </fields>
+                </system_information>
+
+            </groups>
+        </installation_upgrade>
+    </sections>
+</config>

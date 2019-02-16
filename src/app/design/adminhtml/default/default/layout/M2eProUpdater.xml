@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>M2eProUpdater/css/configuration/main.css</stylesheet></action>
+            <action method="addCss"><stylesheet>M2eProUpdater/css/notice_block.css</stylesheet></action>
+            <action method="addCss"><stylesheet>M2eProUpdater/css/tool_tip.css</stylesheet></action>
+            <action method="addJs"><script>M2eProUpdater/General/UrlHandler.js</script></action>
+            <action method="addJs"><script>M2eProUpdater/General/TranslatorHandler.js</script></action>
+            <action method="addJs"><script>M2eProUpdater/Plugin/FieldTip.js</script></action>
+            <action method="addJs"><script>M2eProUpdater/Initialization.js</script></action>
+        </reference>
+        <reference name="notifications">
+            <block type="M2eProUpdater/adminhtml_system_message" name="m2eProUpdater_system_message"></block>
+        </reference>
+    </default>
+</layout>
