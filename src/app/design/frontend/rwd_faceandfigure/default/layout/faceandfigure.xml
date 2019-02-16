@@ -2,8 +2,8 @@
 <layout>
 	<page_empty>
 		<reference name="content">
-			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" />
-			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" />
+			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" before="-" />
+			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" before="hero" />
 			<block type="faceandfigure/main" name="main" as="main" template="faceandfigure/main.phtml" />
 			<block type="faceandfigure/treatments" name="treatments" as="treatments" template="faceandfigure/treatments.phtml" />
 			<block type="faceandfigure/contact" name="contact" as="contact" template="faceandfigure/contact.phtml" />

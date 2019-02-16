@@ -28,6 +28,8 @@
 /**
  * Template for Mage_Page_Block_Html
  */
+$reactLib = Mage::getSingleton('core/design_package')->getSkinUrl() . DS . 'js/lib/require.js';
+$mainJs = Mage::getSingleton('core/design_package')->getSkinUrl() . DS . 'js/main.js';
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +42,10 @@
 
 <head>
     <?php echo $this->getChildHtml('head') ?>
+	<!-- Load React.Js -->
+	<script type="text/javascript" src="<?= $reactLib ?>"></script>
 </head>
 <body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
-	<h1>HERE</h1>
     <div>
         <?php echo $this->getChildHtml('after_body_start') ?>
         <?php echo $this->getChildHtml('global_messages') ?>

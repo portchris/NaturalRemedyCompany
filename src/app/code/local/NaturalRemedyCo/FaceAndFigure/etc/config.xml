@@ -10,7 +10,7 @@
 			<faceandfigure>
 				<class>NaturalRemedyCo_FaceAndFigure_Block</class>
 			</faceandfigure>
-		</helpers>
+		</blocks>
 	</global>
 	<frontend>
 		<layout>
