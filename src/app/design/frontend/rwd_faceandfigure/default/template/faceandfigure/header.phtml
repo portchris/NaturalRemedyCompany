@@ -5,8 +5,12 @@
  * @since 	2019-01-11 <1.0.0>
  * @var 	NaturalRemedyCo_FaceAndFigure_Block_Header 	$this
  */
-?>
+$reactComponents = $this->getComponentsRegistry();
+$reactComponents[] = $this->getReactComponent();
+Mage::register('react_components', $reactComponents); ?>
 <script type="text/javascript">
 	window.config = (window.config != null) ? window.config : {};
+	window.config.component = (window.config.component != null) ? window.config.component : [];
 	window.config.header = <?= $this->getBlockConfig(); ?>;
 </script>
+<header id="header"></header>

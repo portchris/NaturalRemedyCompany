@@ -33,9 +33,21 @@ class NaturalRemedyCo_FaceAndFigure_Block_Header extends Mage_Core_Block_Templat
 		], true);
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getReactComponent()
 	{
-		return Mage::getSingleton('core/design_package')->getSkinBaseDir() . DS . "js" . DS . "components" . DS . self::REACT_COMPONENT . ".js";
+		return Mage::getSingleton('core/design_package')->getSkinUrl()	 . "js" . DS . "components" . DS . self::REACT_COMPONENT . ".js";
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getComponentsRegistry()
+	{
+		return (Mage::registry('react_components', Mage::app()->getStore()->getId())) ? Mage::registry('react_components', Mage::app()->getStore()->getId()) : [];
+
 	}
 }
 ?>

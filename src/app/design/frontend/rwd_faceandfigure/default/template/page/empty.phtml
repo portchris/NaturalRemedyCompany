@@ -57,7 +57,13 @@ $mainJs = $skinUrl . 'js/main.js';
 
 	<!-- Load React.Js -->
 	<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-	<script type="text/javascript" src="<?= $reactLib ?>"></script>
-	<script type="text/javascript" src="<?= $reactDomLib ?>"></script>
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+	<?php 
+	$reactComponents = Mage::registry('react_components', Mage::app()->getStore()->getId());
+	foreach ($reactComponents as $component): ?>
+		<script src="<?= $component; ?>"></script>
+		<?php
+	endforeach; ?>
 </body>
 </html>
