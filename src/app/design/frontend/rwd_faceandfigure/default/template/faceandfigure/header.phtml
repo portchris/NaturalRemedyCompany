@@ -9,9 +9,4 @@
 <script type="text/javascript">
 	window.config = (window.config != null) ? window.config : {};
 	window.config.header = <?= $this->getBlockConfig(); ?>;
-	require.config({
-		paths: {
-			"header": "<?= $this->getReactComponent() ?>"
-		}
-	});
 </script>
