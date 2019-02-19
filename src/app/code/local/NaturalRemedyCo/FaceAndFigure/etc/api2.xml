@@ -1,0 +1,35 @@
+<config>
+	<api2>
+		<resource_groups>
+			<ffapi translate="title" module="faceandfigure">
+				<title>Store</title>
+				<sort_order>10</sort_order>
+			</ffapi>
+		</resource_groups>
+		<resources>        
+			<ffapi_store translate="title" module="faceandfigure">
+				<group>ffapi</group>
+				<model>faceandfigure/api2_restapi</model>
+				<title>Store Information</title>
+				<sort_order>11</sort_order>
+				<privileges>
+					<guest>
+						<retrieve>1</retrieve>
+					</guest>
+				</privileges>
+				<attributes translate="attribute1 attribute2 attribute3" module="faceandfigure">
+					<attribute1>attribute1</attribute1>
+					<attribute2>attribute2</attribute2>
+					<attribute3>attribute3</attribute3>                    
+				</attributes>
+				<routes>
+					<route_collection>
+						<route>/faceandfigure/store/info</route>
+						<action_type>collection</action_type>
+					</route_collection>
+				</routes>
+				<versions>1</versions>
+			</ffapi_store>
+		</resources>
+	</api2>
+</config>

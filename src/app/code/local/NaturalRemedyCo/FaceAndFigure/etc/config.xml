@@ -11,6 +11,21 @@
 				<class>NaturalRemedyCo_FaceAndFigure_Block</class>
 			</faceandfigure>
 		</blocks>
+		<helpers>
+			<faceandfigure>
+				<class>NaturalRemedyCo_FaceAndFigure_Helper</class>
+			</faceandfigure>
+		</helpers>
+		<models>
+			<faceandfigure>
+				<class>NaturalRemedyCo_FaceAndFigure_Model</class>
+			</faceandfigure>
+			<api2>
+				<rewrite>
+					<request>NaturalRemedyCo_FaceAndFigure_Model_Api2_Request</request>
+				</rewrite>
+			</api2>
+		</models>
 	</global>
 	<frontend>
 		<layout>

@@ -87,8 +87,8 @@ RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 	nodejs
 
-# Install mcrypt (legacy for M1)
-RUN pecl install mcrypt-1.0.1
+# Install mcrypt (legacy for M1) and OAuth for Magento 1.9
+RUN pecl install mcrypt-1.0.1 oauth
 
 # Fix issue with php sessions
 RUN mkdir -p /var/lib/php/sessions && \
@@ -100,6 +100,7 @@ RUN mkdir -p /var/lib/php/sessions && \
 
 # Config
 ADD ./config/php /etc/php/7.2/fpm
+ADD ./config/php/conf.d /etc/php/7.2/mods-available
 ADD ./config/ssmtp /etc/ssmtp
 ADD ./config/index-before.php /home/www/index-before.php
 
