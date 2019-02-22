@@ -14,12 +14,22 @@ class NaturalRemedyCo_FaceAndFigure_Block_Header extends Mage_Core_Block_Templat
 	const REACT_COMPONENT = "header";
 
 	/**
+	 * @var Mage_Core_Design_Package
+	 */
+	protected $_design;
+
+
+	/**
 	 * @var Mage_Core_Model_Store
 	 */
 	protected $_store;
 
-	public function __construct() 
+	/**
+	 * Magento contructor
+	 */
+	public function _construct()
 	{
+		$this->_design = Mage::getSingleton('core/design_package');
 		$this->_store = Mage::app()->getStore();
 	}
 
@@ -28,9 +38,11 @@ class NaturalRemedyCo_FaceAndFigure_Block_Header extends Mage_Core_Block_Templat
 	 */
 	public function getBlockConfig()
 	{
-		return json_encode([
-			"title" => $this->_store->getFrontendName() 
-		], true);
+		$logoSrc = Mage::getStoreConfig('design/header/logo_src'); 
+		return [
+			"title" => $this->_store->getFrontendName(),
+			"logo" => $this->_design->getSkinUrl($logoSrc)
+		];
 	}
 
 	/**
@@ -38,7 +50,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Header extends Mage_Core_Block_Templat
 	 */
 	public function getReactComponent()
 	{
-		return Mage::getSingleton('core/design_package')->getSkinUrl()	 . "js" . DS . "components" . DS . self::REACT_COMPONENT . ".js";
+		return $this->_design->getSkinUrl()	. "js" . DS . "components" . DS . self::REACT_COMPONENT . ".js";
 	}
 
 	/**
@@ -46,8 +58,17 @@ class NaturalRemedyCo_FaceAndFigure_Block_Header extends Mage_Core_Block_Templat
 	 */
 	public function getComponentsRegistry()
 	{
-		return (Mage::registry('react_components', Mage::app()->getStore()->getId())) ? Mage::registry('react_components', Mage::app()->getStore()->getId()) : [];
+		return (Mage::registry('react_components', $this->_store->getId())) ? Mage::registry('react_components', $this->_store->getId()) : [];
 
+	}
+
+	/**
+	 * Override default get using getChildHtml, return JSON instead
+	 * @return JSON
+	 */
+	public function _toHtml()
+	{
+		return $this->getBlockConfig();
 	}
 }
 ?>

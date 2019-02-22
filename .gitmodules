@@ -1,0 +1,3 @@
+[submodule "src/app/design/frontend/rwd_faceandfigure/default/faceandfigure"]
+	path = src/app/design/frontend/rwd_faceandfigure/default/faceandfigure
+	url = git@github.com:portchris/faceandfiguresalon.git

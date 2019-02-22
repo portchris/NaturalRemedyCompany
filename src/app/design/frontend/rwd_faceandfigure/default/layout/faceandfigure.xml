@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <layout>
 	<page_empty>
-		<reference name="content">
+	</page_empty>
+	<nrc_layout_index_index>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>faceandfigure/main.phtml</template>
+			</action>
 			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" before="-" />
 			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" before="hero" />
 			<block type="faceandfigure/main" name="main" as="main" template="faceandfigure/main.phtml" />
@@ -9,5 +14,5 @@
 			<block type="faceandfigure/contact" name="contact" as="contact" template="faceandfigure/contact.phtml" />
 			<block type="faceandfigure/footer" name="footer" as="footer" template="faceandfigure/footer.phtml" />
 		</reference>
-	</page_empty>
+	</nrc_layout_index_index>
 </layout>

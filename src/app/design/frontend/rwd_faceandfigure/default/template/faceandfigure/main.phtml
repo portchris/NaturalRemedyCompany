@@ -5,5 +5,8 @@
  * @since 	2019-01-11 <1.0.0>
  * @var 	NaturalRemedyCo_FaceAndFigure_Block_Hero 	$this
  */
-?>
-<div>Main</div>
+$data = [
+	"header" => $this->getChildHtml("header")
+];
+
+echo json_encode($data, true); ?>

@@ -53,7 +53,7 @@
 				<use>standard</use>
 				<args>
 					<module>NaturalRemedyCo_NRCLayout</module>
-					<frontName>nrc_layout</frontName>
+					<frontName>info</frontName>
 				</args>
 			</nrc_layout>
 			<contacts>
