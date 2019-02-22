@@ -40,6 +40,11 @@ server {
 	include /etc/nginx/global/php72.conf;
 
 	location / {
+		add_header 'Access-Control-Allow-Origin' '*';
+		add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS';
+		add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+		add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range';
+		add_header Set-Cookie "kek=7fukucsuji1n1ddcntc0ri4vi; Version=1; Path=/; Max-Age=100000";
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
 }
