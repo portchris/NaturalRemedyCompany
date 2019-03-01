@@ -18,6 +18,7 @@ class NaturalRemedyCo_NRCLayout_IndexController extends Mage_Core_Controller_Fro
 	 */
 	public function _construct() 
 	{
+		header("Access-Control-Allow-Origin: *");
 		$this->_store = Mage::app()->getStore();
 	}
 
