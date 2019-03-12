@@ -3,7 +3,7 @@
 	<nrc_layout_index_index>
 		<reference name="root">
 			<action method="setTemplate">
-				<template>faceandfigure/main.phtml</template>
+				<template>faceandfigure/layout.phtml</template>
 			</action>
 			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" before="-" />
 			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" before="hero" />

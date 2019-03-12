@@ -10,13 +10,12 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 {
 	const REACT_COMPONENT = "treatments";
 
-	protected $_treatments;
+	public $_categoryCollection;
 
-	public function __construct() 
+	public function __construct()
 	{
-		// $this->_treatments = [
-		// 	"" =>  $this->getLayout()->createBlock('cms/block')->setBlockId('')->toHtml()
-		// ];
+		$this->_categoryCollection = Mage::getModel('catalog/category');
+		parent::__construct();
 	}
 
 	/**
@@ -24,8 +23,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 	 */
 	public function getBlockConfig()
 	{
-		return [
-		];
+		return $this->getTreatments();
 	}
 
 	/**
@@ -34,6 +32,45 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 	public function getReactComponent()
 	{
 		return $this->retrieveReactComponent(self::REACT_COMPONENT);
+	}
+
+	/**
+	 * Get Treatments from categories
+	 * @return array $t
+	 */
+	private function getTreatments()
+	{
+		$d = 0;
+		$treatments = [];
+		$collection = $this->_categoryCollection->getCollection()
+			->addNameToResult()
+			->addUrlRewriteToResult()
+			->addAttributeToFilter('url_key', self::REACT_COMPONENT)
+			->getFirstItem();
+		$categoryId = $collection->getEntityId();
+		do {
+			$t = [];
+			$category = $this->_categoryCollection->load($categoryId);
+			$children = ($category->getChildren()) ? explode(",", $category->getChildren()) : [];
+			$parent = ($d === 0) ? $d : $category->getParentCategory()->getEntityId();
+			$t[] = [
+				"depth" => $d,
+				"data" => $category->getData(),
+				"children" => $children,
+				"parent" => $parent
+			];
+			$treatments = array_merge($treatments, $t);
+			if ($children) {
+				$t = $this->_categoryCollection->load($children[0]);
+				$d++;
+			} else {
+				$t = $parent;
+				$d--;
+			}
+			break;
+		} while ($t !== 0 && $d >= 0);
+		return $treatments;
+		
 	}
 }
 ?>

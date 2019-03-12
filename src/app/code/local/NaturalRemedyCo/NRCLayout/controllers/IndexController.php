@@ -31,7 +31,6 @@ class NaturalRemedyCo_NRCLayout_IndexController extends Mage_Core_Controller_Fro
 	{
 		$this->getResponse()->setHeader('Content-type', 'application/json');
 		$this->loadLayout();
-		// $this->getResponse()->setBody();
 		$this->renderLayout();
 	}
 }
