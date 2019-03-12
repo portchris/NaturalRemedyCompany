@@ -3,10 +3,15 @@
  *
  * @author 	Chris Rogers <chris@portchris.co.uk>
  * @since 	2019-01-11 <1.0.0>
- * @var 	NaturalRemedyCo_FaceAndFigure_Block_Hero 	$this
+ * @var 	NaturalRemedyCo_FaceAndFigure_Block_Main 	$this
  */
 $data = [
-	"header" => $this->getChildHtml("header")
+	"header" 		=> $this->getChildHtml("header"),
+	"hero" 			=> $this->getChildHtml("hero"),
+	"main"			=> $this->getChildHtml("main"),
+	"treatments" 	=> $this->getChildHtml("treatments"),
+	"contact" 		=> $this->getChildHtml("contact"),
+	"footer"		=> $this->getChildHtml("footer")
 ];
 
 echo json_encode($data, true); ?>

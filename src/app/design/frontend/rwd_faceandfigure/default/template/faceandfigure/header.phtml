@@ -8,9 +8,3 @@
 $reactComponents = $this->getComponentsRegistry();
 $reactComponents[] = $this->getReactComponent();
 Mage::register('react_components', $reactComponents); ?>
-<script type="text/javascript">
-	window.config = (window.config != null) ? window.config : {};
-	window.config.component = (window.config.component != null) ? window.config.component : [];
-	window.config.header = <?= $this->getBlockConfig(); ?>;
-</script>
-<header id="header"></header>

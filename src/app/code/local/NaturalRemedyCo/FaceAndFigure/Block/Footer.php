@@ -1,16 +1,35 @@
 <?php
 /**
- * Main block class for Face & Figure Salon Onepage React Web App
+ * Footer block class for Face & Figure Salon Onepage React Web App
  * 
  * @author      Chris Rogers
  * @package     rwd_faceandfigure_default
  * @since       2019-01-12
 */
-class NaturalRemedyCo_FaceAndFigure_Block_Footer extends Mage_Core_Block_Template 
+class NaturalRemedyCo_FaceAndFigure_Block_Footer extends NaturalRemedyCo_FaceAndFigure_Block_PageAbstract implements NaturalRemedyCo_FaceAndFigure_Block_PageInterface
 {
+	const REACT_COMPONENT = "footer";
+
 	public function __construct() 
 	{
-		
+		parent::__construct();	
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getBlockConfig()
+	{
+		return [
+		];
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getReactComponent()
+	{
+		return $this->retrieveReactComponent(self::REACT_COMPONENT);
 	}
 }
 ?>
