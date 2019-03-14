@@ -33,5 +33,11 @@ class NaturalRemedyCo_NRCLayout_IndexController extends Mage_Core_Controller_Fro
 		$this->loadLayout();
 		$this->renderLayout();
 	}
+
+	public function formAction()
+	{
+		$this->loadLayout();
+		$this->renderLayout();
+	}
 }
 ?>

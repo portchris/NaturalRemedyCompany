@@ -13,4 +13,13 @@
 			<block type="faceandfigure/footer" name="footer" as="footer" template="faceandfigure/footer.phtml" />
 		</reference>
 	</nrc_layout_index_index>
+	<nrc_layout_index_form>
+		<remove name="header" />
+		<remove name="footer" />
+		<remove name="right" />
+		<remove name="left" />
+		<reference name="content">
+			<block type="faceandfigure/form" name="wufoo" as="wufoo" template="page/html/contact-form.phtml" before="-" />
+		</reference>
+	</nrc_layout_index_form>
 </layout>
