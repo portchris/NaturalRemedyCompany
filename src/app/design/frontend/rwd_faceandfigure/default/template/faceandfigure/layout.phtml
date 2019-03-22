@@ -5,7 +5,8 @@
  * @since 	2019-01-11 <1.0.0>
  */
 $data = [
-	"uri" 				=> Mage::getBaseUrl(),
+	"uri" 			=> Mage::getBaseUrl(),
+	"head" 			=> $this->getChildHtml("head"),
 	"header" 		=> $this->getChildHtml("header"),
 	"hero" 			=> $this->getChildHtml("hero"),
 	"main"			=> $this->getChildHtml("main"),
@@ -14,4 +15,5 @@ $data = [
 	"footer"		=> $this->getChildHtml("footer")
 ];
 
-echo json_encode($data, true); ?>
+echo json_encode($data, true);
+ 

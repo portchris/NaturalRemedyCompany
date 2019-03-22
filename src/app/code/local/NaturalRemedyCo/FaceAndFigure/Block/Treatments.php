@@ -60,7 +60,6 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 		$this->_treatments[] = $this->setCategoryData($category, $depth);
 		$this->createCategoryTree($this->_treatments, $depth, $categoryId);
 		return $this->_treatments;
-		
 	}
 
 	/**
@@ -68,7 +67,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 	 * @param 	Mage_Catalog_Model_Category
 	 * @return 	array
 	 */
-	private function setCategoryData(Mage_Catalog_Model_Category $category, $depth)
+	private function setCategoryData($category, $depth)
 	{
 		$children = ($category->getChildren()) ? explode(",", $category->getChildren()) : [];
 		$parentId = ($depth === 0) ? $depth : $category->getParentCategory()->getEntityId();
@@ -91,7 +90,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 			if (is_array($c)) {
 
 				// This category data has already been set
-				if ($c["parent_id"] == $parentId) {					
+				if ($c["parent_id"] == $parentId) {
 
 					// This is the depth we want to set
 					$c = $this->setCategoryData($cat, $depth);
@@ -125,4 +124,4 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 		}
 	}
 }
-?>
+ 

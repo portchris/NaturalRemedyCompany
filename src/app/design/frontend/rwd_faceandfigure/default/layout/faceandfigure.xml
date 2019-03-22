@@ -5,9 +5,10 @@
 			<action method="setTemplate">
 				<template>faceandfigure/layout.phtml</template>
 			</action>
+			<block type="faceandfigure/head" name="head" as="head" template="page/html/head.phtml" before="-" />
 			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" before="-" />
 			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" before="hero" />
-			<block type="faceandfigure/main" name="main" as="main" template="faceandfigure/page/html/main.phtml" />
+			<block type="faceandfigure/main" name="main" as="main" template="page/html/main.phtml" />
 			<block type="faceandfigure/treatments" name="treatments" as="treatments" template="faceandfigure/treatments.phtml" />
 			<block type="faceandfigure/contact" name="contact" as="contact" template="faceandfigure/contact.phtml" />
 			<block type="faceandfigure/footer" name="footer" as="footer" template="faceandfigure/footer.phtml" />
