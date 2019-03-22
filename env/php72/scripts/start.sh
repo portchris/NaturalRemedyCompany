@@ -19,8 +19,8 @@ fi
 if [ ! -d /home/www/.config ]; then
 	mkdir /home/www/.config
 fi
-if [ -d /home/www/naturalremedy/src/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/node_modules ]; then
-	chmod -R 755 ~/naturalremedy/src/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/node_modules
+if [ -d $SRC/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/node_modules ]; then
+	chmod -R 755 $SRC/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/node_modules
 fi
 chown -R www:www /home/www/.npm
 chown -R www:www /home/www/.config

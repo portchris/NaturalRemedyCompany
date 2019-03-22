@@ -51,6 +51,11 @@ RUN chmod +x -R /scripts
 #    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee -a /etc/apt/sources.list.d/yarn.list && \
 #    apt-get update -o Dir::Etc::sourcelist="sources.list.d/yarn.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
 
+# FIX Debian Stretch Error: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B188E2B695BD4743
+RUN apt-get update && \
+	apt-get install -y dirmngr && \
+	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys B188E2B695BD4743
+
 # Install php with extensions
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
