@@ -59,6 +59,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 		$category = $this->_categoryCollection->load($categoryId);
 		$this->_treatments[] = $this->setCategoryData($category, $depth);
 		$this->createCategoryTree($this->_treatments, $depth, $categoryId);
+		// echo "<pre>"; Zend_Debug::dump($this->_treatments); die;
 		return $this->_treatments;
 	}
 
@@ -73,7 +74,13 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 		$parentId = ($depth === 0) ? $depth : $category->getParentCategory()->getEntityId();
 		return [
 			"depth" => $depth,
-			"data" => $category->toArray(),
+			// "data" => $category->toArray(),
+			"data" => [
+				"url_path" => $category->getUrl(),
+				"name" => $category->getName(),
+				"image" => $category->getImage(),
+				"h1_title" => $category->getH1Title()
+			],
 			"parent_id" => $parentId,
 			"children" => $children
 		];
@@ -107,7 +114,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 			} else if (is_numeric($c)) {
 
 				// Here is a valid child, but data is yet to be populated
-				$categoryObj = $this->_categoryCollection->load($c);
+				$categoryObj = Mage::getModel('catalog/category')->load($c);
 				if ($categoryObj) {
 					$c = $this->setCategoryData($categoryObj, $depth);
 					if (!empty($c["children"])) {
@@ -119,7 +126,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 			} else {
 
 				// Not found, continue down tree
-				$this->createCategoryTree($child, $depth + 1, $parentId);
+				$this->createCategoryTree($cat, $depth + 1, $parentId);
 			}
 		}
 	}
