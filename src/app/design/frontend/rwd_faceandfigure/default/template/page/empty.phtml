@@ -33,7 +33,6 @@ $requireLib = $skinUrl . 'js/lib/require.js';
 $reactLib = $skinUrl . 'js/lib/react.production.min.js';
 $reactDomLib = $skinUrl . 'js/lib/react-dom.production.min.js';
 $mainJs = $skinUrl . 'js/main.js';
-phpinfo();
 ?>
 
 <!DOCTYPE html>
@@ -42,29 +41,29 @@ phpinfo();
 <!--[if IE 7 ]>    <html lang="en" id="top" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" id="top" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" id="top" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" id="top" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" id="top" class="no-js">
+<!--<![endif]-->
 
 <head>
-    <?php echo $this->getChildHtml('head') ?>
+	<?php echo $this->getChildHtml('head') ?>
 </head>
-<body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
-    <div>
-        <?php echo $this->getChildHtml('after_body_start') ?>
-        <?php echo $this->getChildHtml('global_messages') ?>
-        <?php echo $this->getChildHtml('content') ?> <!-- This is where the layout xml defines the bulk blocks in Admin > CMS -->
-        <?php echo $this->getChildHtml('before_body_end') ?>
-        <?php echo $this->getAbsoluteFooter() ?>
-    </div>
 
-	<!-- Load React.Js -->
-	<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-	<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-	<?php 
+<body class="page-empty <?php echo $this->getBodyClass() ? $this->getBodyClass() : '' ?>">
+	<div>
+		<?php echo $this->getChildHtml('after_body_start') ?>
+		<?php echo $this->getChildHtml('global_messages') ?>
+		<?php echo $this->getChildHtml('content') ?>
+		<!-- This is where the layout xml defines the bulk blocks in Admin > CMS -->
+		<?php echo $this->getChildHtml('before_body_end') ?>
+		<?php echo $this->getAbsoluteFooter() ?>
+	</div>
+	<?php
 	$reactComponents = Mage::registry('react_components', Mage::app()->getStore()->getId());
-	foreach ($reactComponents as $component): ?>
+	foreach ($reactComponents as $component) : ?>
 		<script src="<?= $component; ?>"></script>
-		<?php
-	endforeach; ?>
+	<?php
+endforeach; ?>
 </body>
+
 </html>

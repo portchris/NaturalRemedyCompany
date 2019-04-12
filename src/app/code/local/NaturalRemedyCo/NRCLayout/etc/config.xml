@@ -45,7 +45,17 @@
 					<use>core_setup</use>
 				</connection>
 			</cat_attr>
-		</resources> 
+		</resources>
+		<events>
+			<controller_action_layout_render_before>
+				<observers>
+					<nrcaddheaders>
+						<class>NaturalRemedyCo_NRCLayout_Model_Observer</class>
+						<method>addHeaders</method>
+					</nrcaddheaders>
+				</observers>
+			</controller_action_layout_render_before>
+		</events>
 	</global>
 	<frontend>
 		<routers>
