@@ -36,8 +36,10 @@ class NaturalRemedyCo_NRCLayout_IndexController extends Mage_Core_Controller_Fro
 
 	public function formAction()
 	{
+		$this->getResponse()->setHeader('X-Frame-Options', 'ALLOWALL', true);
 		$this->loadLayout();
 		$this->renderLayout();
 	}
 }
+
 ?>
