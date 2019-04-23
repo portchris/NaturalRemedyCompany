@@ -9,6 +9,7 @@
 			<block type="faceandfigure/hero" name="hero" as="hero" template="faceandfigure/hero.phtml" before="-" />
 			<block type="faceandfigure/header" name="header" as="header" template="faceandfigure/header.phtml" before="hero" />
 			<block type="faceandfigure/main" name="main" as="main" template="page/html/main.phtml" />
+			<block type="faceandfigure/promo" name="promo" as="promo" template="faceandfigure/promo.phtml" after="main" />
 			<block type="faceandfigure/treatments" name="treatments" as="treatments" template="faceandfigure/treatments.phtml" />
 			<block type="faceandfigure/contact" name="contact" as="contact" template="faceandfigure/contact.phtml" />
 			<block type="faceandfigure/footer" name="footer" as="footer" template="faceandfigure/footer.phtml" />
