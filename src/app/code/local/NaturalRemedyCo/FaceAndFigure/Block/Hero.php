@@ -20,8 +20,13 @@ class NaturalRemedyCo_FaceAndFigure_Block_Hero extends NaturalRemedyCo_FaceAndFi
 	 */
 	public function getBlockConfig()
 	{
+		$title = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('faceandfigure_hero')->getTitle();
+		$block = $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_hero');
 		return [
-			"data" => $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_hero')->toHtml()
+			"data" => [
+				'title' => $title,
+				'content'=> $block->toHtml()
+			]
 		];
 	}
 
