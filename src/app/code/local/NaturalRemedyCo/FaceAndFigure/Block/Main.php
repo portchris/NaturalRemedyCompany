@@ -22,8 +22,16 @@ class NaturalRemedyCo_FaceAndFigure_Block_Main extends NaturalRemedyCo_FaceAndFi
 	 */
 	public function getBlockConfig()
 	{
+		$title1 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('faceandfigure_desc_1')->getTitle();
+		$title2 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('faceandfigure_desc_2')->getTitle();
+		$block1 = $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_desc_1');
+		$block2 = $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_desc_2');
 		return [
 			"content" => $this->getMainContent(),
+			"description" => [
+				["title" => $title1, "content" => $block1->toHtml()],
+				["title" => $title2, "content" => $block2->toHtml()]
+			]
 		];
 	}
 
