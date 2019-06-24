@@ -27,7 +27,7 @@ class NaturalRemedyCo_FaceAndFigure_Block_Contact extends NaturalRemedyCo_FaceAn
 		$title3 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_us_private_faceandfigure')->getTitle();
 		$block1 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_why_faceandfigure')->toHtml();
 		$block2 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_tech_faceandfigure')->toHtml();
-		$block3 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_private_faceandfigure')->toHtml();		 
+		$block3 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_private_faceandfigure')->toHtml();	 
 		return [
 			"title" => $this->getContactTitle(), 
 			"content" => $this->getContactContent(),
