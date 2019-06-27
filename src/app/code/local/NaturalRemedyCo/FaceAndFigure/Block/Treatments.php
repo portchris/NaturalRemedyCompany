@@ -79,7 +79,8 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 				"url_path" => $category->getUrl(),
 				"name" => $category->getName(),
 				"image" => $category->getImage(),
-				"h1_title" => $category->getH1Title()
+				"h1_title" => $category->getH1Title(),
+				"content" => $category->getDescription()
 			],
 			"parent_id" => $parentId,
 			"children" => $children
