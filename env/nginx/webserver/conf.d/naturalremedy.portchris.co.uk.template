@@ -27,7 +27,7 @@ server {
     include /etc/nginx/global/locations.conf;
     include /etc/nginx/global/static-m1.conf;
     location / {
-        try_files $uri $uri/ /index.php$is_args$args;
+        try_files $uri $uri/ /index.html$is_args$args;
     }
 }
 server {
