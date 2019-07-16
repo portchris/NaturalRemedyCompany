@@ -15,3 +15,12 @@ if [ -z ${GROUP_ID+x} ]; then
 fi
 
 docker-compose up -d --remove-orphans
+
+# install Face & Figure Salon
+docker-compose exec -u www nr_php72 npm --prefix /home/www/naturalremedy/src/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/ install
+
+# Build Face & Figure Salon
+docker-compose exec -u www nr_php72 npm --prefix /home/www/naturalremedy/src/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/ run build
+
+# Export Face & Figure Salon
+docker-compose exec -u www nr_php72 npm --prefix /home/www/naturalremedy/src/app/design/frontend/rwd_faceandfigure/default/faceandfiguresalon/ run export
