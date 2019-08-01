@@ -11,8 +11,14 @@ class NaturalRemedyCo_FaceAndFigure_Block_Contact extends NaturalRemedyCo_FaceAn
 	const PAGE_KEY = "contact-face-and-figure-salon";
 	const REACT_COMPONENT = "contact";
 
+	/**
+	 * @var 	Mage_Core_Model_Store
+	 */
+	public $_storeManager;
+
 	public function __construct() 
 	{
+		$this->_storeManager = Mage::app()->getStore();
 		parent::__construct();	
 		$this->setPage(self::PAGE_KEY, 'identifier');
 	}
@@ -22,9 +28,9 @@ class NaturalRemedyCo_FaceAndFigure_Block_Contact extends NaturalRemedyCo_FaceAn
 	 */
 	public function getBlockConfig()
 	{
-		$title1 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_us_why_faceandfigure')->getTitle();
-		$title2 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_us_tech_faceandfigure')->getTitle();
-		$title3 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('contact_us_private_faceandfigure')->getTitle();
+		$title1 = Mage::getModel('cms/block')->setStoreId($this->_storeManager->getId())->load('contact_us_why_faceandfigure')->getTitle();
+		$title2 = Mage::getModel('cms/block')->setStoreId($this->_storeManager->getId())->load('contact_us_tech_faceandfigure')->getTitle();
+		$title3 = Mage::getModel('cms/block')->setStoreId($this->_storeManager->getId())->load('contact_us_private_faceandfigure')->getTitle();
 		$block1 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_why_faceandfigure')->toHtml();
 		$block2 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_tech_faceandfigure')->toHtml();
 		$block3 = $this->getLayout()->createBlock('cms/block')->setBlockId('contact_us_private_faceandfigure')->toHtml();	 

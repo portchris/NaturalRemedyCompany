@@ -11,8 +11,14 @@ class NaturalRemedyCo_FaceAndFigure_Block_Main extends NaturalRemedyCo_FaceAndFi
 	const PAGE_KEY = "faceandfigure";
 	const REACT_COMPONENT = "main";
 
+	/**
+	 * @var 	Mage_Core_Model_Store
+	 */
+	public $_storeManager;
+
 	public function __construct() 
 	{
+		$this->_storeManager = Mage::app()->getStore();
 		parent::__construct();	
 		$this->setPage(self::PAGE_KEY, 'identifier');
 	}
@@ -22,8 +28,8 @@ class NaturalRemedyCo_FaceAndFigure_Block_Main extends NaturalRemedyCo_FaceAndFi
 	 */
 	public function getBlockConfig()
 	{
-		$title1 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('faceandfigure_desc_1')->getTitle();
-		$title2 = Mage::getModel('cms/block')->setStoreId(Mage::app()->getStore()->getId())->load('faceandfigure_desc_2')->getTitle();
+		$title1 = Mage::getModel('cms/block')->setStoreId($this->_storeManager->getId())->load('faceandfigure_desc_1')->getTitle();
+		$title2 = Mage::getModel('cms/block')->setStoreId($this->_storeManager->getId())->load('faceandfigure_desc_2')->getTitle();
 		$block1 = $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_desc_1');
 		$block2 = $this->getLayout()->createBlock('cms/block')->setBlockId('faceandfigure_desc_2');
 		return [

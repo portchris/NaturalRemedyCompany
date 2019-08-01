@@ -16,14 +16,20 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 	public $_categoryCollection;
 
 	/**
+	 * @var 	Mage_Core_Model_Store
+	 */
+	public $_storeManager;
+
+	/**
 	 * @var 	array
 	 */
 	public $_treatments;
 
 	public function __construct()
 	{
-		$this->_categoryCollection = Mage::getModel('catalog/category');
 		$this->_treatments = [];
+		$this->_categoryCollection = Mage::getModel('catalog/category');
+		$this->_storeManager = Mage::app()->getStore();
 		parent::__construct();
 	}
 
@@ -50,9 +56,9 @@ class NaturalRemedyCo_FaceAndFigure_Block_Treatments extends NaturalRemedyCo_Fac
 	private function getTreatments()
 	{
 		$depth = 0;
-		$collection = $this->_categoryCollection->getCollection()
+		$collection = $this->_categoryCollection->getCollection()->setStoreId($this->_storeManager->getId())
 			->addNameToResult()
-			->addUrlRewriteToResult()
+			// ->addUrlRewriteToResult()
 			->addAttributeToFilter('url_key', self::REACT_COMPONENT)
 			->getFirstItem();
 		$categoryId = $collection->getEntityId();
