@@ -54,7 +54,7 @@ server {
     root $MAGE_ROOT;
     index index.php;
     include /etc/nginx/defaults/magento1.conf;
-    include /etc/nginx/global/php72.conf;
+    include /etc/nginx/global/php72.live.conf;
     location / {
         # add_header 'Access-Control-Allow-Origin' '*';
         # add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS';
@@ -97,7 +97,7 @@ server {
     root $MAGE_ROOT;
     index index.php;
     include /etc/nginx/defaults/magento1.conf;
-    include /etc/nginx/global/php72.conf;
+    include /etc/nginx/global/php72.live.conf;
     location / {
         # add_header 'Access-Control-Allow-Origin' '*';
         # add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS';
