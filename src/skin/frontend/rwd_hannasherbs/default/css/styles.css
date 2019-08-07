@@ -3415,18 +3415,16 @@ a.skip-link {
 }
 @media only screen and (min-width: 771px) {
 	#header-nav {
-		display: block;
+		display: flex;
 		/* Force visibility */
 		padding: 0;
 		background-color: #8c8759;
-		float: left;
 		width: 100%;
 	}
 	#nav {
+		display: flex;
 		width: 100%;
 		max-width: 1260px;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
 /* ============================================ *
@@ -3434,7 +3432,9 @@ a.skip-link {
 * ============================================ */
 @media only screen and (min-width: 771px) {
 	.nav-primary {
-		display: block;
+		display: flex;
+		width: 100%;
+		justify-content: center;
 	}
 }
 /* ============================================ *
@@ -3450,7 +3450,7 @@ a.skip-link {
 	font-weight: lighter;
 	font-size: 19px;
 	line-height: 1.2;
-	padding: 5px;
+	padding: 0.5rem 1rem;
 }
 .nav-primary li {
 	position: relative;
@@ -3475,11 +3475,9 @@ a.skip-link {
 	text-transform: capitalize;
 	color: #FFF;
 	border-right: 1px solid #FFF;
-	margin: 0px auto;
-	display: block;
 	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding: 0.5rem 1rem;
+	height: 100%;
 }
 
 .nav-primary li.level0 > a:hover,
@@ -3546,21 +3544,12 @@ a.skip-link {
 * Large Viewports - Dropdown Menu
 * ============================================ */
 @media only screen and (min-width: 771px) {
-	.nav-primary {
-		/* Default styles for 1+ drop-down menus */
-		/* Level 2+ */
-		/* Styles that only show when the menu is visible */
-		/* Class for js to add briefly to evaluate element positioning. */
-		/* Correct menus that will hang off the page (class added by js) */
-		/* Level 1+ */
-	}
-	.nav-primary a.level0 {
-		padding: 0 5px;
-	}
-	.nav-primary li.level0,
-	.nav-primary a.level0 {
-		display: inline-block;
-	}
+	/* Default styles for 1+ drop-down menus */
+	/* Level 2+ */
+	/* Styles that only show when the menu is visible */
+	/* Class for js to add briefly to evaluate element positioning. */
+	/* Correct menus that will hang off the page (class added by js) */
+	/* Level 1+ */
 	.nav-primary li:last-child > a {
 		border-bottom: none;
 	}

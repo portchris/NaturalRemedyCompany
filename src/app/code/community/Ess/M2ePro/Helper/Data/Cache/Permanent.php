@@ -2,7 +2,7 @@
 
 /*
  * @author     M2E Pro Developers Team
- * @copyright  2011-2015 ESS-UA [M2E Pro]
+ * @copyright  M2E LTD
  * @license    Commercial use is forbidden
  */
 
@@ -20,7 +20,7 @@ class Ess_M2ePro_Helper_Data_Cache_Permanent extends Ess_M2ePro_Helper_Data_Cach
 
     public function setValue($key, $value, array $tags = array(), $lifeTime = NULL)
     {
-        if (is_null($lifeTime) || (int)$lifeTime <= 0) {
+        if ($lifeTime === null || (int)$lifeTime <= 0) {
             $lifeTime = 60*60*24*365*5;
         }
 
@@ -46,7 +46,7 @@ class Ess_M2ePro_Helper_Data_Cache_Permanent extends Ess_M2ePro_Helper_Data_Cach
     {
         $mode = Zend_Cache::CLEANING_MODE_MATCHING_ANY_TAG;
         $tags = array(Ess_M2ePro_Helper_Data::CUSTOM_IDENTIFIER.'_'.$tag);
-        Mage::app()->getCache()->clean($mode,$tags);
+        Mage::app()->getCache()->clean($mode, $tags);
     }
 
     public function removeAllValues()
