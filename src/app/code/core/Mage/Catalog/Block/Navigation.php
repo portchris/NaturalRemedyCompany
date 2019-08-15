@@ -373,7 +373,7 @@ class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
     /**
      * Enter description here...
      *
-     * @return string
+     * @return array
      */
     public function getCurrentCategoryPath()
     {
