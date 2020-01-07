@@ -496,7 +496,7 @@ select,
 table,
 textarea {
 	font-family: "Helvetica Neue", Arial, Verdana, sans-serif;
-	color: #636363;
+	color: #222;
 	font-size: 14px;
 	line-height: 1.5;
 }
@@ -542,7 +542,7 @@ h1, .h1 {
 h2, .h2 {
 	margin: 0;
 	margin-bottom: 0.5em;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 24px;
 	font-weight: 400;
@@ -555,7 +555,7 @@ h2, .h2 {
 h3, .h3 {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
@@ -568,7 +568,7 @@ h3, .h3 {
 h4, .h4 {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
@@ -581,7 +581,7 @@ h4, .h4 {
 h5, .h5 {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 13px;
 	font-weight: bold;
@@ -594,7 +594,7 @@ h5, .h5 {
 h6, .h6 {
 	margin: 0;
 	margin-bottom: 5px;
-	color: #636363;
+	color: #222;
 	font-family: "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
@@ -644,7 +644,7 @@ h6, .h6 {
 .product-name .h1 {
 	text-transform: capitalize;
 	font-size: 24px;
-	color: #636363;
+	color: #222;
 	border-bottom: 1px solid #ededed;
 	padding-bottom: 3px;
 	margin-bottom: 15px;
@@ -673,7 +673,7 @@ h6, .h6 {
 .block-title strong {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 20px;
 	font-style: normal;
@@ -751,7 +751,7 @@ body:not(.customer-account) .block:first-child .block-title {
 	.sidebar .block:not(.block-layered-nav) .block-title > strong {
 		margin: 0;
 		margin-bottom: 10px;
-		color: #636363;
+		color: #222;
 		font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 		font-size: 14px;
 		font-weight: bold;
@@ -794,7 +794,7 @@ body:not(.customer-account) .block:first-child .block-title {
 	.sidebar .block:not(.block-layered-nav) .block-title.active > strong {
 		margin: 0;
 		margin-bottom: 10px;
-		color: #636363;
+		color: #222;
 		font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 		font-size: 14px;
 		font-weight: bold;
@@ -867,7 +867,7 @@ body:not(.customer-account) .block:first-child .block-title {
 }
 .block-account li a,
 .block-cms-menu li a {
-	color: #636363;
+	color: #222;
 }
 .block-account li a:hover,
 .block-cms-menu li a:hover {
@@ -883,7 +883,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .sidebar .actions .button,
 .button.button-secondary {
 	background: #dddddd;
-	color: #636363;
+	color: #222;
 	padding: 7px 15px;
 }
 .cart .buttons-set .button:hover,
@@ -898,13 +898,13 @@ body:not(.customer-account) .block:first-child .block-title {
 .sidebar .actions .button:active,
 .button.button-secondary:active {
 	background: #c4c4c4;
-	color: #636363;
+	color: #222;
 }
 .cart .buttons-set .button:focus,
 .cart-table .button:focus,
 .sidebar .actions .button:focus,
 .button.button-secondary:focus {
-	color: #636363;
+	color: #222;
 	background: #c4c4c4;
 	outline: none;
 }
@@ -1146,7 +1146,7 @@ a.button:hover {
 
 .breadcrumbs a {
 	float: left;
-	color: #636363;
+	color: #222;
 }
 
 .breadcrumbs a:hover {
@@ -1154,7 +1154,7 @@ a.button:hover {
 }
 
 .breadcrumbs strong {
-	color: #636363;
+	color: #222;
 	font-weight: normal;
 }
 
@@ -2083,7 +2083,7 @@ a.button:hover {
 
 .toolbar,
 .pager {
-	color: #636363;
+	color: #222;
 	line-height: 30px;
 	font-size: 12px;
 }
@@ -2216,7 +2216,7 @@ a.button:hover {
 
 .pages .current,
 .pages .current:hover {
-	color: #636363;
+	color: #222;
 	border: 1px solid #cccccc;
 	width: 30px;
 	background-color: #FFFFFF;
@@ -2506,7 +2506,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
 form .legend {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
@@ -2782,7 +2782,7 @@ p.required,
 #checkout-shipping-method-load .sp-methods dd label,
 #co-shipping-method-form .sp-methods dd label,
 .product-options ul.options-list label {
-	color: #636363;
+	color: #222;
 	background-color: #f4f4f4;
 	padding: 5px 10px;
 	display: inline-block;
@@ -3260,7 +3260,7 @@ body {
 	float: left;
 	width: 20%;
 	background: transparent;
-	color: #636363;
+	color: #222;
 	line-height: 42px;
 	text-align: center;
 }
@@ -3358,7 +3358,7 @@ a.skip-link {
 		padding: 0 15px 0 25px;
 		border-bottom: 1px solid #cccccc;
 		text-align: left;
-		color: #636363;
+		color: #222;
 		text-transform: capitalize;
 		line-height: 30px;
 	}
@@ -3444,7 +3444,7 @@ a.skip-link {
 	text-decoration: none;
 	position: relative;
 	display: block;
-	color: #636363;
+	color: #222;
 	line-height: 30px;
 	/*font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;*/
 	font-weight: lighter;
@@ -3735,7 +3735,7 @@ a.skip-link {
 	#header-account-dropdown a {
 		display: block;
 		padding: 5px 10px;
-		color: #636363;
+		color: #222;
 		line-height: 2;
 	}
 
@@ -3985,7 +3985,7 @@ a.skip-link {
 	padding: 4px 0;
 }
 .footer .links a {
-	color: #636363;
+	color: #222;
 }
 .footer .links a:hover {
 	color: #8c8759;
@@ -4172,7 +4172,7 @@ h5.product-name,
 p.product-name {
 	margin: 0;
 	margin-bottom: 0.5em;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 24px;
 	font-weight: 400;
@@ -4190,7 +4190,7 @@ h3.product-name a,
 h4.product-name a,
 h5.product-name a,
 p.product-name a {
-	color: #636363;
+	color: #222;
 }
 h2.product-name a:hover,
 h3.product-name a:hover,
@@ -4656,7 +4656,7 @@ p.product-name a:hover {
 	display: none;
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
@@ -4700,7 +4700,7 @@ p.product-name a:hover {
 .block-layered-nav .block-content > dl > dt {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-size: 18px;
 	font-weight: lighter;
 	font-style: normal;
@@ -4879,7 +4879,7 @@ p.product-name a:hover {
 	}
 
 	.block-layered-nav dl ol > li > a {
-		color: #636363;
+		color: #222;
 		background-color: #f4f4f4;
 		padding: 5px 10px;
 	}
@@ -4892,7 +4892,7 @@ p.product-name a:hover {
 	display: block;
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-size: 18px;
 	font-weight: lighter;
 	font-style: normal;
@@ -5486,7 +5486,7 @@ p.product-name a:hover {
 	.product-collateral > dl > dt {
 		margin: 0;
 		margin-bottom: 10px;
-		color: #636363;
+		color: #222;
 		font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 		font-size: 14px;
 		font-weight: bold;
@@ -5799,7 +5799,7 @@ p.product-name a:hover {
 	padding: 0 0 10px;
 	border: 0;
 	background: 0;
-	color: #636363;
+	color: #222;
 }
 @media only screen and (max-width: 479px) {
 	.product-options-bottom .product-pricing,
@@ -5820,7 +5820,7 @@ p.product-name a:hover {
 
 .product-options-bottom .tier-prices .price,
 .product-options-bottom .tier-prices .benefit {
-	color: #636363;
+	color: #222;
 }
 
 /* "display: none" should be removed if products on site have a long list of product options and those product options */
@@ -5857,7 +5857,7 @@ p.product-name a:hover {
 .block-related .block-title h2 {
 	margin: 0;
 	margin-bottom: 0.5em;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 24px;
 	font-weight: 400;
@@ -6317,7 +6317,7 @@ p.product-name a:hover {
 	vertical-align: top;
 }
 .cart-table h2 {
-	color: #636363;
+	color: #222;
 	font-size: 14px;
 	margin-bottom: 0;
 }
@@ -7182,7 +7182,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 	padding-top: 6px;
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
@@ -7196,7 +7196,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 	color: #a0a0a0;
 }
 .block-progress dt.complete {
-	color: #636363;
+	color: #222;
 }
 .block-progress dd {
 	padding-left: 15px;
@@ -7213,7 +7213,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 .block-progress .payment-info dt {
 	padding: 0;
 	margin: 0 0 3px 0;
-	color: #636363;
+	color: #222;
 	font-family: Georgia, Times, "Times New Roman", serif;
 	text-transform: none;
 	font-style: italic;
@@ -8426,7 +8426,7 @@ div.paypal-logo span > img {
 	font-family: "Helvetica Neue",Verdana,Arial,sans-serif;
 }
 #customer-reviews h2 span {
-	color: #636363;
+	color: #222;
 }
 #customer-reviews h3 {
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
@@ -8993,7 +8993,7 @@ div.paypal-logo span > img {
 	font-size: 12px;
 }
 #wishlist-table .price-box .price {
-	color: #636363;
+	color: #222;
 }
 #wishlist-table .giftregisty-add {
 	margin-top: 5px;
@@ -9178,7 +9178,7 @@ div.paypal-logo span > img {
 	clear: both;
 	position: relative;
 	padding:10px;
-	color: #636363;
+	color: #222;
 }
 .header-minicart .minicart-wrapper:before, .header-minicart .minicart-wrapper:after {
 	content: '';
@@ -9224,7 +9224,7 @@ div.paypal-logo span > img {
 	width: 40px;
 	float: right;
 	display: block;
-	color: #636363;
+	color: #222;
 	text-decoration: none;
 	font-weight: normal;
 	font-size: 30px;
@@ -9353,7 +9353,7 @@ div.paypal-logo span > img {
 }
 @media only screen and (max-width: 770px) {
 	.header-minicart .subtotal .label {
-		color: #636363;
+		color: #222;
 	}
 	.header-minicart .minicart-wrapper:before {
 		background-color: #EDEDED;
@@ -9575,7 +9575,7 @@ div.paypal-logo span > img {
 }
 .cms-page-view .std p,
 .cms-no-route .std p {
-	color: #636363;
+	color: #222;
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 14px;
 	font-style: italic;
@@ -9591,7 +9591,7 @@ div.paypal-logo span > img {
 }
 .cms-page-view .std li,
 .cms-no-route .std li {
-	color: #636363;
+	color: #222;
 	font-family: Georgia, Times, "Times New Roman", serif;
 	font-size: 14px;
 	font-style: italic;
@@ -9633,7 +9633,7 @@ div.paypal-logo span > img {
 #accordion > dl > dt {
 	margin: 0;
 	margin-bottom: 10px;
-	color: #636363;
+	color: #222;
 	font-family: "Kaushan Script", "Helvetica Neue", Arial, Verdana, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
@@ -10584,7 +10584,7 @@ body.customer-account .my-account .order-action-buttons a.button:hover,
 .footer-container {
 	float: left;
 	width: 100%;
-	background-color: #636363;
+	background-color: #222;
 	border-top: 333;
 	padding: 10px;
 	-webkit-box-shadow: inset 0px 4px 10px -4px rgba(0, 0, 0, 0.75);
@@ -10782,11 +10782,11 @@ body.customer-account .my-account .order-action-buttons a.button:hover,
 	#nav .nav-primary li.level0 > a,
 	#nav .nav-primary li a {
 		text-align: left;
-		color: #636363;
+		color: #222;
 	}
 	.nav-primary li.level0 > a {
 		font-weight: bold;
-		color: #636363 !important;
+		color: #222 !important;
 		font-size: 16px;
 	}
 	.skip-link,
