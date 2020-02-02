@@ -26,7 +26,7 @@
 <config>
     <modules>
         <Moogento_NoMoreSpam>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Moogento_NoMoreSpam>
     </modules>

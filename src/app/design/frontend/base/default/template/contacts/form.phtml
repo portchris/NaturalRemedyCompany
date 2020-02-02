@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Magento
  *
@@ -22,6 +23,7 @@
  * @package     base_default
  * @copyright   Copyright (c) 2006-2019 Magento, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ * @var         Mage_Core_Block_Template $this
  */
 ?>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
@@ -61,13 +63,14 @@
         </ul>
     </div>
     <div class="buttons-set">
+        <?php echo $this->getBlockHtml('formkey') ?>
         <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
         <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
         <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
     </div>
 </form>
 <script type="text/javascript">
-//<![CDATA[
+    //<![CDATA[
     var contactForm = new VarienForm('contactForm', true);
-//]]>
+    //]]>
 </script>
