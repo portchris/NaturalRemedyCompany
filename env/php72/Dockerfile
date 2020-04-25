@@ -6,8 +6,8 @@ ARG GID=${GROUP_ID}
 
 # Configure build
 ENV DEBIAN_FRONTEND noninteractive
-RUN rm /etc/localtime && \
-    ln -s /usr/share/zoneinfo/Europe/London /etc/localtime && \
+RUN rm -f /etc/localtime || true
+RUN ln -s /usr/share/zoneinfo/Europe/London /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
 # Add the www user
