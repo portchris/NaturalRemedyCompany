@@ -17,6 +17,24 @@ server {
     index index.php;
     include /etc/nginx/defaults/magento1.conf;
     include /etc/nginx/global/php72.live.conf;
+
+    location ~ /(nradmin|admin) {
+
+        # Convert Digital - Melbourne
+        allow 110.175.220.170;
+
+        # Convert Digital - VPN
+        allow 149.28.169.124;
+
+        # Convert Digital - Developers
+        allow 149.28.179.77;
+
+        # Deny all else
+        deny all;
+        
+        return 403;
+    }
+
     location / {
         try_files $uri $uri/ /index.php$is_args$args;
     }
